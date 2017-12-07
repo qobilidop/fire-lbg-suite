@@ -1,0 +1,25 @@
+#!/bin/bash
+#SBATCH --export=ALL
+#SBATCH --partition=RM
+#SBATCH --nodes=8
+#SBATCH --ntasks-per-node=28
+#SBATCH --time=24:00:00
+#SBATCH --output=job/gizmo.%j.o
+#SBATCH --error=job/gizmo.%j.e
+# Job name is specified in submit.sh
+
+set -x
+cd $REPO_ROOT/run/$RUN
+
+# I don't know what the following line is doing. It's copied from the sample
+# batch script for MPI job at
+# https://www.psc.edu/bridges/user-guide/running-jobs.
+export  I_MPI_JOB_RESPECT_PROCESS_PLACEMENT=0
+
+if ! [ -f output/snapshot_000.hdf5 ]; then
+    # Start from scratch
+    mpirun -np $SLURM_NTASKS GIZMO gizmo_params.txt
+else
+    # Restart
+    mpirun -np $SLURM_NTASKS GIZMO gizmo_params.txt 1
+fi

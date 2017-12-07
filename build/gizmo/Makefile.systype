@@ -1,0 +1,17 @@
+# The following settings are for Bridges (https://www.psc.edu/bridges).
+# See /init.sh for more information.
+
+CC       =  $(REPO_MPICC)
+CXX      =  $(REPO_MPICXX)
+FC       =  $(REPO_MPICC)
+OPTIMIZE = -O3 -xhost -ipo -funroll-loops -no-prec-div -fp-model fast=2 # speed
+OPTIMIZE += -g -Wall # compiler warnings
+OPTIMIZE += -qopenmp # OpenMP for Intel compiler
+MKL_INCL = -I$(REPO_MKL_INC)
+MKL_LIBS = -L$(REPO_MKL_LIB)
+FFTW_INCL= -I$(REPO_FFTW2_INC)
+FFTW_LIBS= -L$(REPO_FFTW2_LIB)
+HDF5INCL = -I$(REPO_HDF5_INC) -DH5_USE_16_API
+HDF5LIB  = -L$(REPO_HDF5_LIB) -lhdf5 -lz
+MPICHLIB = # It's necessary to set this as blank
+OPT     += -DUSE_MPI_IN_PLACE

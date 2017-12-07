@@ -1,0 +1,15 @@
+#!/bin/bash
+#SBATCH --export=ALL
+#SBATCH --partition=RM
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=28
+#SBATCH --time=0:15:00
+#SBATCH --output=job/music.%j.o
+#SBATCH --error=job/music.%j.e
+# Job name is specified in submit.sh
+
+set -x
+cd $REPO_ROOT/run/$RUN
+
+export OMP_NUM_THREADS=$SLURM_NTASKS
+MUSIC music.conf
