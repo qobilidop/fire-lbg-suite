@@ -1,0 +1,10 @@
+RUN = z2h350_fire2
+GIZMO_CONFIG = fire2_md/Config.sh
+GIZMO_PARAMS = fire2_md/params.txt
+MUSIC_CONFIG = dm_512/zoom.conf
+MUSIC_ZOOM_REGION = dm_512/zoom_region/halo350.txt
+
+.PHONY: bootstrap
+
+bootstrap:
+	cp -r ../template/* .

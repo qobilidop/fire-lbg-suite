@@ -30,8 +30,8 @@ TimeBetSnapshot         1.1  % time between (if OutputListOn=0), code units
 TimeBetStatistics       0.05 % time between additional statistics (e.g. energy)
 
 %---- CPU run-time and checkpointing time-limits
-TimeLimitCPU            100000  % in seconds
-CpuTimeBetRestartFile   3600  	% in seconds
+TimeLimitCPU            202000  % in seconds
+CpuTimeBetRestartFile   7000  	% in seconds
 ResubmitOn              0
 ResubmitCommand         none
 
@@ -61,8 +61,8 @@ HubbleParam             0.703   % little 'h'; =1 for non-cosmological runs
 
 
 %----- Memory allocation
-MaxMemSize          4000    % sets maximum MPI process memory use in MByte
-PartAllocFactor     2.5     % memory load allowed for better cpu balance
+MaxMemSize          3500    % sets maximum MPI process memory use in MByte
+PartAllocFactor     3.0     % memory load allowed for better cpu balance
 BufferSize          100     % in MByte
 
 %---- Rebuild domains when >this fraction of particles active

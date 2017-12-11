@@ -3,8 +3,7 @@
 ## Steps
 
 ```bash
-source init.sh
-make src
-make build
+source init_bridges.sh
+make install
 make run
 ```

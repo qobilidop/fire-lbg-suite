@@ -1,15 +1,13 @@
-.PHONY: upload src build run
+.PHONY: upload src install run
 
 upload:
 	rsync -avz --filter=':- .gitignore' . bridges:~/scratch/z2h-fire2-test
 
 src:
-	cd src && make
+	cd $(REPO_PREFIX)/src && make
 
-build:
-	cd build/fftw2 && ./build.sh
-	cd build/gizmo && ./build.sh
-	cd build/music && ./build.sh
+install: src
+	./install_fftw2.sh
 
 run:
-	cd run/z2h350_fire2 && ./run.sh
+	cd run/z2h350_fire2 && make -f Makefile.run && make submit

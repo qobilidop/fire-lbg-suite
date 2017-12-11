@@ -9,7 +9,7 @@
 # Job name is specified in submit.sh
 
 set -x
-cd $REPO_ROOT/run/$RUN
+cd $REPO_ROOT/run/$RUN/ic
 
 export OMP_NUM_THREADS=$SLURM_NTASKS
-MUSIC music.conf
+./music/MUSIC music.conf
