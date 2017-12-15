@@ -27,6 +27,5 @@ export REPO_MKL_LIB="$MKLROOT/lib"
 # Local paths
 export REPO_ROOT="$PWD"
 export REPO_PREFIX="$REPO_ROOT/local"
-export REPO_FFTW2_SRC="$REPO_PREFIX/src/fftw-2.1.5"
 export REPO_FFTW2_INC="$REPO_PREFIX/include"
 export REPO_FFTW2_LIB="$REPO_PREFIX/lib"

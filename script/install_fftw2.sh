@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
-cd $REPO_FFTW2_SRC
+# Download source code
+mkdir -p $REPO_PREFIX/src
+cd $REPO_PREFIX/src
+curl -O http://www.fftw.org/fftw-2.1.5.tar.gz
+tar -xzf fftw-2.1.5.tar.gz
+cd fftw-2.1.5
 
 # Installing FFTW in both single and double precision
 # See http://www.fftw.org/fftw2_doc/fftw_6.html#SEC69
