@@ -6,10 +6,12 @@
 #SBATCH --time=0:15:00
 #SBATCH --output=job/music.%j.o
 #SBATCH --error=job/music.%j.e
-# Job name is specified in submit.sh
+# This is adapted from the sample batch script for OpenMP job in
+# https://www.psc.edu/bridges/user-guide/running-jobs
 
 set -x
 cd $REPO_ROOT/run/$RUN/ic
 
 export OMP_NUM_THREADS=$SLURM_NTASKS
+
 ./music/MUSIC music.conf

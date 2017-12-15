@@ -7,7 +7,7 @@
 #SBATCH --time=48:00:00
 #SBATCH --output=job/gizmo.%j.o
 #SBATCH --error=job/gizmo.%j.e
-# This script is adapted from the sample batch script for MPI job in
+# This is adapted from the sample batch script for hybrid OpenMP/MPI job in
 # https://www.psc.edu/bridges/user-guide/running-jobs
 
 set -x

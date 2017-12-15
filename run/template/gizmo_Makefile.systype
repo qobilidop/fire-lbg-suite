@@ -1,5 +1,4 @@
 # The following settings are for Bridges (https://www.psc.edu/bridges).
-# See /init.sh for more information.
 
 CC       =  $(REPO_MPICC)
 CXX      =  $(REPO_MPICXX)
