@@ -22,23 +22,20 @@ ic/zoom_region.txt: $(REPO_ROOT)/config/music/$(MUSIC_ZOOM_REGION)
 
 compile: gizmo/GIZMO ic/music/MUSIC config
 
-gizmo/GIZMO: gizmo/Config.sh gizmo/Makefile.systype
+gizmo/GIZMO: gizmo_Config.sh gizmo_Makefile.systype | gizmo
+	cp gizmo_Config.sh gizmo/Config.sh
+	cp gizmo_Makefile.systype gizmo/Makefile.systype
 	cd gizmo && make
 
-gizmo/%: gizmo_% | gizmo
-	cp $< $@
-
 gizmo:
-	hg clone https://bitbucket.org/phopkins/gizmo
+	hg clone -r $(GIZMO_COMMIT) https://bitbucket.org/phopkins/gizmo $@
 
-ic/music/MUSIC: ic/music/Makefile
+ic/music/MUSIC: ic/music_Makefile | ic/music
+	cp ic/music_Makefile ic/music/Makefile
 	cd ic/music && make
 
-ic/music/%: ic/music_% | ic/music
-	cp $< $@
-
 ic/music:
-	cd ic && hg clone https://bitbucket.org/ohahn/music
+	hg clone -r $(MUSIC_COMMIT) https://bitbucket.org/ohahn/music $@
 
 
 

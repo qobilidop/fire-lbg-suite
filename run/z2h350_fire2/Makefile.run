@@ -1,6 +1,8 @@
 RUN = z2h350_fire2
+GIZMO_COMMIT = 1a101053c7519218e2bb1aaf31a77240c0325897
 GIZMO_CONFIG = fire2_md/Config.sh
 GIZMO_PARAMS = fire2_md/params.txt
+MUSIC_COMMIT = 12e7b54e7512e7ca5ed19875b643137c59379a20
 MUSIC_CONFIG = dm_512/zoom.conf
 MUSIC_ZOOM_REGION = dm_512/zoom_region/halo350.txt
 
