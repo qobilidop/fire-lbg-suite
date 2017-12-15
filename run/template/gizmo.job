@@ -7,21 +7,19 @@
 #SBATCH --time=48:00:00
 #SBATCH --output=job/gizmo.%j.o
 #SBATCH --error=job/gizmo.%j.e
-# Job name is specified in submit.sh
+# This script is adapted from the sample batch script for MPI job in
+# https://www.psc.edu/bridges/user-guide/running-jobs
 
 set -x
 cd $REPO_ROOT/run/$RUN
-ln -sf ic/ics.dat
 
-# I don't know what the following line is doing. It's copied from the sample
-# batch script for MPI job at
-# https://www.psc.edu/bridges/user-guide/running-jobs.
 export  I_MPI_JOB_RESPECT_PROCESS_PLACEMENT=0
+
 MPI_OPT="-print-rank-map -n $SLURM_NTASKS -genv OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK -genv I_MPI_PIN_DOMAIN=omp"
-if ! [ -f output/snapshot_000.hdf5 ]; then
-    # Start from scratch
-    mpirun -np $SLURM_NTASKS ./gizmo/GIZMO gizmo_params.txt
-else
+if [ -d output/restartfiles ]; then
     # Restart
-    mpirun -np $SLURM_NTASKS ./gizmo/GIZMO gizmo_params.txt 1
+    mpirun $MPI_OPT ./gizmo/GIZMO gizmo_params.txt 1
+else
+    # Start from scratch
+    mpirun $MPI_OPT ./gizmo/GIZMO gizmo_params.txt
 fi
