@@ -5,7 +5,7 @@ CXX      =  $(REPO_MPICXX)
 FC       =  $(REPO_MPICC)
 OPTIMIZE = -O3 -xhost -ipo -funroll-loops -no-prec-div -fp-model fast=2 # speed
 OPTIMIZE += -g -Wall # compiler warnings
-OPTIMIZE += -qopenmp # OpenMP for Intel compiler
+OPTIMIZE += -qopenmp -mt_omp # OpenMP and MPI for Intel compiler
 MKL_INCL = -I$(REPO_MKL_INC)
 MKL_LIBS = -L$(REPO_MKL_LIB)
 GSL_INCL = -I$(REPO_GSL_INC)
