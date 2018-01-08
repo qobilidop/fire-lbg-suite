@@ -30,8 +30,8 @@ TimeBetSnapshot         1.1  % time between (if OutputListOn=0), code units
 TimeBetStatistics       0.05 % time between additional statistics (e.g. energy)
 
 %---- CPU run-time and checkpointing time-limits
-TimeLimitCPU            202000  % in seconds
-CpuTimeBetRestartFile   7000  	% in seconds
+TimeLimitCPU            172800  % in seconds
+CpuTimeBetRestartFile   7200  	% in seconds 
 ResubmitOn              0
 ResubmitCommand         none
 
