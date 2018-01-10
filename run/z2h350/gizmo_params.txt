@@ -24,24 +24,24 @@ OutputListFilename          output_times.txt  % list of times (in code units) fo
 NumFilesPerSnapshot         1
 NumFilesWrittenInParallel   8  % must be < N_processors & power of 2
 
-%---- Output frequency (has no effect if OutputListOn = 1)
+%---- Output frequency
 TimeOfFirstSnapshot     0.1  % time (code units) of first snapshot
 TimeBetSnapshot         1.1  % time between (if OutputListOn=0), code units
 TimeBetStatistics       0.05 % time between additional statistics (e.g. energy)
 
 %---- CPU run-time and checkpointing time-limits
-TimeLimitCPU            172800  % in seconds
-CpuTimeBetRestartFile   7200  	% in seconds 
+TimeLimitCPU            200000  % in seconds
+CpuTimeBetRestartFile   7200  	% in seconds
 ResubmitOn              0
 ResubmitCommand         none
 
 %---- Desired simulation beginning and end times (in code units) for run
 TimeBegin   0.01960784    % Beginning of the simulation, z=50
-TimeMax     0.34     % End of the simulation, z=2
+TimeMax     0.34          % End of the simulation, z=2
 
 %---- Maximum and minimum timesteps allowed
 MaxSizeTimestep         0.005   % in code units, set for your problem
-MinSizeTimestep         1.0e-12 % set this very low, or get the wrong answer
+MinSizeTimestep         5e-9    % set this very low, or get the wrong answer
 
 
 %---- System of units
@@ -83,16 +83,16 @@ MinGasHsmlFractional    1.0     % minimum kernel length relative to gas force so
 %----- Softening lengths per particle type. If ADAPTIVE_GRAVSOFT is set, these
 %-------- are the minimum softening allowed for each type -------
 %-------- (units are co-moving for cosmological integrations)
-SofteningGas    0.0056   % gas (particle type=0) (in co-moving code units)
+SofteningGas    0.007    % gas (particle type=0) (in co-moving code units)
 SofteningHalo   0.56     % dark matter/collisionless particles (type=1)
 SofteningDisk   2        % collisionless particles (type=2)
 SofteningBulge  1        % collisionless particles (type=3)
 SofteningStars  0.056    % stars spawned from gas (type=4)
-SofteningBndry  1       % black holes (if active), or collisionless (type=5)
+SofteningBndry  1        % black holes (if active), or collisionless (type=5)
 %---- if these are set in cosmo runs, SofteningX switches from comoving to physical
 %------- units when the comoving value exceeds the choice here
 %------- (these are ignored, and *only* the above are used, for non-cosmo runs)
-SofteningGasMaxPhys     0.00056
+SofteningGasMaxPhys     0.0007
 SofteningHaloMaxPhys    0.056
 SofteningDiskMaxPhys    0.2
 SofteningBulgeMaxPhys   1
@@ -124,7 +124,7 @@ TurbDiffusionCoefficient 1.0    % Normalizes diffusion rates relative to Smagori
 %-------------------------------------------------------------------------
 
 %---- Star Formation parameters (GALSF on)
-CritPhysDensity     1000.   %  critical physical density for star formation (cm^(-3))
+CritPhysDensity     10.     %  critical physical density for star formation (cm^(-3))
 SfEffPerFreeFall    1.0     %  SFR/(Mgas/tfreefall) for gas which meets SF criteria
 
 %-------------- FIRE (PFH) explicit star formation & feedback model (FIRE on)

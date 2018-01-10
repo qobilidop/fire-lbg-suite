@@ -1,6 +1,6 @@
 RUN = z2h350
 GIZMO_SOURCE = https://bitbucket.org/phopkins/gizmo
-GIZMO_COMMIT = 1f8f0075624a4844e6728f53bf67ead1ff6838d7
+GIZMO_COMMIT = 1a101053c7519218e2bb1aaf31a77240c0325897
 MUSIC_SOURCE = https://bitbucket.org/ohahn/music
 MUSIC_COMMIT = 12e7b54e7512e7ca5ed19875b643137c59379a20
 
