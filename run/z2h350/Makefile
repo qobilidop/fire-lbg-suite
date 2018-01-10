@@ -5,7 +5,7 @@ MUSIC_SOURCE = https://bitbucket.org/ohahn/music
 MUSIC_COMMIT = 12e7b54e7512e7ca5ed19875b643137c59379a20
 
 
-.PHONY: data src compile submit clean destroy
+.PHONY: data src compile submit clean
 
 
 data: ic/zoom_region.txt output_times.txt spcool_tables TREECOOL
@@ -49,12 +49,3 @@ submit: data compile
 clean:
 	cd gizmo && make clean
 	cd ic/music && make clean
-
-
-destroy:
-	rm -rf ic/music
-	rm -rf gizmo
-	rm -rf job
-	rm -rf output
-	rm spcool_tables
-	rm TREECOOL
