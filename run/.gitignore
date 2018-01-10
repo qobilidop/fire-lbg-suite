@@ -1,0 +1,12 @@
+*/gizmo/
+*/ic/music/
+*/ic/ics.dat
+*/ic/input_powerspec.txt
+*/ic/music.conf_log.txt
+*/ic/wnoise_*.bin
+*/job/
+*/output/
+*/ewald_spc_table_64_dbl.dat
+*/gizmo_params.txt-usedvalues
+*/spcool_tables
+*/TREECOOL
