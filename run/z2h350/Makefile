@@ -10,8 +10,11 @@ MUSIC_COMMIT = 12e7b54e7512e7ca5ed19875b643137c59379a20
 
 data: spcool_tables TREECOOL
 
-spcool_tables TREECOOL:
+spcool_tables:
 	ln -s ../../data/$@ .
+
+TREECOOL:
+	ln -s gizmo/cooling/$@ .
 
 
 compile: gizmo/GIZMO ic/music/MUSIC
