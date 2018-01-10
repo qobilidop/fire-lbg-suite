@@ -8,12 +8,12 @@ MUSIC_COMMIT = 12e7b54e7512e7ca5ed19875b643137c59379a20
 .PHONY: data src compile submit clean destroy
 
 
-data: ic/zoom_region.txt spcool_tables TREECOOL
+data: ic/zoom_region.txt output_times.txt spcool_tables TREECOOL
 
 ic/zoom_region.txt:
 	scp ranch:/home2/01708/cfaucher/SCRATCH_stamp/dm_512_MUSIC_ex_halo350_Jan9_2014/dm_512_MUSIC_ex_zoom_coords_halo350.dat $@
 
-spcool_tables:
+output_times.txt spcool_tables:
 	cd ../../data && make $@
 	ln -s ../../data/$@ .
 

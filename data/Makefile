@@ -1,6 +1,9 @@
 .PHONY: all
 
-all: spcool_tables
+all: output_times.txt spcool_tables
+
+output_times.txt:
+	scp ranch:/home2/01708/cfaucher/SCRATCH_stamp/dm_512_MUSIC_ex/output_times.txt $@
 
 %: %.tgz
 	tar -xzf $<
