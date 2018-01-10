@@ -5,7 +5,7 @@ MUSIC_SOURCE = https://bitbucket.org/ohahn/music
 MUSIC_COMMIT = 12e7b54e7512e7ca5ed19875b643137c59379a20
 
 
-.PHONY: data compile submit clean destroy
+.PHONY: data src compile submit clean destroy
 
 
 data: spcool_tables TREECOOL
@@ -17,6 +17,15 @@ TREECOOL:
 	ln -s gizmo/cooling/$@ .
 
 
+src: | gizmo ic/music
+
+gizmo:
+	hg clone -r $(GIZMO_COMMIT) $(GIZMO_SOURCE) $@
+
+ic/music:
+	hg clone -r $(MUSIC_COMMIT) $(MUSIC_SOURCE) $@
+
+
 compile: gizmo/GIZMO ic/music/MUSIC
 
 gizmo/GIZMO: | gizmo
@@ -24,15 +33,9 @@ gizmo/GIZMO: | gizmo
 	cp gizmo_Makefile.systype gizmo/Makefile.systype
 	cd gizmo && make
 
-gizmo:
-	hg clone -r $(GIZMO_COMMIT) $(GIZMO_SOURCE) $@
-
 ic/music/MUSIC: | ic/music
 	cp ic/music_Makefile ic/music/Makefile
 	cd ic/music && make
-
-ic/music:
-	hg clone -r $(MUSIC_COMMIT) $(MUSIC_SOURCE) $@
 
 
 submit: data compile
