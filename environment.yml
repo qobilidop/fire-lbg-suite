@@ -1,0 +1,8 @@
+name: z2f2
+channels:
+  - conda-forge
+dependencies:
+  - jinja2
+  - numpy=1.13
+  - pyyaml
+  - yt
