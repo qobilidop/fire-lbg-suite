@@ -5,6 +5,15 @@ all: dm_512_MUSIC_ex_halo350_Jan9_2014 m12f_res57000 m12i_res57000
 destroy:
 	rm -rf */
 
+dm_512_MUSIC_ex:
+	mkdir -p $@
+	rsync -amvz --delete --include='*/' \
+	--include='gadget-p/Config.sh' \
+	--include='ics_dm_512_MUSIC_ex.conf' \
+	--include='dm_512_MUSIC_ex.txt' \
+	--exclude='*' \
+	ranch:/home2/01708/cfaucher/SCRATCH_stamp/$@/ $@/
+
 dm_512_MUSIC_ex_halo350_Jan9_2014:
 	mkdir -p $@
 	rsync -amvz --delete --include='*/' \
