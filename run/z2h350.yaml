@@ -1,0 +1,4 @@
+target_dir: z2h350_baseline
+template_dir: template/bridges
+template_dict:
+    test: test
