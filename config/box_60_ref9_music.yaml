@@ -31,8 +31,8 @@ gizmo:
     commit: 4fd12fbd8bf81edaa9d710b728ebbefa1e3e51b1
     # Numerics
     softening:  # all in physical pc
-        dm_lr: 280
-        dm: 80
+        dm_lr: 320
+        dm: 320
         star: 8
         gas: 1
         z: 9  # the redshift at which the softening switches to physical

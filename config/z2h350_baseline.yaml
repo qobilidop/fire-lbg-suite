@@ -32,7 +32,7 @@ gizmo:
     commit: 4fd12fbd8bf81edaa9d710b728ebbefa1e3e51b1
     # Numerics
     softening:  # all in physical pc
-        dm_lr: 280
+        dm_lr: 320
         dm: 80
         star: 8
         gas: 1
