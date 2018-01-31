@@ -24,6 +24,7 @@ def main():
     target_dir = output_dir / config['name']
     template_dir = config_file.parent / config['template']
     env = Environment(loader=FileSystemLoader(str(template_dir)))
+    env.keep_trailing_newline = True
     for template_name in env.list_templates():
         template = env.get_template(template_name)
         rendered = template.render(config)
