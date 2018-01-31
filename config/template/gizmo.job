@@ -31,4 +31,4 @@ else
 fi
 
 # Use this file to mark this run as finished.
-touch finished
+touch output/finished
