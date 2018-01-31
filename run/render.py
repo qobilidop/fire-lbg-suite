@@ -17,10 +17,11 @@ def main():
     # Load config file
     with config_file.open() as f:
         config = yaml.load(f)
+    config['template_dict']['name'] = config_file.stem
 
     # Prepare to render
     work_dir = config_file.parent.resolve()
-    target_dir = work_dir / config['target_dir']
+    target_dir = work_dir / config_file.stem
     template_dir = work_dir / config['template_dir']
     env = Environment(loader=FileSystemLoader(str(template_dir)))
 

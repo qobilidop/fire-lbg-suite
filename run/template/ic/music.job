@@ -2,8 +2,8 @@
 #SBATCH --export=ALL
 #SBATCH --partition=RM
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=28
-#SBATCH --time=00:15:00
+#SBATCH --ntasks-per-node={{ music.job.omp_threads }}
+#SBATCH --time={{ music.job.time }}
 #SBATCH --output=job/music.%j.o
 #SBATCH --error=job/music.%j.e
 # This is adapted from the sample batch script for OpenMP job in

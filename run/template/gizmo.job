@@ -1,10 +1,10 @@
 #!/bin/bash
 #SBATCH --export=ALL
 #SBATCH --partition=RM
-#SBATCH --nodes=4
-#SBATCH --ntasks-per-node=14
-#SBATCH --cpus-per-task=2
-#SBATCH --time=48:00:00
+#SBATCH --nodes={{ gizmo.job.nodes }}
+#SBATCH --ntasks-per-node={{ gizmo.job.mpi_tasks }}
+#SBATCH --cpus-per-task={{ gizmo.job.omp_threads }}
+#SBATCH --time={{ gizmo.job.time }}
 #SBATCH --output=job/gizmo.%j.o
 #SBATCH --error=job/gizmo.%j.e
 # This is adapted from the sample batch script for hybrid OpenMP/MPI job in
