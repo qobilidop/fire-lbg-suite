@@ -46,4 +46,4 @@ ic/music/MUSIC: | ic/music
 
 
 submit: data compile
-	RUN={{ name }} ./submit.sh
+	RUN={{ name }} bash submit.sh

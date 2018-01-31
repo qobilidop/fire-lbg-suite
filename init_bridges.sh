@@ -1,5 +1,7 @@
 # Prepare Bridges (https://www.psc.edu/bridges) for simulation runs
 
+source init.sh
+
 # Load modules
 
 module purge
@@ -19,11 +21,6 @@ export RUN_MPIFC=mpiifort
 
 export RUN_OPT_MPI="-mt_mpi"
 export RUN_OPT_OMP="-qopenmp"
-
-# Repository paths
-
-export REPO_ROOT="$PWD"
-export REPO_PREFIX="$REPO_ROOT/local"
 
 # Software paths
 

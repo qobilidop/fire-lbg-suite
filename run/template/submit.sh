@@ -12,7 +12,7 @@ if ! [ -f "ic/ics.dat" ]; then
     gizmo_opt="--dependency=afterok:$music_job_id $gizmo_opt"
 fi
 
-# Submit the gizmo job if the last snapshot does not exist.
-if ! [ -f "output/snapshot_190.hdf5" ]; then
+# Submit the gizmo job if not finished.
+if ! [ -f "output/finished" ]; then
     sbatch $gizmo_opt gizmo.job
 fi

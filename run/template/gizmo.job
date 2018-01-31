@@ -29,3 +29,6 @@ else
     # Start from scratch
     mpirun $MPI_OPT ./gizmo/GIZMO gizmo_params.txt
 fi
+
+# Use this file to mark this run as finished.
+touch finished
