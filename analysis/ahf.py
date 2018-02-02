@@ -102,6 +102,7 @@ class Job(object):
             cmd=self.cmd
         )
         self.script.write_text(template.format(**template_dict))
+        print(f'Submitting {self.script.name}')
         run(['qsub', self.script.name], cwd=self.script.parent)
 
     def execute(self):
