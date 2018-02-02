@@ -32,12 +32,14 @@ class Job(object):
     def parse(cls):
         parser = ArgumentParser()
         parser.add_argument('--sim', type=Path)
+        parser.add_argument('--n_halo', type=int, default=10)
         parser.add_argument('--mode', type=str, default='execute')
         args = parser.parse_args()
-        return cls(args.sim, args.mode)
+        return cls(args.sim, args.n_halo, args.mode)
 
-    def __init__(self, sim: Path, mode: str = 'execute'):
+    def __init__(self, sim: Path, n_halo: int, mode: str = 'execute'):
         self.sim = sim
+        self.n_halo = n_halo
         self.mode = mode
     
     def main(self):
@@ -58,11 +60,11 @@ class Job(object):
 
     @property
     def id(self):
-        return f'mt-{self.sim.name}'
+        return f'ahh-{self.sim.name}'
     
     @property
     def name(self):
-        return f'mt-{self.sim.name}'
+        return f'ahh-{self.sim.name}'
 
     @property
     def script(self):
@@ -77,11 +79,9 @@ class Job(object):
         assert self.work_dir.exists()
     
     def completed(self):
-        n_part = len(list(self.work_dir.glob('*.AHF_particles')))
-        for pattern in ['*.AHF_mtree', '*.AHF_mtree_idx']:
-            n_mt = len(list(self.work_dir.glob(pattern)))
-            if n_mt != n_part - 1:
-                return False
+        n_halo = len(list(self.work_dir.glob('halo_*.dat')))
+        if n_halo != self.n_halo:
+            return False
         print(f'Job {self.id} is already completed.')
         return True
 
@@ -100,15 +100,24 @@ class Job(object):
     def execute(self):
         work_dir = self.work_dir
 
-        particles_files = list(reversed(sorted(work_dir.glob('*.AHF_particles'))))
+        halos_files = reversed(sorted(work_dir.glob('*.AHF_halos')))
 
-        input_args = [str(len(particles_files))] + \
-                     [str(f.relative_to(work_dir)) for f in particles_files] + \
-                     [f.name[:-len('_particles')] for f in particles_files[:-1]]
-        input_file = work_dir / 'MergerTree.input'
-        input_file.write_text('\n'.join(input_args))
+        haloid_list = [str(halo_id) for halo_id in range(self.n_halo)]
+        (work_dir / 'haloid_list').write_text('\n'.join(haloid_list) + '\n')
 
-        run(f'MergerTree < {input_file.name}', shell=True, cwd=work_dir)
+        prefix_list = [f.name[:-len('_halos')] for f in halos_files]
+        (work_dir / 'prefix_list').write_text('\n'.join(prefix_list) + '\n')
+
+        zred_list = [self._extract_zred(p) for p in prefix_list]
+        (work_dir / 'zred_list').write_text('\n'.join(zred_list) + '\n')
+
+        run(['ahfHaloHistory', 'haloid_list', 'prefix_list', 'zred_list'],
+            cwd=work_dir)
+    
+    def _extract_zred(self, prefix):
+        start = prefix.find('.z') + 2
+        end = start + 5
+        return prefix[start:end]
 
 
 if __name__ == '__main__':
