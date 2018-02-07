@@ -1,14 +1,13 @@
-name: z2h350_baseline
-template: template
+name: z2h350_ref12
 general:
     box_length: 60  # in comoving Mpc
     z_start: 50
     z_end: 2
     baryon: true
     zoom: true
-data:
-    output_times: data/output_times.txt
-    zoom_region: data/zoom_region/z2h350.txt
+data:  # all paths relative to repo root
+    output_times: config/output_times.txt
+    zoom_region: config/zoom_region/z2h350.txt
 cosmology:
     h: 0.703
     Omega_m: 0.276
@@ -37,11 +36,11 @@ gizmo:
         star: 8
         gas: 1
         z: 9  # the redshift at which the softening switches to physical
-    CritPhysDensity: 10
+    CritPhysDensity: 1000  # critical physical density for star formation (cm^(-3))
     # Runtime
     NumFilesWrittenInParallel: 8
-    TimeLimitCPU: 200000  # 2 days
-    MaxMemSize: 7000  # < 128 / mpi_tasks * 1000 == 9143
+    TimeLimitCPU: 202000  # 2 days
+    MaxMemSize: 8000  # < 128 / mpi_tasks * 1000 == 9143
     PartAllocFactor: 3
     job:
         nodes: 4
