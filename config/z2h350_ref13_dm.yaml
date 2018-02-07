@@ -1,4 +1,4 @@
-import: profile_ref12.yaml
+import: z2h350_ref12.yaml
 name: z2h350_ref13_dm
 general:
     baryon: false

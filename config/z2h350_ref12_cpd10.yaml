@@ -1,4 +1,4 @@
-import: profile_ref12.yaml
+import: z2h350_ref12.yaml
 name: z2h350_ref12_cpd10
 gizmo:
     CritPhysDensity: 10
