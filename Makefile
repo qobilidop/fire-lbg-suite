@@ -1,7 +1,4 @@
-.PHONY: upload install run
+.PHONY: deploy
 
-upload:
-	rsync -avz --filter=':- .gitignore' . bridges:~/scratch/z2f2
-
-prepare_bridges:
-	./script/install_fftw2.sh
+deploy:
+	rsync -avz --delete-after --filter=':- .gitignore' . bridges:~/scratch/z2f2-run
