@@ -1,4 +1,4 @@
-name: z2f2
+name: z2f2-run
 channels:
   - conda-forge
 dependencies:
