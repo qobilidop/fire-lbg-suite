@@ -1,4 +1,5 @@
 #!/bin/bash
+#SBATCH --job-name={{ name }}-music
 #SBATCH --export=ALL
 #SBATCH --partition=RM
 #SBATCH --nodes=1
@@ -10,7 +11,7 @@
 # https://www.psc.edu/bridges/user-guide/running-jobs
 
 set -x
-cd $REPO_ROOT/run/$RUN/ic
+cd $REPO_ROOT/run/{{ name }}/ic
 
 export OMP_NUM_THREADS=$SLURM_NTASKS
 ./music/MUSIC music.conf
