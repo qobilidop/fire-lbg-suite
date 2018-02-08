@@ -12,7 +12,7 @@
 # https://www.psc.edu/bridges/user-guide/running-jobs
 
 set -x
-cd $REPO_ROOT/run/{{ name }}
+cd $REPO_ROOT/{{ path }}
 
 # Revert the Intel MPI Library to an earlier shared memory mechanism to solve
 # the Intel MPI Library 2018 issue.

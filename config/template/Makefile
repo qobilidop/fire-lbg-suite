@@ -4,13 +4,13 @@
 data: output_times.txt
 
 output_times.txt:
-	cp $(REPO_ROOT)/config/{{ data.output_times }} $@
+	cp $(REPO_ROOT)/{{ data.output_times }} $@
 {%- if general.zoom %}
 
 data: ic/zoom_region.txt
 
 ic/zoom_region.txt:
-	cp $(REPO_ROOT)/config/{{ data.zoom_region }} $@
+	cp $(REPO_ROOT)/{{ data.zoom_region }} $@
 {%- endif %}
 {%- if general.baryon %}
 

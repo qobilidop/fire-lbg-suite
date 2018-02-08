@@ -1,5 +1,4 @@
-import: z2h350_ref12.yaml
-name: z2h350_ref13_dm
+import: test/z2h350_ref12.yaml
 general:
     baryon: false
 music:

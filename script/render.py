@@ -9,6 +9,9 @@ from jinja2 import FileSystemLoader
 import yaml
 
 
+repo_dir = Path(__file__).resolve().parents[1]
+
+
 def main():
     # Parse arguments
     parser = ArgumentParser()
@@ -17,13 +20,15 @@ def main():
 
     # Load profile
     profile = load_profile(args.profile)
+    profile['name'] = args.profile.stem
+    profile['path'] = args.profile.resolve().with_suffix('')
+    profile['path'] = str(profile['path'].relative_to(repo_dir))
     print('Applying the following profile:')
     pprint.pprint(profile)
 
     # Render template into target
-    repo_dir = Path(__file__).resolve().parents[1]
-    target_dir = repo_dir / 'run' / profile['name']
-    template_dir = repo_dir / 'template'
+    target_dir = repo_dir / profile['path']
+    template_dir = repo_dir / 'config/template'
     env = Environment(loader=FileSystemLoader(str(template_dir)))
     env.keep_trailing_newline = True
     for template_name in env.list_templates():
@@ -40,7 +45,7 @@ def load_profile(path: Path):
     with path.open() as f:
         profile = yaml.load(f)
     if 'import' in profile:
-        path_import = path.parent / profile['import']
+        path_import = repo_dir / profile['import']
         del profile['import']
         print(f'Importing {path_import}')
         profile_to_import = load_profile(path_import)
