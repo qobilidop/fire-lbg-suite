@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
+cd $(dirname $0)
+cd .. && source init.sh && cd install
+
 # Download source code
 mkdir -p $REPO_PREFIX/src
 cd $REPO_PREFIX/src
-curl -O http://www.fftw.org/fftw-2.1.5.tar.gz
-tar -xzf fftw-2.1.5.tar.gz
+curl http://www.fftw.org/fftw-2.1.5.tar.gz | tar -vxz
 cd fftw-2.1.5
 
 # Installing FFTW in both single and double precision
