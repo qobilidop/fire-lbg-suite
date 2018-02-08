@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+for run in */; do
+    cd $run
+    make submit
+    cd ..
+done

@@ -1,0 +1,6 @@
+import: benchmark/ref13_dm/baseline.yaml
+gizmo:
+    MaxMemSize: 16000
+    job:
+        mpi_tasks: 7
+        omp_threads: 4

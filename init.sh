@@ -4,6 +4,7 @@ source activate z2f2-run
 
 export REPO_ROOT="$PWD"
 export REPO_PREFIX="$REPO_ROOT/local"
+export PATH="$REPO_ROOT/script:$PATH"
 
 # Load modules
 
