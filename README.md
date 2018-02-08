@@ -1,7 +1,26 @@
-# z2h FIRE-2 test runs
+# Sample z2h FIRE-2 Test Runs on [Bridges](https://www.psc.edu/bridges)
 
-## Notes
+## Prerequisite
 
-- Always do `source init_bridges.sh` before any other operations.
-- First time on Bridges, do `make prepare_bridges` to install necessary softwares.
-- In a run directory, do `make compile` to compile codes, and `make submit` to submit jobs.
+- Access to Bridges (only works there)
+- User-installed [Conda](https://conda.io) on Bridges (to create conda env)
+- Access to GIZMO private version
+
+## Install
+
+```bash
+make install
+```
+
+## Simulation Run
+
+```bash
+source init.sh
+./script/render.py config/z2h350_ref12.yaml
+
+cd run/z2h350_ref12
+# make data
+# make src
+# make compile
+make submit
+```

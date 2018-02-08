@@ -1,4 +1,4 @@
-# Prepare Bridges (https://www.psc.edu/bridges) for simulation runs
+# Prepare Bridges for simulation runs
 
 source activate z2f2-run
 
