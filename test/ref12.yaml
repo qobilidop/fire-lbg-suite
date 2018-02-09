@@ -39,10 +39,10 @@ gizmo:
     # Runtime
     NumFilesWrittenInParallel: 8
     TimeLimitCPU: 202000  # 2 days
-    MaxMemSize: 8000  # < 128 / mpi_tasks * 1000 == 9143
+    MaxMemSize: 4000  # < 128 / mpi_tasks * 1000 == 4571
     PartAllocFactor: 3
     job:
         nodes: 4
-        mpi_tasks: 14  # per node
-        omp_threads: 2  # per task
+        mpi_tasks: 28  # per node
+        omp_threads: 1  # per task
         time: '48:00:00'

@@ -1,0 +1,11 @@
+import: test/ref12.yaml
+general:
+    z_end: 20
+gizmo:
+    TimeLimitCPU: 33000
+    MaxMemSize: 4000
+    job:
+        nodes: 4
+        mpi_tasks: 28
+        omp_threads: 1
+        time: '8:00:00'

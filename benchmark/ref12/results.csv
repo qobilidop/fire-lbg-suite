@@ -1,0 +1,4 @@
+run, time_in_sec
+baseline, 7939.0
+omp2, 9457.0
+omp4, 15242.0
