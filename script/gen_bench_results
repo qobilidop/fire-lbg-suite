@@ -6,9 +6,9 @@ with Path('results.csv').open('w') as f:
     f.write('run, cpu, wall_time_in_h, cpu_time_in_h\n')
     for output in sorted(Path('.').glob('*/output')):
         run = output.parent.name
-        cpu = int(run.split('_')[3:])
+        cpu = int(run.split('_')[0][3:])
         ctimes = [p.stat().st_ctime for p in output.glob('*')]
         wall_time_in_s = max(ctimes) - min(ctimes)
         wall_time_in_h = wall_time_in_s / 3600
         cpu_time_in_h = cpu * wall_time_in_h
-        f.write(f'{run}, {cpu}, {wall_time_in_h}, {cpu_time_in_h}\n')
+        f.write(f'{run}, {cpu}, {wall_time_in_h:.1f}, {cpu_time_in_h:.1f}\n')
