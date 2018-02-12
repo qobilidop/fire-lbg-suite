@@ -1,6 +1,7 @@
-import: benchmark/ref12/baseline.yaml
+import: benchmark/ref12/.common.yaml
 gizmo:
     MaxMemSize: 8000
     job:
+        nodes: 8
         mpi_tasks: 14
         omp_threads: 2
