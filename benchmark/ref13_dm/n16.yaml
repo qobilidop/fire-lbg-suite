@@ -1,4 +1,0 @@
-import: benchmark/ref13_dm/baseline.yaml
-gizmo:
-    job:
-        nodes: 16

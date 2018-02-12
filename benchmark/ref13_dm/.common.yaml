@@ -1,0 +1,7 @@
+import: test/ref13_dm.yaml
+general:
+    z_end: 10
+gizmo:
+    TimeLimitCPU: 100000
+    job:
+        time: '24:00:00'
