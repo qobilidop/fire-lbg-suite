@@ -26,7 +26,7 @@ music:
         omp_threads: 28
         time: '01:00:00'
 gizmo:
-    source: https://bitbucket.org/phopkins/gizmo
+    source: ssh://hg@bitbucket.org/phopkins/gizmo
     commit: 4fd12fbd8bf81edaa9d710b728ebbefa1e3e51b1
     # Numerics
     softening:  # all in physical pc
