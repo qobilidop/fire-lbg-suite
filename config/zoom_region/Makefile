@@ -1,4 +1,4 @@
-.PHONY: all
+.PHONY: sync
 
 sync:
 	rsync -avz --update bridges:~/scratch/z2f2-run/config/zoom_region/* .
