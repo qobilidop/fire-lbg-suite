@@ -3,12 +3,13 @@ from pathlib import Path
 
 
 with Path('results.csv').open('w') as f:
-    f.write('run, cpu, wall_time_in_h, cpu_time_in_h\n')
+    f.write('run, cpu, wall_time_h, cpu_time_h\n')
     for output in sorted(Path('.').glob('*/output')):
         run = output.parent.name
-        cpu = int(run.split('_')[0][3:])
+        nodes = int(run.split('_')[0][1:])
+        cpus = nodes * 28
         ctimes = [p.stat().st_ctime for p in output.glob('*')]
-        wall_time_in_s = max(ctimes) - min(ctimes)
-        wall_time_in_h = wall_time_in_s / 3600
-        cpu_time_in_h = cpu * wall_time_in_h
-        f.write(f'{run}, {cpu}, {wall_time_in_h:.1f}, {cpu_time_in_h:.1f}\n')
+        wall_time_s = max(ctimes) - min(ctimes)
+        wall_time_h = wall_time_s / 3600
+        cpu_time_h = cpus * wall_time_h
+        f.write(f'{run}, {cpus}, {wall_time_h:.1f}, {cpu_time_h:.1f}\n')
