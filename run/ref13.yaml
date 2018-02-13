@@ -2,7 +2,7 @@ import: run/.common.yaml
 data:
     zoom_region: config/zoom_region/z2h350_ref13_rad4.txt
 music:
-    levelmax: 12
+    levelmax: 13
     region_point:
         shift: '-67, -45, -89'
         levelmin: 8
