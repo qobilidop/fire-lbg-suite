@@ -1,3 +1,0 @@
-import: test/ref12.yaml
-gizmo:
-    CritPhysDensity: 10

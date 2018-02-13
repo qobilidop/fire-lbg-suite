@@ -1,0 +1,7 @@
+import: test/ref13_dm.yaml
+data:
+    zoom_region: config/zoom_region/z2h350_ref13_rad4.txt
+music:
+    region_point:
+        shift: '-67, -45, -89'
+        levelmin: 8

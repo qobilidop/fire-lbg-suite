@@ -1,8 +1,11 @@
-import: test/ref12.yaml
+import: test/.common.yaml
 general:
     baryon: false
 music:
     levelmax: 13
 gizmo:
+    MaxMemSize: 4000
     job:
         nodes: 16
+        mpi_tasks: 28
+        omp_threads: 1
