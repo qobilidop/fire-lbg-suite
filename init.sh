@@ -2,6 +2,7 @@
 
 source activate z2f2-run
 
+export REPO_ROOT_BRIDGES="bridges:~/scratch/z2f2"
 export REPO_ROOT="$PWD"
 export REPO_PREFIX="$REPO_ROOT/local"
 export PATH="$REPO_ROOT/script:$PATH"

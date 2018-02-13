@@ -1,7 +1,7 @@
 .PHONY: deploy install
 
 deploy:
-	rsync -avz --delete-after --filter=':- .gitignore' . bridges:~/scratch/z2f2-run
+	rsync -avz --delete-after --filter=':- .gitignore' . $(REPO_ROOT_BRIDGES)
 
 install:
 	conda env create -f install/environment.yml --force

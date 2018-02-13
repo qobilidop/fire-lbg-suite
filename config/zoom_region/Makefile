@@ -1,7 +1,7 @@
 .PHONY: sync
 
 sync:
-	rsync -avz --update bridges:~/scratch/z2f2-run/config/zoom_region/* .
+	rsync -avz --update $(REPO_ROOT_BRIDGES)/config/zoom_region/* .
 
 z2h350_ref13_rad%.txt:
 	cd ../../run/ref13_dm/ && gen_zoom_region --rad $*
