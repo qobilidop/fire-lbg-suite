@@ -1,11 +1,9 @@
-import: test/.common.yaml
-general:
-    baryon: false
+import: run/.common.yaml
 music:
-    levelmax: 13
+    levelmax: 12
 gizmo:
     MaxMemSize: 4000
     job:
-        nodes: 16
+        nodes: 4
         mpi_tasks: 28
         omp_threads: 1

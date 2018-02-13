@@ -1,4 +1,4 @@
-import: test/ref13_dm.yaml
+import: run/ref13_dm.yaml
 general:
     z_end: 10
 gizmo:

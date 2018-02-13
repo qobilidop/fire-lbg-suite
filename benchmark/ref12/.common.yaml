@@ -1,4 +1,4 @@
-import: test/ref12.yaml
+import: run/ref12.yaml
 general:
     z_end: 10
 gizmo:
