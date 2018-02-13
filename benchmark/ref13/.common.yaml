@@ -1,0 +1,7 @@
+import: run/ref13.yaml
+general:
+    z_end: 20
+gizmo:
+    TimeLimitCPU: 100000
+    job:
+        time: '24:00:00'
