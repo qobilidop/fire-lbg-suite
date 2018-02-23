@@ -1,6 +1,6 @@
 # ref13
 
-Iteration | Snapshot
---------- | --------
-1         | 65
-2         | 102
+iteration | snap_max | snap_new
+--------- | -------- | --------
+1         | 65       | 65
+2         | 102      | 37
