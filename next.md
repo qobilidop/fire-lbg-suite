@@ -1,7 +1,5 @@
-- After ref13 is backed up at TSCC
-    - Rename the restartfiles on TSCC to restartfiles_snap118
-    - Restart the run on Bridges
-- Check the ref12 run
+- Restart ref12 when backup finished
+- Check ref13 progress
 - When I have time
     - Start writing a report to make these test runs useful to others
     - Improve the directory structure
