@@ -11,3 +11,4 @@ Each iteraion is 2 days.
 > warning: Timestep wants to be below the limit `MinSizeTimestep'
 > Part-ID=128383518  dt=5.22141e-09 dtc=3.58005e-08 ac=3.09765e+12 xyz=(31539.1|32226.7|29325.9)  hsml=0.0303857  maxcsnd=19333.1 dt0=2.3566e-09 eps=0.00309481
 - Iteration 4 finished at snapshot 143 (+25).
+- Iteration 5 finished at snapshot 159 (+16).
