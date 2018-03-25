@@ -1,0 +1,22 @@
+package:
+  name: ahf
+  version: 1.0.094
+
+source:
+  url: http://popia.ft.uam.es/AHF/files/ahf-v1.0-094.tgz
+  patches:
+    - Makefile.patch
+
+build:
+  script_env:
+   - RUN_CC
+   - RUN_FC
+   - RUN_OPT_OMP
+
+test:
+  commands:
+    - which AHF
+    - which AHF_dm
+
+about:
+  home: http://popia.ft.uam.es/AHF

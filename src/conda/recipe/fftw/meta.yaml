@@ -1,0 +1,14 @@
+package:
+  name: fftw
+  version: 2.1.5
+
+source:
+  url: http://www.fftw.org/fftw-2.1.5.tar.gz
+
+build:
+  script_env:
+   - RUN_CC
+   - RUN_MPICC
+
+about:
+  home: http://www.fftw.org/

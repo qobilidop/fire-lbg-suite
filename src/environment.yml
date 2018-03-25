@@ -1,0 +1,14 @@
+channels:
+  - ./conda/channel
+  - conda-forge
+dependencies:
+  # Locally built
+  - ahf
+  - fftw
+  # General
+  - jinja2
+  - numpy
+  - python=3
+  - pyyaml
+  - scipy
+  - yt
