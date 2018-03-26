@@ -1,4 +1,4 @@
-import: benchmark/ref12/.common.yaml
+import: .common.yaml
 gizmo:
     MaxMemSize: 16000
     job:

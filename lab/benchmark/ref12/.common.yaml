@@ -1,7 +1,8 @@
-import: run/ref12.yaml
+import: ../../run/z2h350_ref12.yaml
 general:
-    z_end: 10
+    z_end: 2.4
 gizmo:
+    restart_from_snapshot: ../../run/z2h350_ref12/output/snapshot_165.hdf5
     TimeLimitCPU: 100000
     job:
         time: '24:00:00'
