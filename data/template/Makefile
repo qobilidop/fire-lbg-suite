@@ -40,11 +40,11 @@ compile: gizmo/GIZMO ic/music/MUSIC
 gizmo/GIZMO: | gizmo
 	cp gizmo_Config.sh gizmo/Config.sh
 	cp gizmo_Makefile.systype gizmo/Makefile.systype
-	cd gizmo && make
+	cd gizmo && make -j$(SLURM_NTASKS)
 
 ic/music/MUSIC: | ic/music
 	cp ic/music_Makefile ic/music/Makefile
-	cd ic/music && make
+	cd ic/music && make -j$(SLURM_NTASKS)
 
 # submit
 submit: data compile
