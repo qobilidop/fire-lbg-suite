@@ -1,0 +1,13 @@
+import: .common.yaml
+general:
+    baryon: false
+data:
+    zoom_region: data/zoom_region/z2h600.txt
+music:
+    levelmax: 13
+gizmo:
+    MaxMemSize: 4000
+    job:
+        nodes: 16
+        mpi_tasks: 28
+        omp_threads: 1
