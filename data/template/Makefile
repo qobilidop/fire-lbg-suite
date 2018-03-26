@@ -1,16 +1,18 @@
+REPO_ROOT = {{ meta.repo_root }}
+
 .PHONY: data src compile submit
 
-
+# data
 data: output_times.txt
 
-output_times.txt:
-	cp $(REPO_ROOT)/{{ data.output_times }} $@
+output_times.txt: $(REPO_ROOT)/{{ data.output_times }}
+	cp $< $@
 {%- if general.zoom %}
 
 data: ic/zoom_region.txt
 
-ic/zoom_region.txt:
-	cp $(REPO_ROOT)/{{ data.zoom_region }} $@
+ic/zoom_region.txt: $(REPO_ROOT)/{{ data.zoom_region }}
+	cp $< $@
 {%- endif %}
 {%- if general.baryon %}
 
@@ -23,7 +25,7 @@ TREECOOL:
 	ln -s gizmo/cooling/$@ .
 {%- endif %}
 
-
+# src
 src: | gizmo ic/music
 
 gizmo:
@@ -32,7 +34,7 @@ gizmo:
 ic/music:
 	hg clone -r {{ music.commit }} {{ music.source }} $@
 
-
+# compile
 compile: gizmo/GIZMO ic/music/MUSIC
 
 gizmo/GIZMO: | gizmo
@@ -44,6 +46,6 @@ ic/music/MUSIC: | ic/music
 	cp ic/music_Makefile ic/music/Makefile
 	cd ic/music && make
 
-
+# submit
 submit: data compile
 	bash submit.sh

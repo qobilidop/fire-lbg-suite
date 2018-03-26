@@ -1,18 +1,18 @@
 #!/bin/bash
-#SBATCH --job-name={{ name }}-gizmo
+# This script is adapted from the sample batch script for hybrid OpenMP/MPI job at
+# https://www.psc.edu/bridges/user-guide/running-jobs
+#SBATCH --job-name={{ meta.name }}-gizmo
 #SBATCH --export=ALL
 #SBATCH --partition=RM
 #SBATCH --nodes={{ gizmo.job.nodes }}
 #SBATCH --ntasks-per-node={{ gizmo.job.mpi_tasks }}
 #SBATCH --cpus-per-task={{ gizmo.job.omp_threads }}
 #SBATCH --time={{ gizmo.job.time }}
-#SBATCH --output=job/gizmo.%j.o
-#SBATCH --error=job/gizmo.%j.e
-# This is adapted from the sample batch script for hybrid OpenMP/MPI job in
-# https://www.psc.edu/bridges/user-guide/running-jobs
+# Make sure the job is submitted as job/gizmo.sh to get the right dir
+#SBATCH --chdir=.
+#SBATCH --output=job/gizmo.%j.log
 
 set -x
-cd $REPO_ROOT/{{ path }}
 
 # Revert the Intel MPI Library to an earlier shared memory mechanism to solve
 # the Intel MPI Library 2018 issue.

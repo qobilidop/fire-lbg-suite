@@ -1,4 +1,4 @@
-import: run/ref13_dm.yaml
+import: z2h350_ref13_dm.yaml
 data:
     zoom_region: config/zoom_region/z2h350_ref13_rad4.txt
 music:

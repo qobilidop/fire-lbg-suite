@@ -1,4 +1,4 @@
-import: run/.common.yaml
+import: .common.yaml
 general:
     baryon: false
 music:
