@@ -28,7 +28,7 @@ if [ -d output/restartfiles ]; then
     mpirun $MPI_OPT ./gizmo/GIZMO gizmo_params.txt 1
 else
     # Start from scratch
-    mpirun $MPI_OPT ./gizmo/GIZMO gizmo_params.txt
+    mpirun $MPI_OPT ./gizmo/GIZMO gizmo_params.txt {{ 2 if gizmo.restart_from_snapshot }}
 fi
 
 # Use this file to mark this run as finished.

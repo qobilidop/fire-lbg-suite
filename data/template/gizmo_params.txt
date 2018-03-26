@@ -1,5 +1,9 @@
 %----  Relevant files (filenames and directories)
+{%- if gizmo.restart_from_snapshot %}
+InitCondFile  output/{{ gizmo.restart_from_snapshot.split('/')[-1] }}
+{%- else %}
 InitCondFile  ic/ics.dat
+{%- endif %}
 OutputDir     output
 
 %---- File formats (input and output)

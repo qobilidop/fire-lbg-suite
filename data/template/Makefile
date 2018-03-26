@@ -24,6 +24,14 @@ spcool_tables:
 TREECOOL:
 	ln -s gizmo/cooling/$@ .
 {%- endif %}
+{%- if gizmo.restart_from_snapshot %}
+
+data: output/{{ gizmo.restart_from_snapshot.split('/')[-1] }}
+
+output/{{ gizmo.restart_from_snapshot.split('/')[-1] }}: ../{{ gizmo.restart_from_snapshot }}
+	mkdir -p output
+	ln -s $@ $<
+{%- endif %}
 
 # src
 src: | gizmo ic/music
