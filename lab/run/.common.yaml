@@ -6,7 +6,6 @@ general:
     zoom: true
 data:
     output_times: data/output_times.txt
-    zoom_region: data/zoom_region/z2h350.txt
 cosmology:
     h: 0.703
     Omega_m: 0.276

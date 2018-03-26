@@ -1,6 +1,8 @@
 import: .common.yaml
 general:
     baryon: false
+data:
+    zoom_region: data/zoom_region/z2h350.txt
 music:
     levelmax: 13
 gizmo:
