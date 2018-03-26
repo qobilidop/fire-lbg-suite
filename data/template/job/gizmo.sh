@@ -8,8 +8,8 @@
 #SBATCH --ntasks-per-node={{ gizmo.job.mpi_tasks }}
 #SBATCH --cpus-per-task={{ gizmo.job.omp_threads }}
 #SBATCH --time={{ gizmo.job.time }}
-# Make sure the job is submitted as job/gizmo.sh to get the right dir
-#SBATCH --chdir=.
+# Make sure the job is submitted as job/gizmo.sh to get the right workdir
+#SBATCH --workdir=.
 #SBATCH --output=job/gizmo.%j.log
 
 set -x

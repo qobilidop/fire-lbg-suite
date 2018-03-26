@@ -7,11 +7,12 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node={{ music.job.omp_threads }}
 #SBATCH --time={{ music.job.time }}
-# Make sure the job is submitted as job/music.sh to get the right dir
-#SBATCH --chdir=.
+# Make sure the job is submitted as job/music.sh to get the right workdir
+#SBATCH --workdir=.
 #SBATCH --output=job/music.%j.log
 
 set -x
+cd ic
 
 export OMP_NUM_THREADS=$SLURM_NTASKS
 ./music/MUSIC music.conf

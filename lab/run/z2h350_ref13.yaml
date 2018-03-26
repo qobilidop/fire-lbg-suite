@@ -1,6 +1,6 @@
 import: .common.yaml
 data:
-    zoom_region: config/zoom_region/z2h350_ref13_rad4.txt
+    zoom_region: data/zoom_region/z2h350_ref13_rad4.txt
 music:
     levelmax: 13
     region_point:
@@ -9,6 +9,6 @@ music:
 gizmo:
     MaxMemSize: 8000
     job:
-        nodes: 32
-        mpi_tasks: 14
-        omp_threads: 2
+        nodes: 64
+        mpi_tasks: 7
+        omp_threads: 4

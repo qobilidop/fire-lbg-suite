@@ -1,6 +1,6 @@
 import: .common.yaml
 data:
-    zoom_region: config/zoom_region/z2h350_ref13_rad4.txt
+    zoom_region: data/zoom_region/z2h350_ref13_rad4.txt
 music:
     levelmax: 12
     region_point:
