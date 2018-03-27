@@ -30,7 +30,7 @@ data: output/{{ gizmo.restart_from_snapshot.split('/')[-1] }}
 
 output/{{ gizmo.restart_from_snapshot.split('/')[-1] }}: ../{{ gizmo.restart_from_snapshot }}
 	mkdir -p output
-	ln -s $@ $<
+	cd output && ln -s ../$< .
 {%- endif %}
 
 # src
