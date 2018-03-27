@@ -1,0 +1,10 @@
+name: z2h-fire2
+channels:
+  - conda-forge
+dependencies:
+  - jinja2
+  - numpy
+  - python=3
+  - pyyaml
+  - scipy
+  - yt
