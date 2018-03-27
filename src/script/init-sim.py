@@ -22,18 +22,17 @@ template_dir = repo_dir / 'data/template'
 def main():
     # Parse arguments
     parser = ArgumentParser()
-    parser.add_argument('config_file', type=Path)
+    parser.add_argument('config_files', type=Path, nargs='+')
     args = parser.parse_args()
 
-    # Load config file
-    config = load_config(args.config_file)
-    print()
-    print('Applying the following config:')
-    pprint.pprint(config)
-    print()
-
-    # Render simulation directory
-    render(config)
+    for config_file in args.config_files:
+        # Load config file
+        config = load_config(config_file)
+        print('Applying the following config:')
+        pprint.pprint(config)
+        # Render simulation directory
+        render(config)
+        print()
 
 
 def render(config):

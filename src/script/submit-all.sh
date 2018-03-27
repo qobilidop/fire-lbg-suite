@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-for run in */; do
-    cd $run
+for sim in */; do
+    cd $sim
     make submit
     cd ..
 done
