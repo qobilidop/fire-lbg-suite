@@ -1,5 +1,3 @@
-- Restart ref12 when backup finished
-- Check ref13 progress
-- When I have time
-    - Start writing a report to make these test runs useful to others
-    - Improve the directory structure
+- Check benchmark n004_t4. If it works, submit all benchmarks.
+- Check z2h600_ref13_dm. When it finishes, continue with z2h600_ref13_rad4_dm.
+- Check z2h350_ref13. If it doesn't run, restart from snapshot.
