@@ -7,7 +7,7 @@ InitCondFile  ic/ics.dat
 OutputDir     output
 
 %---- File formats (input and output)
-ICFormat    1
+ICFormat    {{ 3 if gizmo.restart_from_snapshot else 1 }}
 SnapFormat  3
 
 %---- Output parameters
