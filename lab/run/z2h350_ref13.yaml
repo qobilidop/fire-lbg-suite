@@ -7,7 +7,7 @@ music:
         shift: '-67, -45, -89'
         levelmin: 8
 gizmo:
-    MaxMemSize: 8000
+    MaxMemSize: 16000
     job:
         nodes: 64
         mpi_tasks: 7
