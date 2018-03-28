@@ -1,6 +1,6 @@
 %----  Relevant files (filenames and directories)
 {%- if gizmo.restart_from_snapshot %}
-InitCondFile  output/{{ gizmo.restart_from_snapshot.split('/')[-1] }}
+InitCondFile  output/{{ Path(gizmo.restart_from_snapshot).stem }}
 {%- else %}
 InitCondFile  ic/ics.dat
 {%- endif %}

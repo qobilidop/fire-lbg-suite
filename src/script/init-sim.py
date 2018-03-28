@@ -43,7 +43,7 @@ def render(config):
     for template_name in env.list_templates():
         # Render template
         template = env.get_template(template_name)
-        rendered = template.render(config)
+        rendered = template.render(**config, Path=Path)
         # Write target
         target = target_dir / template_name
         target.parent.mkdir(parents=True, exist_ok=True)
