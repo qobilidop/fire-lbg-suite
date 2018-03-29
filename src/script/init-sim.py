@@ -63,7 +63,7 @@ def load_config(path: Path):
     # Import and update items
     if 'import' in config:
         import_path = (path.parent / config['import']).resolve()
-        print(f'Importing', config['import'])
+        print('Importing', config['import'])
         del config['import']
         config_to_import = load_config(import_path)
         config = update_config(config_to_import, config)
