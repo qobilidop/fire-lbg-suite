@@ -2,37 +2,32 @@
 
 ## Goal
 
-Rerun one of the z2h halo (z2h350) with FIRE-2 physics and resolution (1 refinement level higher == 8 times higher in mass resolution), and larger zoom-in region (aiming at 0 contamination within halo at redshift 2).
+Rerun some of the z2h halos with FIRE-2 physics and resolution (1 refinement level higher == 8 times higher in mass resolution), and larger zoom-in region (aiming at 0 contamination within main halo at redshift 2).
 
-## Progress
+## Protocols
 
-- [ ] Run ref12 with FIRE-2 physics.
-- [ ] Run ref13_dm to determine larger zoom-in region iteratively.
-- [ ] Run ref13 with FIRE-2 physics and larger zoom-in region.
+### Set up the environment
 
-## Code usage
-
-### Prerequisites
-
-- Access to Bridges (only works there)
-- User-installed [Conda](https://conda.io) on Bridges (to create conda env)
-- Access to GIZMO private version
-
-### Install
-
+First, we need to install all the softwares needed to compile MUSIC and GIZMO, run the simulation, and analyze the outputs. This is done in the following commands
 ```bash
+source init-bridges.sh
 make install
 ```
 
-### Simulation Run
-
+Later on, before running each simulation, make sure the environments are properly set up by
 ```bash
-source init.sh
-./script/render.py config/z2h350_ref12.yaml
+source init-bridges.sh
+```
 
-cd run/z2h350_ref12
-# make data
-# make src
-# make compile
+### Run a simulation
+
+Initialize a simulation directory from a config file
+```bash
+init-sim.py sim.yaml
+```
+
+Submit the jobs to run the simulation
+```bash
+cd sim
 make submit
 ```
