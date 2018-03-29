@@ -6,6 +6,7 @@ dependencies:
   - ahf
   - fftw
   # General
+  - hdf5=1.8.16  # Match the system version
   - jinja2
   - numpy
   - python=3
