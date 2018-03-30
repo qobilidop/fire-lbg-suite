@@ -6,10 +6,10 @@ dependencies:
   - ahf
   - fftw
   # General
-  - hdf5=1.8.16  # Match the system version
+  - hdf5
   - jinja2
   - numpy
-  - python=3
+  - python=3.6
   - pyyaml
   - scipy
   - yt
