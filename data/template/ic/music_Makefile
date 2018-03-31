@@ -9,12 +9,12 @@ BOXLIB_HOME     = ${HOME}/nyx_tot_sterben/BoxLib
 
 ##############################################################################
 ### compiler and path settings
-CC      = $(RUN_CXX)
-OPT     = -Wall -Wno-unknown-pragmas -O3 -g -mtune=native $(RUN_OPT_OMP)
+CC      = $(MY_CXX)
+OPT     = -Wall -Wno-unknown-pragmas -O3 -g -mtune=native $(MY_OPT_OMP)
 CFLAGS  =
 LFLAGS  = -lgsl -lgslcblas
-CPATHS  = -I. -I$(RUN_FFTW3_INC) -I$(RUN_GSL_INC) -I$(RUN_HDF5_INC)
-LPATHS  = -L$(RUN_FFTW3_LIB) -L$(RUN_GSL_LIB) -L$(RUN_HDF5_LIB)
+CPATHS  = -I. $(MY_FFTW3_INC) $(MY_GSL_INC) $(MY_HDF5_INC)
+LPATHS  = $(MY_FFTW3_LIB) $(MY_GSL_LIB) $(MY_HDF5_LIB)
 
 ##############################################################################
 # if you have FFTW 2.1.5 or 3.x with multi-thread support, you can enable the
