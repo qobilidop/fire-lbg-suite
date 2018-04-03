@@ -20,3 +20,7 @@
 - Iteration 6 failed at snapshot 167 (+8):
 > Sync-Point 2617195, Time: 0.28946, Redshift: 2.45471, Systemstep: 9.89192e-08, Dloga: 3.41738e-07
 > Task=27: Not enough memory in mymalloc_fullinfo() to allocate 4251.57 MB for variable 'GasGradDataResult' at hydro_gradient_calc()/hydro/gradients.c/line 760 (FreeBytes=3577.29 MB).
+- Restart with number of CPUs doubled.
+- Iteration 7 failed at snapshot 171 (+4):
+> Sync-Point 2795571, Time: 0.297573, Redshift: 2.36051, Systemstep: 5.0846e-08, Dloga: 1.70869e-07
+> Task=237: Not enough memory in mymalloc_fullinfo() to allocate 3565.18 MB for variable 'HydroDataResult' at hydro_force()/hydro/hydra_master.c/line 1117 (FreeBytes=3528.08 MB).
