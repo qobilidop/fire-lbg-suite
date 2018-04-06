@@ -9,7 +9,7 @@ import yt
 
 
 parser = ArgumentParser()
-parser.add_argument('--rad', type=float, default=3)
+parser.add_argument('--rad', type=float, default=4)
 parser.add_argument('--snap', type=Path,
                     default='output/snapshot_190.hdf5')
 parser.add_argument('--hc', type=Path,

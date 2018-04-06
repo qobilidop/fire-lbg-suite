@@ -1,10 +1,7 @@
 #!/usr/bin/env python
 from argparse import ArgumentParser
 from pathlib import Path
-from subprocess import run
 
-import numpy as np
-from scipy.spatial import ConvexHull
 import yt
 
 

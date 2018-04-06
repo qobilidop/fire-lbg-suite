@@ -50,7 +50,7 @@ def main():
         outfile_prefix=snap_name
     ))
     if args.dm:
-        cmd = 'AHF_DM'
+        cmd = 'AHF_dm'
     else:
         cmd = 'AHF'
     print(cmd)
