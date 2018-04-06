@@ -3,5 +3,6 @@ data:
     zoom_region: data/zoom_region/z2h350_ref13_rad4.txt
 music:
     region_point:
+        # See data/zoom_region/z2h350_ref13_shift.conf
         shift: '-67, -45, -89'
         levelmin: 8
