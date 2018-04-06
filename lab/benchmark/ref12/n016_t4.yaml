@@ -1,7 +1,0 @@
-import: .common.yaml
-gizmo:
-    MaxMemSize: 16000
-    job:
-        nodes: 16
-        mpi_tasks: 7
-        omp_threads: 4

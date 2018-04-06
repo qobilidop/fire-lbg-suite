@@ -1,7 +1,4 @@
-.PHONY: sync
+.PHONY: grid
 
-sync:
-	rsync -avz --update $(REPO_ROOT_BRIDGES)/benchmark/ref13/results.csv .
-
-results.csv:
-	gen_bench_results
+grid:
+	gen_bench_grid.py --n_min 5 --n_max 7 --t_min 0 --t_max 2
