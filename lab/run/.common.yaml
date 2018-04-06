@@ -40,6 +40,7 @@ gizmo:
     TimeLimitCPU: 202000  # 2 days
     MaxMemSize: 4000  # < 128 / mpi_tasks * 1000 == 4571
     PartAllocFactor: 3
+    BufferSize: 100
     TreeDomainUpdateFrequency: 0.005
     job:
         nodes: 4

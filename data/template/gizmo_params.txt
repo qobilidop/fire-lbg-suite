@@ -57,7 +57,7 @@ HubbleParam            {{ cosmology.h }}
 %----- Memory allocation
 MaxMemSize       {{ gizmo.MaxMemSize }}
 PartAllocFactor  {{ gizmo.PartAllocFactor }}
-BufferSize       100
+BufferSize       {{ gizmo.BufferSize }}
 
 %---- Rebuild domains when > this fraction of particles active
 TreeDomainUpdateFrequency  {{ gizmo.TreeDomainUpdateFrequency }}
