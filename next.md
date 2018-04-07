@@ -1,3 +1,3 @@
-- Check benchmark n004_t4. If it works, submit all benchmarks.
-- Check z2h600_ref13_dm. When it finishes, continue with z2h600_ref13_rad4_dm.
-- Check z2h350_ref13. If it doesn't run, restart from snapshot.
+- When the benchmarks finished, make a scaling plot.
+- Check z2h600_ref13_rad4_dm, when it finished, continue with z2h600_ref12 and z2h600_ref13.
+- Babysit z2h350_ref13.
