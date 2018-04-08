@@ -1,4 +1,4 @@
 .PHONY: grid
 
 grid:
-	gen_bench_grid.py --n_min 5 --n_max 7 --t_min 0 --t_max 2
+	gen_bench_grid.py --n_min 4 --n_max 6 --t_min 1 --t_max 2
