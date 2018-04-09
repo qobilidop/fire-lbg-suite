@@ -32,7 +32,8 @@ GADGET_MUNIT      = 1e10
 def main():
     # Parse arguments
     parser = ArgumentParser()
-    parser.add_argument('snapshot', type=Path)
+    parser.add_argument('snapshot', type=Path,
+                        default='output/snapdhot_190.hdf5')
     parser.add_argument('--dm', action='store_true')
     args = parser.parse_args()
     snap = args.snapshot

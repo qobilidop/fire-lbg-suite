@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+"""Diagnose low resolution dark matter contamination."""
 from argparse import ArgumentParser
 from pathlib import Path
 
@@ -11,7 +12,7 @@ parser.add_argument('--snap', type=Path,
 parser.add_argument('--hc', type=Path,
                     default='ahf/snapshot_190.parameter')
 parser.add_argument('--halo_id', type=int, default=0)
-parser.add_argument('--out', type=Path, default='main_halo.csv')
+parser.add_argument('--out', type=Path, default='dm_con.csv')
 args = parser.parse_args()
 
 # Load datasets
