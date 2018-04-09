@@ -1,3 +1,3 @@
-- When the benchmarks finished, make a scaling plot.
-- Check z2h600_ref13_rad4_dm, when it finished, continue with z2h600_ref12 and z2h600_ref13.
-- Babysit z2h350_ref13.
+- Babysit z2h350_ref13, z2h600_ref12, and z2h600_ref13.
+- Update benchmark ref13_dm.
+- Update README.
