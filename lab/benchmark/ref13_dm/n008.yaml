@@ -1,7 +1,0 @@
-import: benchmark/ref13_dm/.common.yaml
-gizmo:
-    MaxMemSize: 4000
-    job:
-        nodes: 8
-        mpi_tasks: 28
-        omp_threads: 1
