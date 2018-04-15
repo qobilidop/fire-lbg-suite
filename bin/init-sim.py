@@ -15,7 +15,7 @@ from jinja2 import FileSystemLoader
 import yaml
 
 
-repo_dir = Path(__file__).resolve().parents[2]
+repo_dir = Path(__file__).resolve().parents[1]
 template_dir = repo_dir / 'run/template'
 
 
