@@ -34,3 +34,5 @@ export LD_LIBRARY_PATH="$PWD/code/conda/pkg/fftw2/lib:$LD_LIBRARY_PATH"
 
 # Export PATH
 export PATH="$PWD/code/bin:$PATH"
+
+source activate "$PWD/code/conda/env"
