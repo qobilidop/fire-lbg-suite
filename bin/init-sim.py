@@ -16,7 +16,7 @@ import yaml
 
 
 repo_dir = Path(__file__).resolve().parents[2]
-template_dir = repo_dir / 'data/template'
+template_dir = repo_dir / 'run/template'
 
 
 def main():

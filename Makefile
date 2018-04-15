@@ -11,4 +11,7 @@ deploy:
 	rsync -avz --delete-after --filter=':- .gitignore' . $(REMOTE)/
 
 install:
-	cd code/conda && make
+	cd conda && make
+
+uninstall:
+	cd conda && make clean

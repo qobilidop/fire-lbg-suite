@@ -27,12 +27,12 @@ export MY_MKL_INC="-I$MKLROOT/include"
 export MY_MKL_LIB="-L$MKLROOT/lib"
 
 # User package
-export MY_FFTW2_INC="-I$PWD/code/conda/pkg/fftw2/include"
-export MY_FFTW2_LIB="-I$PWD/code/conda/pkg/fftw2/lib"
-export LIBRARY_PATH="$PWD/code/conda/pkg/fftw2/lib:$LIBRARY_PATH"
-export LD_LIBRARY_PATH="$PWD/code/conda/pkg/fftw2/lib:$LD_LIBRARY_PATH"
+export MY_FFTW2_INC="-I$PWD/conda/pkg/fftw2/include"
+export MY_FFTW2_LIB="-I$PWD/conda/pkg/fftw2/lib"
+export LIBRARY_PATH="$PWD/conda/pkg/fftw2/lib:$LIBRARY_PATH"
+export LD_LIBRARY_PATH="$PWD/conda/pkg/fftw2/lib:$LD_LIBRARY_PATH"
 
 # Export PATH
-export PATH="$PWD/code/bin:$PATH"
+export PATH="$PWD/bin:$PATH"
 
-source activate "$PWD/code/conda/env"
+source activate "$PWD/conda/env"
