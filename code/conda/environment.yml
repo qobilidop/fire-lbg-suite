@@ -1,12 +1,10 @@
 channels:
-  - ./conda/channel
+  - ./channel
   - conda-forge
 dependencies:
   # Locally built
   - ahf
-  - fftw
   # General
-  - hdf5
   - jinja2
   - numpy
   - python=3.6

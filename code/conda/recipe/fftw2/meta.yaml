@@ -1,5 +1,5 @@
 package:
-  name: fftw
+  name: fftw2
   version: 2.1.5
 
 source:
@@ -7,8 +7,8 @@ source:
 
 build:
   script_env:
-   - RUN_CC
-   - RUN_MPICC
+   - MY_CC
+   - MY_MPICC
 
 about:
   home: http://www.fftw.org/

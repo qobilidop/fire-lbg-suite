@@ -1,4 +1,4 @@
-REMOTE = bridges:~/scratch/z2h-fire2
+REMOTE = bridges:~/project/z2h-fire2
 
 .PHONY: deploy install
 
@@ -11,4 +11,4 @@ deploy:
 	rsync -avz --delete-after --filter=':- .gitignore' . $(REMOTE)/
 
 install:
-	./src/install.sh
+	cd code/conda && make
