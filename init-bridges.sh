@@ -19,8 +19,8 @@ export MY_OPT_OMP="-qopenmp"
 # System package
 export MY_FFTW3_INC="-I$FFTW3_INCLUDE"
 export MY_FFTW3_LIB="-L$FFTW3_LIB"
-export MY_GSL_INC="-I/usr/include/gsl"
-export MY_GSL_LIB="-L/lib64"
+export MY_GSL_INC=
+export MY_GSL_LIB=
 export MY_HDF5="-I$HDF5_ROOT/include"
 export MY_HDF5="-L$HDF5_ROOT/lib"
 export MY_MKL_INC="-I$MKLROOT/include"
