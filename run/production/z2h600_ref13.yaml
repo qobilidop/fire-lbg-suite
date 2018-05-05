@@ -7,10 +7,9 @@ music:
         shift: '-104, 62, -98'
         levelmin: 8
 gizmo:
-    MaxMemSize: 16000
-    PartAllocFactor: 6
-    BufferSize: 400
+    MaxMemSize: 8000
+    BufferSize: 200
     job:
-        nodes: 64
+        nodes: 32
         mpi_tasks: 7
-        omp_threads: 4
+        omp_threads: 2
