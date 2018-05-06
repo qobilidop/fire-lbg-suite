@@ -1,3 +1,3 @@
-- Babysit z2h350_ref13, z2h600_ref12, and z2h600_ref13.
-- Update benchmark ref13_dm.
+- Babysit z2h600_ref13.
+- Archive the cpu.txt files for future performance analysis.
 - Update README.
