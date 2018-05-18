@@ -11,5 +11,5 @@ gizmo:
     BufferSize: 200
     job:
         nodes: 32
-        mpi_tasks: 7
+        mpi_tasks: 14
         omp_threads: 2
