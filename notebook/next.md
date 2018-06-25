@@ -1,3 +1,0 @@
-- Babysit z2h600_ref13.
-- Archive the cpu.txt files for future performance analysis.
-- Update README.
