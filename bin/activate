@@ -1,0 +1,23 @@
+# This script activates environment for the project.
+# It should only be used as
+# $ source bin/activate
+# from the project root directory.
+
+# Export project-specific environment variables
+export PROJECT_DIR="$PWD"
+export LOCAL_DIR="$PWD/local"
+export LOCAL_ENV_FILE="$PWD/.local-env"
+
+# Alter system environment variables
+export PATH="$PWD/bin:$PATH"
+
+# Conditional operations
+if [ -d "$LOCAL_DIR" ]; then
+    source enable-conda
+    conda activate "$LOCAL_DIR"
+    export PATH="$LOCAL_DIR/bin:$PATH"
+fi
+if [ -f "$LOCAL_ENV_FILE" ]; then
+    export LOCAL_ENV="$(cat "$LOCAL_ENV_FILE")"
+    source "env/$LOCAL_ENV/activate"
+fi
