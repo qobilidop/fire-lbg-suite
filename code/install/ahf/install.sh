@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
 
+mkdir -p "$LOCAL_DIR/opt"
+cd "$LOCAL_DIR/opt"
+curl http://popia.ft.uam.es/AHF/files/ahf-v1.0-094.tgz | tar xz
+cd ahf-v1.0-094
+patch Makefile "$PROJECT_DIR/code/install/ahf/Makefile.patch"
+
 export CC="$LOCAL_CC -std=c99 $LOCAL_OPT_OMP"
 export FC="$LOCAL_FC"
 export OPTIMIZE=-O2
 export CCFLAGS=
 export LNFLAGS=
 export DEFINEFLAGS=
-export MAKE="make -j$CPU_COUNT"
+export MAKE=make
 
 # Compile AHF-dmo for dark matter only simulations
 export DEFINEFLAGS="-DMULTIMASS -DWITH_OPENMP"
@@ -19,4 +25,4 @@ export DEFINEFLAGS="-DMULTIMASS -DGAS_PARTICLES -DREFINE_BARYONIC_MASS -DWITH_OP
 export AHF_BIN="AHF"
 make AHF
 
-mv bin/* $PREFIX/bin/
+mv bin/* $LOCAL_DIR/bin/
