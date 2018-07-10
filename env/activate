@@ -10,7 +10,7 @@ export LOCAL_DIR="$PWD/.local"
 export LOCAL_ENV_FILE="$PWD/.local-env"
 
 # Alter system environment variables
-export PATH="$PWD/bin:$PATH"
+export PATH="$PWD/code/bin:$PATH"
 
 # Activate conda env
 if [ -d "$LOCAL_DIR" ]; then
