@@ -8,4 +8,4 @@ init:
 
 .PHONY: purge
 purge:
-	rm -rf $(LOCAL_DIR) $(LOCAL_ENV_FILE)
+	rm -rf env/.local*

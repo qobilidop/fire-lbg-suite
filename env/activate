@@ -6,8 +6,8 @@
 # Export project-specific environment variables
 export PROJECT="fire2-lbg"
 export PROJECT_DIR="$PWD"
-export LOCAL_DIR="$PWD/.local"
-export LOCAL_ENV_FILE="$PWD/.local-env"
+export LOCAL_DIR="$PWD/env/.local"
+export LOCAL_ENV_FILE="$PWD/env/.local-env"
 
 # Alter system environment variables
 export PATH="$PWD/code/bin:$PATH"
