@@ -1,4 +1,5 @@
 .vscode/
-conda/channel/
-local/
+.local/
 .local-env
+
+*.egg-info

@@ -6,18 +6,20 @@
 # Export project-specific environment variables
 export PROJECT="fire2-lbg"
 export PROJECT_DIR="$PWD"
-export LOCAL_DIR="$PWD/local"
+export LOCAL_DIR="$PWD/.local"
 export LOCAL_ENV_FILE="$PWD/.local-env"
 
 # Alter system environment variables
 export PATH="$PWD/bin:$PATH"
 
-# Conditional operations
+# Activate conda env
 if [ -d "$LOCAL_DIR" ]; then
     source enable-conda
     conda activate "$LOCAL_DIR"
     export PATH="$LOCAL_DIR/bin:$PATH"
 fi
+
+# Activate local env
 if [ -f "$LOCAL_ENV_FILE" ]; then
     export LOCAL_ENV="$(cat "$LOCAL_ENV_FILE")"
     source "env/$LOCAL_ENV/activate"
