@@ -24,7 +24,7 @@ if __name__ == '__main__':
         VescTune=1e10,
     
         # Set this to a large number to reduce output file size
-        NminPerHalo=1e4,  # min m_halo = 2.36e11 Msun
+        NminPerHalo=1e4,  # min m_halo / Msun = 2.36e11 = 1e11.37
     
         # Define virial density as critical density
         RhoVir=0,
