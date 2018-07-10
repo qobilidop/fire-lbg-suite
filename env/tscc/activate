@@ -1,0 +1,9 @@
+echo "tscc" > "$LOCAL_ENV_FILE"
+
+export MODULES="intel openmpi_ib"
+module purge
+module load $MODULES
+
+export LOCAL_CC=icc
+export LOCAL_FC=ifort
+export LOCAL_OPT_OMP=-openmp
