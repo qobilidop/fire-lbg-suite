@@ -2,15 +2,16 @@
 
 host="$1"
 
-opt=(-amvz --update --delete-after --filter ":- .gitignore")
+opt=(-amvz --update --delete-after --filter ":- .gitignore" --exclude ".git")
 src="$PROJECT_DIR/"
 dst="$host:~/project/$PROJECT/"
+cmd=(rsync "${opt[@]}" "$src" "$dst")
 
-rsync --dry-run "${opt[@]}" "$src" "$dst"
+"${cmd[@]}" --dry-run
 echo "Run?"
 select yn in "Yes" "No"; do
     case $yn in
-        Yes ) rsync "${opt[@]}" "$src" "$dst"; break;;
+        Yes ) "${cmd[@]}"; break;;
         No ) exit;;
     esac
 done
