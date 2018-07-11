@@ -5,8 +5,6 @@ echo "$PROJECT_DIR"
 cd "$PROJECT_DIR"
 source env/activate
 
-mkdir -p "$LOCAL_PREFIX/bin"
-
 echo "Create conda env"
 source enable-conda
 conda env create -f code/environment.yml -p "$LOCAL_CONDA_PREFIX"

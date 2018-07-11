@@ -7,10 +7,11 @@
 export PROJECT_NAME="fire2-lbg"
 export PROJECT_DIR="$PWD"
 export LOCAL_PREFIX="$PROJECT_DIR/.local"
-export LOCAL_CONDA_PREFIX="$LOCAL_PREFIX/conda"
+export LOCAL_CONDA_PREFIX="$LOCAL_PREFIX/conda-env"
 export LOCAL_ENV_FILE="$LOCAL_PREFIX/env"
 
 # Alter system environment
+mkdir -p "$LOCAL_PREFIX/bin"
 export PATH="$LOCAL_PREFIX/bin:$PATH"
 export PATH="$PROJECT_DIR/code/bin:$PATH"
 

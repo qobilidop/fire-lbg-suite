@@ -7,8 +7,12 @@ module load intel mpi/intel_mpi
 export LOCAL_CC=icc
 export LOCAL_CXX=icpc
 export LOCAL_FC=ifort
+
 export LOCAL_MPICC=mpiicc
 export LOCAL_MPICXX=mpiicpc
 export LOCAL_MPIFC=mpiifort
-export LOCAL_OPT_MPI=-mt_mpi
-export LOCAL_OPT_OMP=-qopenmp
+
+export LOCAL_CFLAGS=-O3
+export LOCAL_LDFLAGS=
+export LOCAL_MPIFLAGS=-mt_mpi
+export LOCAL_OMPFLAGS=-qopenmp

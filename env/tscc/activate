@@ -6,8 +6,12 @@ module load intel openmpi_ib
 export LOCAL_CC=icc
 export LOCAL_CXX=icpc
 export LOCAL_FC=ifort
+
 export LOCAL_MPICC=mpicc
 export LOCAL_MPICXX=mpicxx
 export LOCAL_MPIFC=mpifort
-export LOCAL_OPT_MPI=
-export LOCAL_OPT_OMP=-openmp
+
+export LOCAL_CFLAGS=-O3
+export LOCAL_LDFLAGS=
+export LOCAL_MPIFLAGS=-mt_mpi
+export LOCAL_OMPFLAGS=-openmp
