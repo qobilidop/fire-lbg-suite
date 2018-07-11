@@ -26,3 +26,6 @@ make -j
 
 # Install
 mv MUSIC "$LOCAL_PREFIX"/bin/
+
+# Test
+which MUSIC

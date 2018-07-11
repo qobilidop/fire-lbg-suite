@@ -35,3 +35,7 @@ make -j AHF
 
 # Install
 mv bin/* "$LOCAL_PREFIX"/bin/
+
+# Test
+which AHF
+which AHF-dmo
