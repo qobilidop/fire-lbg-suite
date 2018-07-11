@@ -1,5 +1,14 @@
 echo "conda" > "$LOCAL_ENV_FILE"
 
 export LOCAL_CC=gcc
-export LOCAL_FC=fgortran
-export LOCAL_OPT_OMP=-fopenmp
+export LOCAL_CXX=g++
+export LOCAL_FC=gfortran
+
+export LOCAL_MPICC=mpicc
+export LOCAL_MPICXX=mpicxx
+export LOCAL_MPIFC=mpifort
+
+export LOCAL_CFLAGS=-O3
+export LOCAL_LDFLAGS=-Wl,-rpath,"$LOCAL_CONDA_PREFIX/lib"
+export LOCAL_MPIFLAGS=
+export LOCAL_OMPFLAGS=-fopenmp

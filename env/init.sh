@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
-
 set -e
 
-echo "We're at $PROJECT_DIR"
+echo "$PROJECT_DIR"
 cd "$PROJECT_DIR"
 source env/activate
 
+mkdir -p "$LOCAL_PREFIX/bin"
+
 echo "Create conda env"
 source enable-conda
-conda env create -f env/environment.yml -p "$LOCAL_DIR"
+conda env create -f code/environment.yml -p "$LOCAL_CONDA_PREFIX"
 source env/activate
 
-echo "Install local Python package"
+echo "Install code/src"
 cd code
 pip install -e .
 cd -
@@ -20,5 +21,4 @@ echo "Initialize local env: $LOCAL_ENV"
 ./env/"$LOCAL_ENV"/init.sh
 
 echo "Install external code"
-echo "Install AHF"
-./code/extern/ahf/install.sh
+./code/extern/install-all.sh

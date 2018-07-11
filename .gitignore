@@ -1,7 +1,6 @@
+.local/
 .vscode/
 data
-env/.local/
-env/.local-env
 *.log
 
 # Select from https://github.com/github/gitignore/blob/master/Python.gitignore

@@ -3,20 +3,22 @@
 # $ source bin/activate
 # from the project root directory.
 
-# Export project-specific environment variables
-export PROJECT="fire2-lbg"
+# Export project environment
+export PROJECT_NAME="fire2-lbg"
 export PROJECT_DIR="$PWD"
-export LOCAL_DIR="$PWD/env/.local"
-export LOCAL_ENV_FILE="$PWD/env/.local-env"
+export LOCAL_PREFIX="$PROJECT_DIR/.local"
+export LOCAL_CONDA_PREFIX="$LOCAL_PREFIX/conda"
+export LOCAL_ENV_FILE="$LOCAL_PREFIX/env"
 
-# Alter system environment variables
-export PATH="$PWD/code/bin:$PATH"
+# Alter system environment
+export PATH="$LOCAL_PREFIX/bin:$PATH"
+export PATH="$PROJECT_DIR/code/bin:$PATH"
 
 # Activate conda env
-if [ -d "$LOCAL_DIR" ]; then
+if [ -d "$LOCAL_CONDA_PREFIX/conda-meta" ]; then
     source enable-conda
-    conda activate "$LOCAL_DIR"
-    export PATH="$LOCAL_DIR/bin:$PATH"
+    conda activate "$LOCAL_CONDA_PREFIX"
+    export PATH="$LOCAL_CONDA_PREFIX/bin:$PATH"
 fi
 
 # Activate local env
