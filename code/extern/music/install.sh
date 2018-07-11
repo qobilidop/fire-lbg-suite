@@ -16,7 +16,7 @@ patch < "$PROJECT_DIR/code/extern/music/Makefile.patch"
 # Configure
 export CC="$LOCAL_CXX"
 export OPT=-Wno-unknown-pragmas
-export CFLAGS="$LOCAL_CFLAGS"
+export CFLAGS="$LOCAL_CFLAGS $LOCAL_OMPFLAGS"
 export LFLAGS="-lgsl -lgslcblas $LOCAL_LDFLAGS"
 export CPATHS="-I. -I"$LOCAL_FFTW3_INC" -I"$LOCAL_GSL_INC" -I"$LOCAL_HDF5_INC""
 export LPATHS="-L"$LOCAL_FFTW3_LIB" -L"$LOCAL_GSL_LIB" -L"$LOCAL_HDF5_LIB""
