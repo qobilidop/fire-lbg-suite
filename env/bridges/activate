@@ -3,6 +3,7 @@ echo "bridges" > "$LOCAL_ENV_FILE"
 module purge
 module load psc_path slurm
 module load intel mpi/intel_mpi
+module load fftw3 hdf5
 
 export LOCAL_CC=icc
 export LOCAL_CXX=icpc
@@ -16,3 +17,10 @@ export LOCAL_CFLAGS=-O3
 export LOCAL_LDFLAGS=
 export LOCAL_MPIFLAGS=-mt_mpi
 export LOCAL_OMPFLAGS=-qopenmp
+
+export LOCAL_FFTW3_INC="$FFTW3_INCLUDE"
+export LOCAL_FFTW3_LIB="$FFTW3_LIB"
+export LOCAL_GSL_INC=
+export LOCAL_GSL_LIB=
+export LOCAL_HDF5_INC="$HDF5_HOME/include"
+export LOCAL_HDF5_LIB="$HDF5_HOME/lib"
