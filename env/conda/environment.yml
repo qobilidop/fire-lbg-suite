@@ -1,0 +1,12 @@
+channels:
+  - conda-forge
+dependencies:
+  # Compilers
+  - gcc
+  - openmpi
+  # Applications
+  - fftw=3
+  - gsl
+  - hdf5
+  # Development tools
+  - jupyterlab
