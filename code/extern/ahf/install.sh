@@ -19,18 +19,26 @@ export OPTIMIZE=
 export CCFLAGS="-std=c99 $LOCAL_CFLAGS $LOCAL_OMPFLAGS"
 export LNFLAGS="$LOCAL_LDFLAGS"
 export DEFINEFLAGS=
-export MAKE=make
+export MAKE="make -j"
 
 # Compile
+## Compile AHF for hydro simulations
+make clean
+export DEFINEFLAGS="-DMULTIMASS -DGAS_PARTICLES -DREFINE_BARYONIC_MASS -DWITH_OPENMP"
+export AHF_BIN="AHF"
+make -j AHF
 ## Compile AHF-dmo for dark matter only simulations
 make clean
 export DEFINEFLAGS="-DMULTIMASS -DWITH_OPENMP"
 export AHF_BIN="AHF-dmo"
 make -j AHF
-## Compile AHF for hydro simulations
+## Compile AHF-dmo-mpi
 make clean
-export DEFINEFLAGS="-DMULTIMASS -DGAS_PARTICLES -DREFINE_BARYONIC_MASS -DWITH_OPENMP"
-export AHF_BIN="AHF"
+export CC="$LOCAL_MPICC"
+export FC="$LOCAL_MPIFC"
+export CCFLAGS="$CCFLAGS $LOCAL_MPIFLAGS"
+export DEFINEFLAGS="$DEFINEFLAGS -DWITH_MPI"
+export AHF_BIN="$AHF_BIN-mpi"
 make -j AHF
 
 # Install
@@ -39,3 +47,4 @@ mv bin/* "$LOCAL_PREFIX"/bin/
 # Test
 which AHF
 which AHF-dmo
+which AHF-dmo-mpi

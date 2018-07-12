@@ -4,6 +4,9 @@ export LOCAL_CC=gcc
 export LOCAL_CXX=g++
 export LOCAL_FC=gfortran
 
+export OMPI_CC=gcc
+export OMPI_CXX=g++
+export OMPI_FC=gfortran
 export LOCAL_MPICC=mpicc
 export LOCAL_MPICXX=mpicxx
 export LOCAL_MPIFC=mpifort
