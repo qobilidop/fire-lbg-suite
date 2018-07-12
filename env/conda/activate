@@ -16,6 +16,7 @@ export LOCAL_LDFLAGS=-Wl,-rpath,"$LOCAL_CONDA_PREFIX/lib"
 export LOCAL_MPIFLAGS=
 export LOCAL_OMPFLAGS=-fopenmp
 
+export LOCAL_CODES="ahf music"
 export LOCAL_FFTW3_INC="$LOCAL_CONDA_PREFIX/include"
 export LOCAL_FFTW3_LIB="$LOCAL_CONDA_PREFIX/lib"
 export LOCAL_GSL_INC="$LOCAL_CONDA_PREFIX/include"

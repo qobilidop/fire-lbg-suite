@@ -2,7 +2,9 @@
 set -e
 
 cd "$(dirname "${BASH_SOURCE[0]}")"
-for code in */; do
+
+# LOCAL_CODES is a space-separated string. Here we don't use "" intentionally.
+for code in $LOCAL_CODES; do
     echo "Install $code"
     ./"$code"/install.sh
 done

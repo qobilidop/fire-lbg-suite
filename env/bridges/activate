@@ -18,6 +18,7 @@ export LOCAL_LDFLAGS=
 export LOCAL_MPIFLAGS=-mt_mpi
 export LOCAL_OMPFLAGS=-qopenmp
 
+export LOCAL_CODES="ahf music"
 export LOCAL_FFTW3_INC="$FFTW3_INCLUDE"
 export LOCAL_FFTW3_LIB="$FFTW3_LIB"
 export LOCAL_GSL_INC=
