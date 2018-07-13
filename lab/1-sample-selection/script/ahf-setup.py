@@ -20,25 +20,26 @@ if __name__ == '__main__':
         LgridMax=2**30,  # grid size = 0.08 pc
         NperDomCell=5.0,
         NperRefCell=5.0,
-    
+
         # Effectively disable unbinding
         VescTune=1e10,
-    
-        # Don't keep small halos in the output to reduce file size
-        NminPerHalo=1e4,  # min m_halo / Msun = 2.36e11 = 1e11.37
-    
+
+        # m_part = 2.36e7 Msun
+        NminPerHalo=100,  # This number is chosen rather arbitrarily
+
         # Use critical density as virial density
         RhoVir=0,
 
         # Let AHF calculate virial overdensity using spherical top-hat collapse
         Dvir=-1,
-    
+
         # Maximum object size in Mpc/h
-        MaxGatherRad=3.0,
+        # max Rvir = 766 kpc/h as I have experimented
+        MaxGatherRad=1.0,
 
         # MPI options
-        LevelDomainDecomp=4,  # 86 / 2**4 = 5.375 Mpc = 3.655 Mpc/h
-        NcpuReading=8,
+        LevelDomainDecomp=6,  # 86 / 2**6 = 1.34 Mpc = 0.91 Mpc/h
+        NcpuReading=16,  # There are 16 MPI tasks
     )
     work_dir = data_dir / 'box-halo/ahf'
     ahf_job = ahfriend.create_job(ds, custom_config, work_dir)
