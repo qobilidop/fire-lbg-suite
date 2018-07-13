@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#SBATCH -J box-ahf
+#SBATCH -J ahf-run
 #SBATCH -p RM
 #SBATCH -N 2
 #SBATCH --ntasks-per-node=4

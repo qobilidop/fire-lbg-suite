@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#SBATCH -J box-ahf
+#SBATCH -J ahf-setup
 #SBATCH -p RM
 #SBATCH -N 1
 #SBATCH --ntasks-per-node=28
