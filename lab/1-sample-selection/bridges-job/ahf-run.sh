@@ -4,7 +4,7 @@
 #SBATCH -N 4
 #SBATCH --ntasks-per-node=4
 #SBATCH --cpus-per-task=7
-#SBATCH -t 2:00:00
+#SBATCH -t 1:00:00
 #SBATCH --export=ALL
 #SBATCH -o "%x.%j.log"
 set -e
