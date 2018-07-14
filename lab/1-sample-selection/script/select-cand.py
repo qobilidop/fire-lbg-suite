@@ -54,4 +54,4 @@ if yt.is_root():
     # Rvir, Xc, Yc, Zc in kpccm/h (aka code_length)
     hc = hc[['Mvir', 'Rvir', 'Xc', 'Yc', 'Zc', 'Menv']]
     # Save to disk
-    hc.to_hdf(data_dir / 'box-halo/candidates.hdf5', key='data')
+    hc.to_csv(data_dir / 'box-halo/candidates.csv', index=False)
