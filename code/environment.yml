@@ -3,6 +3,8 @@ channels:
 dependencies:
   - h5py
   - numpy
+  - pandas
+  - pytables
   - python=3
   - yt
   - pip:

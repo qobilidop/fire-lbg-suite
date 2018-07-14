@@ -19,3 +19,6 @@ if __name__ == '__main__':
     out = run(['sbatch', f'--dependency=afterok:{id_ahf_setup}',
                'bridges-job/ahf-run.sh'])
     id_ahf_run = out.split()[-1]
+    out = run(['sbatch', f'--dependency=afterok:{id_ahf_run}',
+               'bridges-job/select-cand.sh'])
+    id_select_cand = out.split()[-1]
