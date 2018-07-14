@@ -1,6 +1,6 @@
 .local/
 .vscode/
-data
+scratch/
 *.log
 
 # Select from https://github.com/github/gitignore/blob/master/Python.gitignore
@@ -11,3 +11,6 @@ __pycache__/
 
 # Distribution / packaging
 *.egg-info
+
+# Jupyter Notebook
+.ipynb_checkpoints
