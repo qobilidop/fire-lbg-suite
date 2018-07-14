@@ -8,5 +8,6 @@ dependencies:
   - fftw=3
   - gsl
   - hdf5
+  - mpi4py
   # Development tools
   - jupyterlab

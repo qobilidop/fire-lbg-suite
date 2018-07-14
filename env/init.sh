@@ -3,11 +3,12 @@ set -e
 
 echo "$PROJECT_DIR"
 cd "$PROJECT_DIR"
-source env/activate
 
 echo "Create conda env"
 source enable-conda
 conda env create -f code/environment.yml -p "$LOCAL_CONDA_PREFIX"
+
+echo "Activate conda env"
 source env/activate
 
 echo "Install code/src"
