@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
+set -e
 
-host="$1"
-
+src="$PROJECT_ROOT/"
+dst="$1/"
 opt=(-aKmvz --update --delete-after --filter ":- .gitignore" --exclude ".git")
-src="$PROJECT_DIR/"
-dst="$host:~/project/$PROJECT_NAME/"
+
 cmd=(rsync "${opt[@]}" "$src" "$dst")
 
 echo "${cmd[*]}"

@@ -1,1 +1,0 @@
-. "$("$CONDA_EXE" info --root)"/etc/profile.d/conda.sh

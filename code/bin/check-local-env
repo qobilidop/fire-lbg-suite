@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-local_env="$1"
-
-if [[ "$LOCAL_ENV" != "$local_env" ]]; then
-    echo "Error! Local env is expected to be \"$local_env\", but \"$LOCAL_ENV\" is got."
-    exit 1
-fi
