@@ -1,14 +1,28 @@
 #!/usr/bin/env python
 """Set up AHF job."""
+from argparse import ArgumentParser
+from pathlib import Path
+
 import ahfriend
 import yt
 
-from src.env import repo_dir
 
+parser = ArgumentParser()
+parser.add_argument(
+    '-s', '--snap-file', type=Path,
+    help='The input snapshot.'
+)
+parser.add_argument(
+    '-w', '--work-dir', type=Path,
+    help='Where the AHF command is run.'
+)
+parser.add_argument(
+    '-c', '--cpus', type=int,
+    help='NcpuReading used in AHF input.'
+)
+args = parser.parse_args()
 
-data_dir = repo_dir / 'data'
-snap_path = data_dir / 'box/L86/output/snapdir_005/snapshot_005.0.hdf5'
-ds = yt.load(str(snap_path))
+ds = yt.load(str(args.snap_file))
 # See http://popia.ft.uam.es/AHF/files/AHF.pdf
 # Search "sample AHF.input"
 custom_config = dict(
@@ -38,8 +52,7 @@ custom_config = dict(
 
     # MPI options
     LevelDomainDecomp=6,  # 86 / 2**6 = 1.34 Mpc = 0.91 Mpc/h
-    NcpuReading=16,  # There are 16 MPI tasks
+    NcpuReading=args.cpus,
 )
-work_dir = data_dir / 'box-halo/ahf'
-ahf_job = ahfriend.create_job(ds, custom_config, work_dir)
+ahf_job = ahfriend.create_job(ds, custom_config, args.work_dir)
 ahf_job.setup()

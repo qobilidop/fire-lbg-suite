@@ -1,9 +1,6 @@
-from setuptools import (
-    find_packages,
-    setup,
-)
+from setuptools import find_packages, setup
 
 setup(
-    name = 'src',
-    packages = find_packages(),
+    name = 'toolbox',
+    packages = find_packages()
 )

@@ -1,7 +1,7 @@
 # Set project root
 export PROJECT_ROOT="$PWD"
 export PATH="$PROJECT_ROOT/env/bin:$PATH"
-export PATH="$PROJECT_ROOT/code/bin:$PATH"
+export PATH="$PROJECT_ROOT/code/script:$PATH"
 
 # Activate galenv
 export PROJECT_GALENV_SYS="$PROJECT_ROOT/.galenv-sys"

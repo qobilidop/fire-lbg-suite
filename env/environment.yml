@@ -5,7 +5,7 @@ dependencies:
   - numpy
   - pandas
   - pytables
-  - python=3
+  - python=3.7
   - yt
   - pip:
     - git+https://github.com/qobilidop/ahfriend
