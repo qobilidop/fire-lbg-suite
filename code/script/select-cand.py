@@ -73,6 +73,6 @@ if yt.is_root():
     # Select columns to save
     # Mvir, Menv are in Msun (not Msun/h!)
     # Rvir, Xc, Yc, Zc are in kpccm/h (aka code_length)
-    hc = hc[['Menv', 'Mvir', 'Rvir', 'Xc', 'Yc', 'Zc']]
+    hc = hc[['Mvir', 'Menv', 'Rvir', 'Xc', 'Yc', 'Zc']]
     # Save to disk
     hc.to_csv(args.output, index=False)
