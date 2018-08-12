@@ -3,15 +3,17 @@
 
 Candidates are host halos with Mvir/Msun in (1e11.8, 1e12.2).
 """
-import subprocess as sp
+from argparse import ArgumentParser
 from pathlib import Path
+import subprocess as sp
+import sys
 
 import yt
 
-from src.io import read_ahf_csv
+from toolbox.ahf import read_ahf_csv
 
 yt.enable_parallelism()
-comm = communication_system.communicators[-1]
+comm = yt.communication_system.communicators[-1]
 rank = comm.rank
 size = comm.size
 
@@ -19,18 +21,15 @@ if comm.rank == 0:
     parser = ArgumentParser()
     parser.add_argument(
         '-s', '--snap-file', type=Path,
-        help='The snapshot file.',
-        default='data/box/L86/output/snapdir_005/snapshot_005.0.hdf5'
+        help='The snapshot file.'
     )
     parser.add_argument(
-        '-h', '--ahf-dir', type=Path,
-        help='Where the AHF results are saved.',
-        default='data/box-halo/ahf'
+        '--ahf-dir', type=Path,
+        help='Where the AHF results are saved.'
     )
     parser.add_argument(
         '-o', '--output', type=Path,
-        help='Output halo candidates table.',
-        default='data/box-halo/candidates.csv'
+        help='Output halo candidates table.'
     )
     args = parser.parse_args()
 else:
@@ -54,6 +53,7 @@ hc.sort_values(by='Mvir', ascending=False, inplace=True)
 hc.reset_index(drop=True, inplace=True)
 if yt.is_root():
     print(f'{len(hc)} candidates found.')
+    sys.stdout.flush()
 
 # Measure local environment density
 storage = {}

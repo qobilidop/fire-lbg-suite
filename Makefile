@@ -3,16 +3,15 @@ help:
 	cat Makefile
 
 .PHONY: init
-# Initialize local env for the first time:
-# $ source env/activate
-# $ source env/<LOCAL_ENV>/activate
-# $ make init
-# Activate local env afterwords:
-# $ source env/activate
 init:
 	./env/init.sh
+	cd data && make
 
 .PHONY: purge
 # Purge local env
 purge:
-	rm -rf .local
+	rm -rf .conda .local
+
+.PHONY: deploy
+deploy:
+	deploy.sh bridges:~/project/fire2-lbg

@@ -30,11 +30,15 @@ if [ -f "$PROJECT_GALENV_SYS" ]; then
     export GALENV_MUSIC_DL="hg clone https://bitbucket.org/ohahn/music -r afefabeea948f0fa951c7f031e2c53ca66d06ea2"
 
     source "$GALENV_REPO/activate"
+    if [ "$GALENV_SYS" = "bridges" ]; then
+        module load psc_path slurm
+    fi
 fi
 
 # Activate conda env
 export PROJECT_CONDA="$PROJECT_ROOT/.conda"
 if [ -d "$PROJECT_CONDA/conda-meta" ]; then
+    source enable-conda
     conda activate "$PROJECT_CONDA"
     export PATH="$PROJECT_CONDA/bin:$PATH"
 fi

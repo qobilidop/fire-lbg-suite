@@ -1,5 +1,6 @@
 """Utilities for submitting jobs on Bridges."""
 from pathlib import Path
+import sys
 import subprocess as sp
 
 from .env import job_dir
@@ -71,13 +72,16 @@ class BridgesJob(object):
         # Assemble submit command
         cmd = ['sbatch']
         if depend is not None:
-            cmd += ['--dependency=afterok:' + ':'.join(depend)]
+            # Remove None dependencies
+            depend = [d for d in depend if d is not None]
+            if depend:
+                cmd += ['--dependency=afterok:' + ':'.join(depend)]
         cmd += [self.file.name]
 
         # Submit
         print(' '.join(cmd))
-        cp = sp.run(cmd, cwd=self.file.parent,
-                    check=True, stdout=sp.PIPE, text=True)
+        cp = sp.run(cmd, cwd=self.file.parent, check=True,
+                    stdout=sp.PIPE, encoding=sys.getdefaultencoding())
         print(cp.stdout)
         job_id = cp.stdout.split()[-1]
         return job_id

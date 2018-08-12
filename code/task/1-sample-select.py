@@ -11,6 +11,7 @@ snap_file = repo_dir / 'data/box/L86/output/snapdir_005/snapshot_005.0.hdf5'
 ahf_dir = repo_dir / 'data/box-halo/ahf'
 cand_file = repo_dir / 'data/box-halo/candidates.csv'
 
+# Setup AHF job
 job_ahf_setup = BridgesJob(
     'ahf-setup',
     f'ahf-setup.py -s {snap_file} -w {ahf_dir} -c 16',  # 16 = 4 * (28 / 7)
@@ -21,6 +22,7 @@ if not (ahf_dir / 'snapshot_005.input').exists():
 else:
     id_ahf_setup = None
 
+# Run AHF job
 job_ahf_run = BridgesJob(
     'ahf-run',
     'AHF-dmo-mpi snapshot_005.input',
@@ -28,14 +30,15 @@ job_ahf_run = BridgesJob(
     nodes=4, ncpus=7, time='1:00:00', mpi=True,
 )
 if not (ahf_dir / 'snapshot_005.parameter').exists():
-    id_ahf_run = job_ahf_run.submit(depend=id_ahf_run)
+    id_ahf_run = job_ahf_run.submit(depend=[id_ahf_setup])
 else:
     id_ahf_run = None
 
+# Select halo candidates
 job_select_cand = BridgesJob(
     'select-cand',
-    f'select-cand.py -s {snap_file} -h {ahf_dir} -o {cand_file}',
+    f'select-cand.py -s {snap_file} --ahf-dir {ahf_dir} -o {cand_file}',
     nodes=4, ncpus=4, time='2:00:00', mpi=True,
 )
 if not cand_file.exists():
-    job_select_cand.submit(depend=id_ahf_run)
+    job_select_cand.submit(depend=[id_ahf_run])

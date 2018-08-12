@@ -10,10 +10,13 @@ cd "$PROJECT_ROOT"
 source env/activate
 
 echo "Initializing conda env"
-. "$("$CONDA_EXE" info --root)"/etc/profile.d/conda.sh
+source enable-conda
 conda env create -f env/environment.yml -p "$PROJECT_CONDA"
-conda activate "$PROJECT_CONDA"
 source env/activate
+if [ ! -z "$GALENV_MPICC" ]; then
+    # Install mpi4py using local MPI
+    env MPICC="$GALENV_MPICC" pip install mpi4py
+fi
 (
     cd code
     pip install -e .
