@@ -2,6 +2,7 @@
 .local/
 .vscode/
 scratch/
+result
 .galenv-sys
 *.log
 

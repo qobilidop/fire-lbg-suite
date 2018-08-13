@@ -10,6 +10,7 @@ from toolbox.job import BridgesJob
 snap_file = repo_dir / 'data/box/L86/output/snapdir_005/snapshot_005.0.hdf5'
 ahf_dir = repo_dir / 'data/box-halo/ahf'
 cand_file = repo_dir / 'data/box-halo/candidates.csv'
+plot_file = repo_dir / 'result/sample-location.png'
 
 # Setup AHF job
 job_ahf_setup = BridgesJob(
@@ -41,4 +42,15 @@ job_select_cand = BridgesJob(
     nodes=4, ncpus=4, time='2:00:00', mpi=True,
 )
 if not cand_file.exists():
-    job_select_cand.submit(depend=[id_ahf_run])
+    id_select_cand = job_select_cand.submit(depend=[id_ahf_run])
+else:
+    id_select_cand = None
+
+# Select sample & plot
+job_select_sample = BridgesJob(
+    'select-sample',
+    'select-sample.py',
+    nodes=1, ncpus=28, time='1:00:00'
+)
+if not plot_file.exists():
+    job_select_sample.submit(depend=[id_select_cand])

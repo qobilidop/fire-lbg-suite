@@ -1,6 +1,7 @@
 channels:
   - conda-forge
 dependencies:
+  - cython
   - h5py
   - numpy
   - pandas

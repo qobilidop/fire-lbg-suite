@@ -18,6 +18,15 @@ if [ ! -z "$GALENV_MPICC" ]; then
     env MPICC="$GALENV_MPICC" pip install mpi4py
 fi
 (
+    # Replace yt by the dev version
+    mkdir -p env/repo
+    cd env/repo
+    git clone https://github.com/yt-project/yt.git
+    cd yt
+    conda uninstall yt
+    pip install -e .
+)
+(
     cd code
     pip install -e .
 )
