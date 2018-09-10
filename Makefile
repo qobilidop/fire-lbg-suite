@@ -2,16 +2,26 @@
 help:
 	cat Makefile
 
-.PHONY: init
+
+# Environment management
+.PHONY: init purge
+
 init:
 	./env/init.sh
 	cd data && make
 
-.PHONY: purge
-# Purge local env
 purge:
 	rm -rf .conda .local
 
-.PHONY: deploy
+
+# Data synchronization
+.PHONY: deploy capture
+
+sync = rsync -Kamrvz --update
+remote = bridges:~/project/fire2-lbg
+
 deploy:
-	deploy.sh bridges:~/project/fire2-lbg
+	$(sync) --filter ':- .gitignore' --exclude '.git' --delete-after . $(remote)
+
+capture:
+	$(sync) --delete $(remote)/result result
