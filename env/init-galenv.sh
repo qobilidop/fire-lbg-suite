@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-if [ -z "$PROJECT_ROOT"]; then
+if [ -z "$PROJECT_ROOT" ]; then
     echo "PROJECT_ROOT is not set. Activate first:"
     echo ">>> source env/activate"
     exit

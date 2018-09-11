@@ -11,7 +11,7 @@ init:
 	cd data && make
 
 purge:
-	rm -rf .conda .local
+	rm -rf .conda .local env/repo
 
 
 # Data synchronization

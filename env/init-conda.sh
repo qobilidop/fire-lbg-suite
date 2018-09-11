@@ -23,10 +23,11 @@ fi
     cd env/repo
     git clone https://github.com/yt-project/yt.git
     cd yt
-    conda uninstall yt
+    conda uninstall -y yt
     pip install -e .
 )
 (
     cd code
     pip install -e .
 )
+conda clean -ay
