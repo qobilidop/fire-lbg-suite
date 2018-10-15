@@ -1,44 +1,14 @@
 # Set project root
 export PROJECT_ROOT="$PWD"
-export PATH="$PROJECT_ROOT/env/bin:$PATH"
-export PATH="$PROJECT_ROOT/code/script:$PATH"
+export PATH="$PROJECT_ROOT/bin:$PATH"
 
 # Activate galenv
-export PROJECT_GALENV_SYS="$PROJECT_ROOT/.galenv-sys"
-if [ -f "$PROJECT_GALENV_SYS" ]; then
-    export GALENV_SYS="$(cat "$PROJECT_GALENV_SYS")"
-    GALENV_PKG="ahf gizmo music"
-    if [ "$GALENV_SYS" = "bridges" ]; then
-        GALENV_PKG="fftw2 $GALENV_PKG"
-    fi
-    export GALENV_PKG
-    export GALENV_REPO="$PROJECT_ROOT/env/galenv"
-    export GALENV_LOCAL="$PROJECT_ROOT/.local"
-
-    # AHF
-    export GALENV_AHF_DIR="ahf"
-    export GALENV_AHF_DL="curl http://popia.ft.uam.es/AHF/files/ahf-v1.0-094.tgz | tar xz && mv ahf-v1.0-094 ahf"
-    export GALENV_AHF_FLAGS_DIR="$PROJECT_ROOT/env/pkg-conf/ahf"
-
-    # GIZMO
-    export GALENV_GIZMO_DIR="gizmo"
-    export GALENV_GIZMO_DL="hg clone ssh://hg@bitbucket.org/phopkins/gizmo -r 76dbfab6c0fbef056b713410e5eb73f8c1b00205"
-    export GALENV_GIZMO_CONFIG_DIR="$PROJECT_ROOT/env/pkg-conf/gizmo"
-
-    # MUSIC
-    export GALENV_MUSIC_DIR="music"
-    export GALENV_MUSIC_DL="hg clone https://bitbucket.org/ohahn/music -r afefabeea948f0fa951c7f031e2c53ca66d06ea2"
-
-    source "$GALENV_REPO/activate"
-    if [ "$GALENV_SYS" = "bridges" ]; then
-        module load psc_path slurm
-    fi
-fi
+source ~/.galenv/activate
 
 # Activate conda env
 export PROJECT_CONDA="$PROJECT_ROOT/.conda"
 if [ -d "$PROJECT_CONDA/conda-meta" ]; then
-    source enable-conda
+    source "$PROJECT_ROOT/env/enable-conda"
     conda activate "$PROJECT_CONDA"
     export PATH="$PROJECT_CONDA/bin:$PATH"
 fi

@@ -1,9 +1,7 @@
 .conda/
-.local/
 .vscode/
 scratch/
 result
-.galenv-sys
 *.log
 
 # Select from https://github.com/github/gitignore/blob/master/Python.gitignore

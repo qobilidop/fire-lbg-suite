@@ -1,4 +1,5 @@
 channels:
+  - yt-project/label/dev
   - conda-forge
 dependencies:
   - cython
@@ -10,3 +11,4 @@ dependencies:
   - yt
   - pip:
     - git+https://github.com/qobilidop/ahfriend
+    - git+https://github.com/qobilidop/libdil
