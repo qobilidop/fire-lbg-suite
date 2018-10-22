@@ -1,5 +1,9 @@
 #!/usr/bin/env python
-"""Set up AHF job."""
+"""Set up an AHF job.
+
+This script creates an AHF input file, and converts input snapshot to binary
+format.
+"""
 from argparse import ArgumentParser
 from pathlib import Path
 
@@ -13,12 +17,12 @@ parser.add_argument(
     help='The input snapshot.'
 )
 parser.add_argument(
-    '-w', '--work-dir', type=Path,
-    help='Where the AHF command is run.'
+    '-w', '--work-dir', type=Path, default='.',
+    help='The directory where the AHF command would be run.'
 )
 parser.add_argument(
-    '-c', '--cpus', type=int,
-    help='NcpuReading used in AHF input.'
+    '-c', '--cpus', type=int, default=4,
+    help='The number of CPUs used in reading snapshot.'
 )
 args = parser.parse_args()
 

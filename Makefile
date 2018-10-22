@@ -21,7 +21,7 @@ sync = rsync -Kamrvz --update
 remote = bridges:~/project/fire2-lbg
 
 deploy:
-	$(sync) --filter ':- .gitignore' --exclude '.git' --delete-after . $(remote)
+	$(sync) --filter ':- .gitignore' --exclude '.git' . $(remote)
 
 capture:
 	$(sync) --delete $(remote)/result result
