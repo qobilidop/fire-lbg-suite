@@ -15,13 +15,16 @@ purge:
 
 
 # Data synchronization
-.PHONY: deploy capture
+.PHONY: deploy-bridges deploy-tscc
 
 sync = rsync -Kamrvz --update
-remote = bridges:~/project/fire2-lbg
+sync-deploy = $(sync) --filter ':- .gitignore' --exclude '.git'
+project-name = fire2-lbg
+remote-bridges = bridges:~/project/$(project-name)
+remote-tscc = tscc:~/project/$(project-name)
 
-deploy:
-	$(sync) --filter ':- .gitignore' --exclude '.git' . $(remote)
+deploy-bridges:
+	$(sync-deploy) . $(remote-bridges)
 
-capture:
-	$(sync) --delete $(remote)/result result
+deploy-tscc:
+	$(sync-deploy) . $(remote-tscc)

@@ -3,7 +3,7 @@ export PROJECT_ROOT="$PWD"
 export PATH="$PROJECT_ROOT/code/script:$PATH"
 
 # Activate galenv
-source ~/.galenv/activate
+source ~/.galenv/bin/galenv-activate
 
 # Activate conda env
 export PROJECT_CONDA="$PROJECT_ROOT/.conda"
