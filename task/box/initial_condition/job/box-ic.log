@@ -1,0 +1,114 @@
+====================
+gizenv is activated!
+====================
+
+GIZENV_ROOT=/home/b2dong/gizenv
+GIZENV_LOCAL=/home/b2dong/gizenv/local
+GIZENV_SYS=tscc
+GIZENV_PKG=ahf fftw2 music
+
+GIZENV_CC=icc
+GIZENV_CXX=icpc
+GIZENV_FC=ifort
+GIZENV_LDSHARED=icc -shared
+
+GIZENV_MPICC=mpicc
+GIZENV_MPICXX=mpicxx
+GIZENV_MPIFC=mpifort
+
+GIZENV_CFLAGS=-Ofast
+GIZENV_LDFLAGS=-Wl,-rpath,/home/b2dong/gizenv/local
+GIZENV_OMPFLAGS=-openmp
+GIZENV_MPIFLAGS=
+
+GIZENV_FFTW2_INC=/home/b2dong/gizenv/local/include
+GIZENV_FFTW2_LIB=/home/b2dong/gizenv/local/lib
+GIZENV_FFTW3_INC=/opt/fftw/3.3.4/intel/openmpi_ib/include
+GIZENV_FFTW3_LIB=/opt/fftw/3.3.4/intel/openmpi_ib/lib
+GIZENV_GSL_INC=/opt/gsl/intel/include
+GIZENV_GSL_LIB=/opt/gsl/intel/lib
+GIZENV_HDF5_DIR=/opt/hdf5/intel/openmpi_ib
+GIZENV_HDF5_INC=/opt/hdf5/intel/openmpi_ib/include -I/opt/openmpi/intel/ib/include
+GIZENV_HDF5_LIB=/opt/hdf5/intel/openmpi_ib/lib
+/home/b2dong/project/fire2-lbg/task/box/initial_condition
+Sun Nov 25 23:23:44 PST 2018
+
+    __    __     __  __     ______     __     ______      
+   /\ "-./  \   /\ \/\ \   /\  ___\   /\ \   /\  ___\  
+   \ \ \-./\ \  \ \ \_\ \  \ \___  \  \ \ \  \ \ \____ 
+    \ \_\ \ \_\  \ \_____\  \/\_____\  \ \_\  \ \_____\ 
+     \/_/  \/_/   \/_____/   \/_____/   \/_/   \/_____/ 
+
+                            this is music! version 1.53
+
+
+ - Opening log file 'ic_L86_ref10.conf_log.txt'.
+ - Using k-space sampled transfer functions...
+ - Selecting transfer function plug-in 'eisenstein'...
+ - starting at a=0.01
+ - Selecting region generator plug-in 'box'...
+ - Selecting random number generator plug-in 'MUSIC'...
+-------------------------------------------------------------
+ - Grid structure:
+     Level  10 :   offset = (    0,     0,     0)
+                     size = ( 1024,  1024,  1024)
+-------------------------------------------------------------
+ - Finest level :
+                   extent =  58480 x 58480 x 58480 h-3 kpc**3
+                 mtotgrid =  1.72059e+16 h-1 M_o
+            particle mass =  1.60243e+07 h-1 M_o
+                       dx =  57.1094 h-1 kpc
+-------------------------------------------------------------
+ - Selecting output plug-in 'gadget2'...
+=============================================================
+   GENERATING WHITE NOISE
+-------------------------------------------------------------
+ - Found 0 density constraint(s) to be obeyed.
+ - Generating random numbers (2) with seed 1123
+ - Generating random numbers w/ sample cube size of 128
+ - Generating random numbers w/ sample cube size of 256
+ - Generating a constrained random number set with seed 1235
+    using coarse mode replacement...
+ - Generating random numbers w/ sample cube size of 256
+ - Generating a constrained random number set with seed 2358
+    using coarse mode replacement...
+ - Generating random numbers w/ sample cube size of 256
+ - Generating a constrained random number set with seed 35813
+    using coarse mode replacement...
+=============================================================
+   COMPUTING VELOCITIES
+-------------------------------------------------------------
+ - Using k-space transfer function kernel.
+ - Performing noise convolution on level  10
+   - Performing density convolution... (1024, 1024, 1024)
+ - Density calculation took 29.6015s with 16 threads.
+ - Top grid mean density is off by 5.82335e-21, correcting...
+-------------------------------------------------------------
+ - Invoking unigrid FFT Poisson solver...
+ - Computing 2LPT term....
+ - Solving 2LPT Poisson equation
+-------------------------------------------------------------
+ - Invoking unigrid FFT Poisson solver...
+ - velocity component 0 : sigma = 0.406481
+ - velocity component 1 : sigma = 0.4293
+ - velocity component 2 : sigma = 0.397723
+=============================================================
+   COMPUTING DARK MATTER DISPLACEMENTS
+-------------------------------------------------------------
+ - max. x-displacement of HR particles is -3.006323 [mean dx]
+ - max. y-displacement of HR particles is 3.237298 [mean dx]
+ - max. z-displacement of HR particles is -2.759333 [mean dx]
+ - Gadget2 : writing 1073741824 particles to file...
+ -       type   1 :   1073741824 [m=0.00160243]
+ - Gadget2 : distributing particles to 4 files
+ -       file 0 :    268435456
+ -       file 1 :    268435456
+ -       file 2 :    268435456
+ -       file 3 :    268435456
+=============================================================
+ - Wrote output file 'ic_L86_ref10'
+     using plugin 'gadget2'...
+ - Done!
+
+Sun Nov 25 23:35:44 PST 2018
+Nodes:        tscc-1-57

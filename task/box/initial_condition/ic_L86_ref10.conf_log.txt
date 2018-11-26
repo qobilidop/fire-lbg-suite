@@ -1,0 +1,133 @@
+23:23:45 | info    | Opening log file 'ic_L86_ref10.conf_log.txt'.
+23:23:45 | info    | Running music!, version 1.53
+23:23:45 | info    | Log is for run started Sun Nov 25 23:23:45 2018 
+23:23:45 | info    | Code was compiled using FFTW version 3.x
+23:23:45 | info    | Code was compiled for multi-threaded FFTW
+23:23:45 | info    | Running with a maximum of 16 OpenMP threads
+23:23:45 | info    | Code was compiled for double precision.
+23:23:45 | info    | Using k-space sampled transfer functions...
+23:23:45 | info    | Selecting transfer function plug-in  : eisenstein
+23:23:45 | info    | Selecting region generator plug-in  : box
+23:23:45 | info    | Selecting random number generator plug-in  : MUSIC
+23:23:45 | info    | Grid structure for Poisson solver:
+23:23:45 | info    |    Domain shifted by      (    0,    0,    0)
+23:23:45 | info    |    Level  10 :   offset = (    0,    0,    0)
+23:23:45 | info    |                    size = ( 1024, 1024, 1024)
+23:23:45 | info    | Grid structure for density convolution:
+23:23:45 | info    |    Domain shifted by      (    0,    0,    0)
+23:23:45 | info    |    Level  10 :   offset = (    0,    0,    0)
+23:23:45 | info    |                    size = ( 1024, 1024, 1024)
+23:23:45 | info    | Computing white noise...
+23:23:45 | info    | Found 0 density constraint(s) to be obeyed.
+23:23:45 | info    | Generating random numbers (2) with seed 1123
+23:23:45 | info    | Generating random numbers w/ sample cube size of 128
+23:23:45 | info    | Generating random numbers w/ sample cube size of 256
+23:23:46 | info    | Generating a constrained random number set with seed 1235     using coarse mode replacement...
+23:23:47 | info    | Generating random numbers w/ sample cube size of 256
+23:23:50 | info    | Generating a constrained random number set with seed 2358     using coarse mode replacement...
+23:23:51 | info    | Generating random numbers w/ sample cube size of 256
+23:24:04 | info    | Generating a constrained random number set with seed 35813     using coarse mode replacement...
+23:24:20 | info    | Storing white noise field in file 'wnoise_0010.bin'...
+23:24:33 | info    | Entering 2LPT branch
+23:24:33 | info    | Computing velocities...
+23:24:33 | info    | Using k-space transfer function kernel.
+23:24:35 | info    | Performing noise convolution on level  10
+23:24:35 | info    | Loading white noise from file 'wnoise_0010.bin'...
+23:24:38 | info    | Performing kernel convolution on ( 1024, 1024, 1024) grid
+23:24:38 | info    | Performing forward FFT...
+23:24:51 | info    | Performing backward FFT...
+23:25:03 | info    | Finished computing the density field in 29.601459s
+23:25:07 | info    | Grid mean density is 4.36705e-317. Correcting...
+23:25:14 | info    | Entering k-space Poisson solver...
+23:25:15 | info    | Performing forward transform.
+23:25:18 | info    | Performing backward transform.
+23:25:26 | info    | Done with k-space Poisson solver.
+23:25:26 | info    | Computing 2LPT term....
+23:26:07 | info    | Solving 2LPT Poisson equation
+23:26:13 | info    | Entering k-space Poisson solver...
+23:26:13 | info    | Performing forward transform.
+23:26:16 | info    | Performing backward transform.
+23:26:24 | info    | Done with k-space Poisson solver.
+23:26:33 | info    | Computing a gradient in k-space... 
+23:26:50 | info    | Done with k-space gradient. 
+23:26:54 | info    | Writing CDM velocities
+23:27:11 | info    | Computing a gradient in k-space... 
+23:27:30 | info    | Done with k-space gradient. 
+23:27:34 | info    | Writing CDM velocities
+23:27:51 | info    | Computing a gradient in k-space... 
+23:28:10 | info    | Done with k-space gradient. 
+23:28:15 | info    | Writing CDM velocities
+23:28:32 | info    | Computing dark matter displacements...
+23:28:41 | info    | Computing a gradient in k-space... 
+23:28:58 | info    | Done with k-space gradient. 
+23:28:59 | info    | max. x-displacement of HR particles is -3.006323 [mean dx]
+23:29:00 | info    | Writing CDM displacements
+23:29:25 | info    | Computing a gradient in k-space... 
+23:29:45 | info    | Done with k-space gradient. 
+23:29:47 | info    | max. y-displacement of HR particles is 3.237298 [mean dx]
+23:29:48 | info    | Writing CDM displacements
+23:30:13 | info    | Computing a gradient in k-space... 
+23:30:30 | info    | Done with k-space gradient. 
+23:30:32 | info    | max. z-displacement of HR particles is -2.759333 [mean dx]
+23:30:33 | info    | Writing CDM displacements
+23:30:59 | info    |       type   1 :   1073741824 [m=0.00160243]
+23:30:59 | info    | Gadget2 : distributing particles to 4 files
+23:30:59 | info    |       file 0 :    268435456
+23:30:59 | info    |       file 1 :    268435456
+23:30:59 | info    |       file 2 :    268435456
+23:30:59 | info    |       file 3 :    268435456
+23:35:44 | info    | Wrote output file 'ic_L86_ref10'.
+23:35:44 | info    | Run finished succesfully on Sun Nov 25 23:35:44 2018 
+23:35:44 | info    | List of all configuration options:
+23:35:44 | info    |               cosmology/H0 = 68.0
+23:35:44 | info    |          cosmology/Omega_L = 0.69
+23:35:44 | info    |          cosmology/Omega_b = 0.048
+23:35:44 | info    |          cosmology/Omega_m = 0.31
+23:35:44 | info    |            cosmology/dplus = 0.0127402551123
+23:35:44 | info    |            cosmology/nspec = 0.97
+23:35:44 | info    |            cosmology/pnorm = 1.98531365487
+23:35:44 | info    |          cosmology/sigma_8 = 0.82
+23:35:44 | info    |         cosmology/transfer = eisenstein
+23:35:44 | info    |            cosmology/vfact = 556.776380001
+23:35:44 | info    |               cosmology/w0 = -1.0
+23:35:44 | info    |            output/filename = ic_L86_ref10
+23:35:44 | info    |              output/format = gadget2
+23:35:44 | info    |   output/gadget_coarsetype = 2
+23:35:44 | info    |        output/gadget_lunit = kpc
+23:35:44 | info    |    output/gadget_num_files = 4
+23:35:44 | info    |          output/shift_back = no
+23:35:44 | info    |           poisson/accuracy = 1e-6
+23:35:44 | info    |           poisson/fft_fine = yes
+23:35:44 | info    |         poisson/grad_order = 6
+23:35:44 | info    |      poisson/laplace_order = 6
+23:35:44 | info    |        poisson/post_smooth = 3
+23:35:44 | info    |         poisson/pre_smooth = 3
+23:35:44 | info    |           poisson/smoother = gs
+23:35:44 | info    |            random/cubesize = 256
+23:35:44 | info    |            random/seed[10] = 35813
+23:35:44 | info    |             random/seed[7] = 1123
+23:35:44 | info    |             random/seed[8] = 1235
+23:35:44 | info    |             random/seed[9] = 2358
+23:35:44 | info    |            setup/align_top = no
+23:35:44 | info    |              setup/baryons = no
+23:35:44 | info    |            setup/boxlength = 58.48
+23:35:44 | info    |               setup/do_SPH = yes
+23:35:44 | info    |            setup/kspace_TF = yes
+23:35:44 | info    |             setup/levelmax = 10
+23:35:44 | info    |             setup/levelmin = 10
+23:35:44 | info    |          setup/levelmin_TF = 10
+23:35:44 | info    |             setup/no_shift = yes
+23:35:44 | info    |         setup/offset(10,0) = 0
+23:35:44 | info    |         setup/offset(10,1) = 0
+23:35:44 | info    |         setup/offset(10,2) = 0
+23:35:44 | info    |              setup/overlap = 4
+23:35:44 | info    |              setup/padding = 12
+23:35:44 | info    |          setup/periodic_TF = yes
+23:35:44 | info    |              setup/shift_x = 0
+23:35:44 | info    |              setup/shift_y = 0
+23:35:44 | info    |              setup/shift_z = 0
+23:35:44 | info    |           setup/size(10,0) = 1024
+23:35:44 | info    |           setup/size(10,1) = 1024
+23:35:44 | info    |           setup/size(10,2) = 1024
+23:35:44 | info    |             setup/use_2LPT = yes
+23:35:44 | info    |               setup/zstart = 99
