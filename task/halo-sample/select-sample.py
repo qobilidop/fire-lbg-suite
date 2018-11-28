@@ -1,6 +1,5 @@
 #!/usr/bin/env python
-"""Set up AHF job."""
-from argparse import ArgumentParser
+"""Select halo sample."""
 import os
 from pathlib import Path
 
@@ -11,13 +10,10 @@ import numpy as np
 import pandas as pd
 import yt
 
-from toolbox.env import repo_dir
-
-
-os.chdir(repo_dir)
+os.chdir(Path(__file__).resolve().parent)
 
 # Load candidates
-cand = pd.read_csv('data/box-halo/candidates.csv')
+cand = pd.read_csv('candidates.csv')
 
 # Select sample
 x = np.log10(cand['Mvir'])
@@ -30,8 +26,8 @@ for i, j in zip(sample['i'], sample['j']):
     label += [f'h{i}{j}']
 sample['label'] = label
 sample = sample[['label', 'Mvir', 'Menv', 'Rvir', 'Xc', 'Yc', 'Zc']]
-sample.to_csv('data/box-halo/sample.csv', index=False)
-sample = pd.read_csv('data/box-halo/sample.csv')
+sample.to_csv('sample.csv', index=False)
+sample = pd.read_csv('sample.csv')
 
 # Plot sample selection
 xlim = xbins[[0, -1]]
@@ -46,11 +42,10 @@ plt.xlim(*xlim)
 plt.ylim(*ylim)
 plt.xlabel('$\log{M_{vir}}\,\mathrm{[M_\odot]}$')
 plt.ylabel('$\log{M(<1.8\,\mathrm{Mpc})}\,\mathrm{[M_\odot]}$')
-plt.savefig('result/sample-selection.png', dpi=200)
+plt.savefig('sample-selection.png', dpi=200)
 
 # Plot sample location
-ds = yt.load('data/box/L86/output/snapdir_005/snapshot_005.0.hdf5',
-             n_ref=1024)
+ds = yt.load('../box/output/snapdir_005/snapshot_005.0.hdf5', n_ref=1024)
 p = yt.ParticleProjectionPlot(ds, 'z', 'particle_mass')
 p.hide_axes()
 p.hide_colorbar()
@@ -67,4 +62,4 @@ for row in sample.itertuples():
         circle_args={'ls': 'dashed', 'color': 'white'})
     p.annotate_sphere(center, (1.8, 'Mpc'),
         circle_args={'ls': 'dotted', 'color': 'white'})
-p.save('result/sample-location.png')
+p.save('sample-location.png')

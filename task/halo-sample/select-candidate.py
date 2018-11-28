@@ -5,12 +5,11 @@ Candidates are host halos with Mvir/Msun in (1e11.8, 1e12.2).
 """
 from argparse import ArgumentParser
 from pathlib import Path
-import subprocess as sp
 import sys
 
 import yt
 
-from toolbox.ahf import read_ahf_csv
+from giztool import ahf
 
 yt.enable_parallelism()
 comm = yt.communication_system.communicators[-1]
@@ -20,16 +19,19 @@ size = comm.size
 if comm.rank == 0:
     parser = ArgumentParser()
     parser.add_argument(
-        '-s', '--snap-file', type=Path,
-        help='The snapshot file.'
+        '-s', '--snapshot', type=Path,
+        help='The snapshot file.',
+        default='../box/output/snapdir_005/snapshot_005.0.hdf5'
     )
     parser.add_argument(
-        '--ahf-dir', type=Path,
-        help='Where the AHF results are saved.'
+        '--ahf-halos', type=Path,
+        help='The AHF_halos file.',
+        default='../box/ahf/snapshot_005.AHF_halos'
     )
     parser.add_argument(
         '-o', '--output', type=Path,
         help='Output halo candidates table.'
+        default='candidates.csv'
     )
     args = parser.parse_args()
 else:
@@ -37,11 +39,10 @@ else:
 args = comm.mpi_bcast(args, root=0)
 
 # Load snapshot
-ds = yt.load(str(args.snap_file))
+ds = yt.load(str(args.snapshot))
 
 # Load halo catalog
-sp.run('cat *.AHF_halos > AHF_halos', shell=True, cwd=args.ahf_dir)
-hc = read_ahf_csv(args.ahf_dir / 'AHF_halos')
+hc = ahf.read_csv(args.ahf_halos)
 ## Convert mass unit from Msun/h to Msun
 hc.Mvir /= ds.hubble_constant
 
