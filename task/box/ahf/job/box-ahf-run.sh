@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #PBS -N box-ahf-run
 #PBS -q condo
-#PBS -l nodes=8:ppn=16:ib
+#PBS -l nodes=4:ppn=16:ib
 #PBS -l walltime=8:00:00
 #PBS -j oe
 #PBS -o box-ahf-run.log

@@ -1,0 +1,112 @@
+====================
+gizenv is activated!
+====================
+
+GIZENV_ROOT=/home/b2dong/gizenv
+GIZENV_LOCAL=/home/b2dong/gizenv/local
+GIZENV_SYS=tscc
+GIZENV_PKG=ahf fftw2 music
+
+GIZENV_CC=icc
+GIZENV_CXX=icpc
+GIZENV_FC=ifort
+GIZENV_LDSHARED=icc -shared
+
+GIZENV_MPICC=mpicc
+GIZENV_MPICXX=mpicxx
+GIZENV_MPIFC=mpifort
+
+GIZENV_CFLAGS=-Ofast
+GIZENV_LDFLAGS=-Wl,-rpath,/home/b2dong/gizenv/local
+GIZENV_OMPFLAGS=-openmp
+GIZENV_MPIFLAGS=
+
+GIZENV_FFTW2_INC=/home/b2dong/gizenv/local/include
+GIZENV_FFTW2_LIB=/home/b2dong/gizenv/local/lib
+GIZENV_FFTW3_INC=/opt/fftw/3.3.4/intel/openmpi_ib/include
+GIZENV_FFTW3_LIB=/opt/fftw/3.3.4/intel/openmpi_ib/lib
+GIZENV_GSL_INC=/opt/gsl/intel/include
+GIZENV_GSL_LIB=/opt/gsl/intel/lib
+GIZENV_HDF5_DIR=/opt/hdf5/intel/openmpi_ib
+GIZENV_HDF5_INC=/opt/hdf5/intel/openmpi_ib/include -I/opt/openmpi/intel/ib/include
+GIZENV_HDF5_LIB=/opt/hdf5/intel/openmpi_ib/lib
+/home/b2dong/project/fire2-lbg/task/box/ahf
+Tue Nov 27 16:28:18 PST 2018
+[tscc-1-46][[64195,1],15][btl_tcp_component.c:667:mca_btl_tcp_component_create_instances] invalid interface "eth2"
+[tscc-1-46][[64195,1],13][btl_tcp_component.c:667:mca_btl_tcp_component_create_instances] invalid interface "eth2"
+[tscc-1-46][[64195,1],14][btl_tcp_component.c:667:mca_btl_tcp_component_create_instances] invalid interface "eth2"
+[tscc-1-46][[64195,1],12][btl_tcp_component.c:667:mca_btl_tcp_component_create_instances] invalid interface "eth2"
+[tscc-1-33][[64195,1],5][btl_tcp_component.c:667:mca_btl_tcp_component_create_instances] invalid interface "eth2"
+[tscc-1-33][[64195,1],6][btl_tcp_component.c:667:mca_btl_tcp_component_create_instances] invalid interface "eth2"
+[tscc-1-33][[64195,1],7][btl_tcp_component.c:667:mca_btl_tcp_component_create_instances] invalid interface "eth2"
+[tscc-1-33][[64195,1],4][btl_tcp_component.c:667:mca_btl_tcp_component_create_instances] invalid interface "eth2"
+[tscc-1-37][[64195,1],9][btl_tcp_component.c:667:mca_btl_tcp_component_create_instances] invalid interface "eth2"
+[tscc-1-37][[64195,1],10][btl_tcp_component.c:667:mca_btl_tcp_component_create_instances] invalid interface "eth2"
+[tscc-1-37][[64195,1],11][btl_tcp_component.c:667:mca_btl_tcp_component_create_instances] invalid interface "eth2"
+[tscc-1-37][[64195,1],8][btl_tcp_component.c:667:mca_btl_tcp_component_create_instances] invalid interface "eth2"
+[tscc-1-60][[64195,1],1][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],1][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],1][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],1][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],1][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],1][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],1][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],1][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],1][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],1][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],1][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],1][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],2][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],2][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],2][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],2][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],2][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],2][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],2][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],2][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],2][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],2][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],2][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],2][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],3][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],3][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],3][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],3][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],3][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],3][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],3][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],3][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],3][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],3][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],3][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],3][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],0][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],0][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],0][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],0][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],0][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],0][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],0][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],0][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],0][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],0][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],0][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+[tscc-1-60][[64195,1],0][btl_tcp_proc.c:131:mca_btl_tcp_proc_create] ompi_modex_recv: failed with return value=-48
+
+These are the input parameters you provided, please check them carefully again:
+===============================================================================
+ic_filename       = converted_snap/snapshot_005.
+ic_filetype       = 61
+outfile_prefix    = snapshot_005
+Detected prefixes: {'snapshot_005'}
+Centralizing snapshot_005.*.log
+Generating snapshot_005.AHF_halos
+Clearing snapshot_005.*.AHF_halos
+Generating snapshot_005.AHF_particles
+Clearing snapshot_005.*.AHF_particles
+Generating snapshot_005.AHF_profiles
+Clearing snapshot_005.*.AHF_profiles
+Generating snapshot_005.AHF_substructure
+Clearing snapshot_005.*.AHF_substructure
+Tue Nov 27 17:51:10 PST 2018
+Nodes:        tscc-1-33 tscc-1-37 tscc-1-46 tscc-1-60
