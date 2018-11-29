@@ -14,7 +14,11 @@ echo "$PWD"
 
 date
 export OMP_NUM_THREADS=4
+source config.sh
 mpirun -v -machinefile $PBS_NODEFILE -npernode 4 \
 -x PATH -x LD_LIBRARY_PATH -x OMP_NUM_THREADS \
-./select-candidate.py
+./script/select-candidate.py \
+--snapshot "$SNAPSHOT" \
+--halo_catalog "$HALO_CATALOG" \
+--candidate candidate.csv
 date

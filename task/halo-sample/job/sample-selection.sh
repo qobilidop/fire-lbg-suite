@@ -13,5 +13,5 @@ cd ..
 echo "$PWD"
 
 date
-./select-sample.py
+make all
 date
