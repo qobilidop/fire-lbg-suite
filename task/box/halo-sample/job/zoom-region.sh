@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-#PBS -N sample-selection
+#PBS -N zoom-region
 #PBS -q condo
 #PBS -l nodes=1:ppn=16
 #PBS -l walltime=8:00:00
 #PBS -j oe
-#PBS -o sample-selection.log
+#PBS -o zoom-region.log
 #PBS -V
 #PBS -d .
 set -e
@@ -13,6 +13,5 @@ cd ..
 echo "$PWD"
 
 date
-source config.sh
-make all
+./script/trace-zoom-region.py
 date

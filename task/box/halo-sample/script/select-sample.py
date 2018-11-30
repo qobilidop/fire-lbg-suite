@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 """Select halo sample."""
-from argparse import ArgumentParser
-
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+
+import config
 
 RANDOM_SEED = 42
 
@@ -19,15 +19,8 @@ def remove_boundary_halos(hc, padding=3672, boundary=58480):
     return hc
 
 
-# Parse arguments
-parser = ArgumentParser()
-parser.add_argument('--candidate')
-parser.add_argument('--sample')
-parser.add_argument('--plot')
-args = parser.parse_args()
-
 # Select sample
-candidate = pd.read_csv(args.candidate)
+candidate = pd.read_csv(config.CANDIDATE)
 candidate = remove_boundary_halos(candidate)
 x = np.log10(candidate['Mvir'])
 y = np.log10(candidate['Menv'])
@@ -41,7 +34,7 @@ for i, j in zip(sample['i'], sample['j']):
     label += [f'h{i}{j}']
 sample['label'] = label
 sample = sample[['label', 'Mvir', 'Menv', 'Rvir', 'Xc', 'Yc', 'Zc']]
-sample.to_csv(args.sample, index=False)
+sample.to_csv(config.SAMPLE, index=False)
 
 # Plot sample selection
 xlim = xbins[[0, -1]]
@@ -56,4 +49,4 @@ plt.xlim(*xlim)
 plt.ylim(*ylim)
 plt.xlabel('$\log{M_{vir}}\,\mathrm{[M_\odot]}$')
 plt.ylabel('$\log{M(<1.8\,\mathrm{Mpc})}\,\mathrm{[M_\odot]}$')
-plt.savefig(args.plot, dpi=200)
+plt.savefig(config.SELECTION_PLOT, dpi=200)

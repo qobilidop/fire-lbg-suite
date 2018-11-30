@@ -3,12 +3,14 @@
 
 Candidate halos are a host halos with Mvir/Msun in (1e11.8, 1e12.2).
 """
-from argparse import ArgumentParser
 import sys
 
 import yt
 
 from giztool import ahf
+
+import config
+import util
 
 
 # Set up MPI
@@ -17,27 +19,13 @@ comm = yt.communication_system.communicators[-1]
 rank = comm.rank
 size = comm.size
 
-# Parse arguments
-if comm.rank == 0:
-    parser = ArgumentParser()
-    parser.add_argument('--snapshot')
-    parser.add_argument('--halo_catalog')
-    parser.add_argument('--candidate')
-    args = parser.parse_args()
-else:
-    args = None
-args = comm.mpi_bcast(args, root=0)
+# Load data
+ds = util.load_snapshot()
+hc = ahf.read_csv(config.HALO_CATALOG)
 
-# Load snapshot
-ds = yt.load(str(args.snapshot))
-
-# Load halo catalog
-hc = ahf.read_csv(args.halo_catalog)
-## Convert mass unit from Msun/h to Msun
-hc['Mvir'] /= ds.hubble_constant
-
-# Select candidates within the mass range
+# Select host halos within the mass range
 hc = hc[hc['hostHalo'] == 0]
+hc['Mvir'] /= ds.hubble_constant  # Convert mass unit from Msun/h to Msun
 m_min, m_max = 10**11.8, 10**12.2
 hc = hc[(m_min < hc['Mvir']) & (hc['Mvir'] < m_max)]
 hc.sort_values(by='Mvir', ascending=False, inplace=True)
@@ -66,4 +54,4 @@ if yt.is_root():
     # Rvir, Xc, Yc, Zc are in kpccm/h (aka code_length)
     hc = hc[['Mvir', 'Menv', 'Rvir', 'Xc', 'Yc', 'Zc']]
     # Save to disk
-    hc.to_csv(args.candidate, index=False)
+    hc.to_csv(config.CANDIDATE, index=False)
