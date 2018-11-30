@@ -11,6 +11,14 @@ import pandas as pd
 RANDOM_SEED = 42
 
 
+def remove_boundary_halos(hc, padding=3672, boundary=58480):
+    # 3672 = 1800 * 0.68 * (1 + 2)
+    for axis in 'XYZ':
+        col = f'{axis}c'
+        hc = hc[(hc[col] > padding) & (hc[col] < boundary - padding)]
+    return hc
+
+
 # Parse arguments
 parser = ArgumentParser()
 parser.add_argument('--candidate')
@@ -20,6 +28,7 @@ args = parser.parse_args()
 
 # Select sample
 candidate = pd.read_csv(args.candidate)
+candidate = remove_boundary_halos(candidate)
 x = np.log10(candidate['Mvir'])
 y = np.log10(candidate['Menv'])
 candidate['i'], xbins = pd.cut(x, [11.8, 12, 12.2], labels=False, retbins=True)
