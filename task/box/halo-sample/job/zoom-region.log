@@ -1,0 +1,81 @@
+====================
+gizenv is activated!
+====================
+
+GIZENV_ROOT=/home/b2dong/gizenv
+GIZENV_LOCAL=/home/b2dong/gizenv/local
+GIZENV_SYS=tscc
+GIZENV_PKG=ahf fftw2 music
+
+GIZENV_CC=icc
+GIZENV_CXX=icpc
+GIZENV_FC=ifort
+GIZENV_LDSHARED=icc -shared
+
+GIZENV_MPICC=mpicc
+GIZENV_MPICXX=mpicxx
+GIZENV_MPIFC=mpifort
+
+GIZENV_CFLAGS=-Ofast
+GIZENV_LDFLAGS=-Wl,-rpath,/home/b2dong/gizenv/local
+GIZENV_OMPFLAGS=-openmp
+GIZENV_MPIFLAGS=
+
+GIZENV_FFTW2_INC=/home/b2dong/gizenv/local/include
+GIZENV_FFTW2_LIB=/home/b2dong/gizenv/local/lib
+GIZENV_FFTW3_INC=/opt/fftw/3.3.4/intel/openmpi_ib/include
+GIZENV_FFTW3_LIB=/opt/fftw/3.3.4/intel/openmpi_ib/lib
+GIZENV_GSL_INC=/opt/gsl/intel/include
+GIZENV_GSL_LIB=/opt/gsl/intel/lib
+GIZENV_HDF5_DIR=/opt/hdf5/intel/openmpi_ib
+GIZENV_HDF5_INC=/opt/hdf5/intel/openmpi_ib/include -I/opt/openmpi/intel/ib/include
+GIZENV_HDF5_LIB=/opt/hdf5/intel/openmpi_ib/lib
+/home/b2dong/project/fire2-lbg/task/box/halo-sample
+Fri Nov 30 14:14:27 PST 2018
+--------------------------------------------------------------------------
+WARNING: One or more nonexistent OpenFabrics devices/ports were
+specified:
+
+  Host:                 tscc-4-64
+  MCA parameter:        mca_btl_if_include
+  Nonexistent entities: mlx4_0:1
+
+These entities will be ignored.  You can disable this warning by
+setting the btl_openib_warn_nonexistent_if MCA parameter to 0.
+--------------------------------------------------------------------------
+yt : [INFO     ] 2018-11-30 14:14:32,305 Calculating time from 1.000e-02 to be 5.433e+14 seconds
+yt : [INFO     ] 2018-11-30 14:14:32,306 Assuming length units are in kpc/h (comoving)
+yt : [INFO     ] 2018-11-30 14:14:32,338 Parameters: current_time              = 543336898233580.3 s
+yt : [INFO     ] 2018-11-30 14:14:32,338 Parameters: domain_dimensions         = [2 2 2]
+yt : [INFO     ] 2018-11-30 14:14:32,339 Parameters: domain_left_edge          = [-1.e-10 -1.e-10 -1.e-10]
+yt : [INFO     ] 2018-11-30 14:14:32,339 Parameters: domain_right_edge         = [58480. 58480. 58480.]
+yt : [INFO     ] 2018-11-30 14:14:32,339 Parameters: cosmological_simulation   = 1
+yt : [INFO     ] 2018-11-30 14:14:32,339 Parameters: current_redshift          = 99.0
+yt : [INFO     ] 2018-11-30 14:14:32,339 Parameters: omega_lambda              = 0.69
+yt : [INFO     ] 2018-11-30 14:14:32,339 Parameters: omega_matter              = 0.31
+yt : [INFO     ] 2018-11-30 14:14:32,339 Parameters: hubble_constant           = 0.68
+yt : [INFO     ] 2018-11-30 14:14:32,357 Allocating for 1.074e+09 particles (index particle type 'all')
+yt : [INFO     ] 2018-11-30 14:18:33,614 Identified 4.918e+07 octs
+yt : [INFO     ] 2018-11-30 14:18:34,623 Calculating time from 3.333e-01 to be 1.032e+17 seconds
+yt : [INFO     ] 2018-11-30 14:18:34,623 Assuming length units are in kpc/h (comoving)
+yt : [INFO     ] 2018-11-30 14:18:34,642 Parameters: current_time              = 1.0317955332872987e+17 s
+yt : [INFO     ] 2018-11-30 14:18:34,642 Parameters: domain_dimensions         = [2 2 2]
+yt : [INFO     ] 2018-11-30 14:18:34,642 Parameters: domain_left_edge          = [0. 0. 0.]
+yt : [INFO     ] 2018-11-30 14:18:34,642 Parameters: domain_right_edge         = [58480. 58480. 58480.]
+yt : [INFO     ] 2018-11-30 14:18:34,643 Parameters: cosmological_simulation   = 1
+yt : [INFO     ] 2018-11-30 14:18:34,643 Parameters: current_redshift          = 2.0000003196611424
+yt : [INFO     ] 2018-11-30 14:18:34,643 Parameters: omega_lambda              = 0.69
+yt : [INFO     ] 2018-11-30 14:18:34,643 Parameters: omega_matter              = 0.31
+yt : [INFO     ] 2018-11-30 14:18:34,643 Parameters: hubble_constant           = 0.68
+yt : [INFO     ] 2018-11-30 14:18:34,801 Allocating for 1.074e+09 particles (index particle type 'all')
+yt : [INFO     ] 2018-11-30 14:22:37,986 Identified 7.760e+07 octs
+Processing h00
+Processing h01
+Processing h02
+Processing h03
+Processing h10
+Processing h11
+Processing h12
+Processing h13
+Fri Nov 30 15:28:37 PST 2018
+Nodes:        tscc-4-64

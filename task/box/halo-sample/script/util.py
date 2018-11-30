@@ -19,7 +19,7 @@ def load_snapshot(**yt_load_kwargs):
 def sample_halos(ds):
     sample = pd.read_csv(config.SAMPLE)
     for row in sample.itertuples():
-        label = row['label']
+        label = row.label
         center = ds.arr([row.Xc, row.Yc, row.Zc], 'kpccm/h')
         r_vir = ds.quan(row.Rvir, 'kpccm/h')
         yield label, center, r_vir

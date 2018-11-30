@@ -1,0 +1,73 @@
+====================
+gizenv is activated!
+====================
+
+GIZENV_ROOT=/home/b2dong/gizenv
+GIZENV_LOCAL=/home/b2dong/gizenv/local
+GIZENV_SYS=tscc
+GIZENV_PKG=ahf fftw2 music
+
+GIZENV_CC=icc
+GIZENV_CXX=icpc
+GIZENV_FC=ifort
+GIZENV_LDSHARED=icc -shared
+
+GIZENV_MPICC=mpicc
+GIZENV_MPICXX=mpicxx
+GIZENV_MPIFC=mpifort
+
+GIZENV_CFLAGS=-Ofast
+GIZENV_LDFLAGS=-Wl,-rpath,/home/b2dong/gizenv/local
+GIZENV_OMPFLAGS=-openmp
+GIZENV_MPIFLAGS=
+
+GIZENV_FFTW2_INC=/home/b2dong/gizenv/local/include
+GIZENV_FFTW2_LIB=/home/b2dong/gizenv/local/lib
+GIZENV_FFTW3_INC=/opt/fftw/3.3.4/intel/openmpi_ib/include
+GIZENV_FFTW3_LIB=/opt/fftw/3.3.4/intel/openmpi_ib/lib
+GIZENV_GSL_INC=/opt/gsl/intel/include
+GIZENV_GSL_LIB=/opt/gsl/intel/lib
+GIZENV_HDF5_DIR=/opt/hdf5/intel/openmpi_ib
+GIZENV_HDF5_INC=/opt/hdf5/intel/openmpi_ib/include -I/opt/openmpi/intel/ib/include
+GIZENV_HDF5_LIB=/opt/hdf5/intel/openmpi_ib/lib
+/home/b2dong/project/fire2-lbg/task/box/halo-sample
+Fri Nov 30 14:37:19 PST 2018
+--------------------------------------------------------------------------
+[[52179,1],0]: A high-performance Open MPI point-to-point messaging module
+was unable to find any relevant network interfaces:
+
+Module: OpenFabrics (openib)
+  Host: tscc-10-33
+
+Another transport will be used instead, although this may result in
+lower performance.
+--------------------------------------------------------------------------
+yt : [INFO     ] 2018-11-30 14:37:22,557 Calculating time from 3.333e-01 to be 1.032e+17 seconds
+yt : [INFO     ] 2018-11-30 14:37:22,560 Assuming length units are in kpc/h (comoving)
+yt : [INFO     ] 2018-11-30 14:37:22,579 Parameters: current_time              = 1.0317955332872987e+17 s
+yt : [INFO     ] 2018-11-30 14:37:22,579 Parameters: domain_dimensions         = [2 2 2]
+yt : [INFO     ] 2018-11-30 14:37:22,579 Parameters: domain_left_edge          = [0. 0. 0.]
+yt : [INFO     ] 2018-11-30 14:37:22,580 Parameters: domain_right_edge         = [58480. 58480. 58480.]
+yt : [INFO     ] 2018-11-30 14:37:22,580 Parameters: cosmological_simulation   = 1
+yt : [INFO     ] 2018-11-30 14:37:22,580 Parameters: current_redshift          = 2.0000003196611424
+yt : [INFO     ] 2018-11-30 14:37:22,580 Parameters: omega_lambda              = 0.69
+yt : [INFO     ] 2018-11-30 14:37:22,580 Parameters: omega_matter              = 0.31
+yt : [INFO     ] 2018-11-30 14:37:22,580 Parameters: hubble_constant           = 0.68
+yt : [INFO     ] 2018-11-30 14:37:22,714 Allocating for 1.074e+09 particles (index particle type 'all')
+yt : [INFO     ] 2018-11-30 14:40:05,297 Identified 5.069e+06 octs
+yt : [INFO     ] 2018-11-30 14:40:05,667 xlim = 0.000000 58480.000000
+yt : [INFO     ] 2018-11-30 14:40:05,667 ylim = 0.000000 58480.000000
+yt : [INFO     ] 2018-11-30 14:40:05,667 xlim = 0.000000 58480.000000
+yt : [INFO     ] 2018-11-30 14:40:05,667 ylim = 0.000000 58480.000000
+yt : [INFO     ] 2018-11-30 14:40:05,673 Splatting (('all', 'particle_mass')) onto a 800 by 800 mesh
+yt : [INFO     ] 2018-11-30 14:46:52,732 Saving plot /oasis/tscc/scratch/b2dong/project/fire2-lbg/task/box/halo-sample/sample-location.png
+Plotting h00
+Plotting h01
+Plotting h02
+Plotting h03
+Plotting h10
+Plotting h11
+Plotting h12
+Plotting h13
+Fri Nov 30 14:46:53 PST 2018
+Nodes:        tscc-10-33

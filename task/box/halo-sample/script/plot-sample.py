@@ -24,7 +24,7 @@ p.annotate_timestamp(redshift=True)
 
 for label, center, r_vir in util.sample_halos(ds):
     print('Plotting', label)
-    p.annotate_text(sp.center, label, inset_box_args={'alpha': 0})
+    p.annotate_text(center, label, inset_box_args={'alpha': 0})
     r_vir = r_vir.to('code_length')
     p.annotate_sphere(center, r_vir)
     p.annotate_sphere(center, r_vir * config.ZOOM_REGION_RADIUS,

@@ -16,7 +16,8 @@ ds.index
 config.ZOOM_REGION.mkdir(parents=True, exist_ok=True)
 for label, center, r_vir in util.sample_halos(ds):
     print('Processing', label)
-    sp = ds.sphere(center, r_vir * config.RADIUS)
+    radius = config.ZOOM_REGION_RADIUS
+    sp = ds.sphere(center, r_vir * radius)
     vertices = trace_region_chull(sp, ic)
-    path = config.ZOOM_REGION / f'{label}_rad{config.RADIUS}.txt'
+    path = config.ZOOM_REGION / f'{label}_rad{radius}.txt'
     np.savetxt(path, vertices)
