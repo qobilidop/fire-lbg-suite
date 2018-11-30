@@ -13,5 +13,6 @@ cd ..
 echo "$PWD"
 
 date
+source config.sh
 make all
 date
