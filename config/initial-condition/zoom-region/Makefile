@@ -1,7 +1,7 @@
 CONFIG_DIR = ../..
 RUN_DIR = $(CONFIG_DIR)/../run
 
-%_box_rad4.txt:
+%-box-rad4.txt:
 	prepare-region-point-file.py \
 	--halo_sample $(CONFIG_DIR)/halo-sample/sample.csv \
 	--halo_label $* \

@@ -11,5 +11,5 @@ echo "$PWD"
 source project-activate.sh
 
 date
-make "${HALO_LABEL}_box_rad4.txt"
+make "${HALO_LABEL}-box-rad4.txt"
 date
