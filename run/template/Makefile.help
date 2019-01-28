@@ -1,0 +1,6 @@
+.PHONY: help
+help:
+	@echo These commands are available:
+	@echo init
+	@echo submit-ic
+	@echo submit-run
