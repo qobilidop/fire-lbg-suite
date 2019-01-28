@@ -1,7 +1,4 @@
-.conda/
-.vscode/
-scratch/
-result
+*.log
 
 # Select from https://github.com/github/gitignore/blob/master/Python.gitignore
 

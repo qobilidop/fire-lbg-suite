@@ -2,10 +2,12 @@
 """Prepare region point file to use with MUSIC."""
 from argparse import ArgumentParser
 
+import numpy as np
 import pandas as pd
 from scipy.spatial import ConvexHull
+import yt
 
-from .lib.num import periodic_center_of_mass
+from toolbox.num import periodic_center_of_mass
 
 
 def main():
@@ -41,22 +43,22 @@ def main():
     halo_info = sample.loc[args.halo_label]
 
     # Determine particle IDs to track
-    ds = yt.load(args.halo_snap)
-    center = ds.quan(halo_info[['Xc', 'Yc', 'Zc']], 'code_length')
-    r_vir = ds.quan(halo_info['Rvir'], 'code_length')
+    ds = load_snap(args.halo_snap)
+    center = ds.arr(halo_info[['Xc', 'Yc', 'Zc']].values, 'kpccm/h')
+    r_vir = ds.quan(halo_info['Rvir'], 'kpccm/h')
     sp = ds.sphere(center, r_vir * args.zoom_radius)
     pid = sp['particle_index']
 
     # Track particle positions in IC
-    ds = yt.load(ic_file)
+    ds = load_snap(args.ic_snap)
     ad = ds.all_data()
     mask = np.isin(ad['particle_index'], pid)
     pos = ad['particle_position'][mask].to('unitary').v
 
     # Transform to center-of-mass coordinates to ensure no boundary crossing
     box_size = np.array([1., 1., 1.])
-    mass = ad['particle_mass'].to('Msun').v
-    center = periodic_center_of_mass(points, box_size, mass=mass)
+    mass = ad['particle_mass'][mask].to('Msun').v
+    center = periodic_center_of_mass(pos, box_size, mass=mass)
     pos -= center
 
     # Compress positions by convex hull vertices
@@ -68,7 +70,15 @@ def main():
     vertices = np.remainder(vertices, 1.)
 
     # Save output
-    np.savetxt(region_point_file, vertices)
+    np.savetxt(args.output, vertices)
+
+
+def load_snap(path, **yt_load_kwargs):
+    # Add some padding to bbox to avoid domain overflow issue
+    from toolbox.const import BOX_SIZE
+    eps = 1e-10
+    bbox = [[-eps, BOX_SIZE + eps]] * 3
+    return yt.load(path, bounding_box=bbox, **yt_load_kwargs)
 
 
 if __name__ == '__main__':
