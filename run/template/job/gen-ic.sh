@@ -2,7 +2,7 @@
 # This script is adapted from
 # https://www.psc.edu/bridges/user-guide/sample-batch-scripts#openmp
 #SBATCH --export=ALL
-#SBATCH --partition=RM
+#SBATCH --partition=RM-small
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=28
 #SBATCH --cpus-per-task=1
