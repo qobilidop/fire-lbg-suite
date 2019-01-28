@@ -1,0 +1,5 @@
+.PHONY: submit-run
+submit-run: job/run.sh
+	cd job && sbatch -J $(JOB_NAME) run.sh
+job/run.sh: ../template/job/run-dmo.sh | job
+	cp -f $< $@

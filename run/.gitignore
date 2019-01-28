@@ -1,0 +1,10 @@
+/box/
+gizmo-hg/
+initial-condition/
+job/
+output/
+GIZMO
+gizmo-config.sh
+gizmo-params.txt
+output-scale-factors.txt
+TREECOOL
