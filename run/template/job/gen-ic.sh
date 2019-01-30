@@ -1,21 +1,18 @@
 #!/bin/bash
-# This script is adapted from
-# https://www.psc.edu/bridges/user-guide/sample-batch-scripts#openmp
-#SBATCH --export=ALL
-#SBATCH --partition=RM-small
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=28
-#SBATCH --cpus-per-task=1
-#SBATCH --time=02:00:00
-#SBATCH --workdir=.
-#SBATCH --output=gen-ic.log
-
+# This job is to submit on TSCC.
+#PBS -q pdafm
+#PBS -l nodes=1:ppn=32
+#PBS -l walltime=1:00:00
+#PBS -j oe
+#PBS -o gen-ic.log
+#PBS -V
+#PBS -d .
 set -x
 cd ../initial-condition
 pwd
 source gizenv-activate.sh
 
-export OMP_NUM_THREADS=$SLURM_NTASKS
+export OMP_NUM_THREADS=32
 
 date
 MUSIC music.conf

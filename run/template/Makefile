@@ -40,7 +40,7 @@ initial-condition:
 
 .PHONY: submit-ic
 submit-ic: job/gen-ic.sh
-	cd job && sbatch -J $(JOB_NAME)-ic gen-ic.sh
+	cd job && qsub -N $(JOB_NAME)-ic gen-ic.sh
 job/gen-ic.sh: ../template/job/gen-ic.sh | job
 	cp -f $< $@
 job:
