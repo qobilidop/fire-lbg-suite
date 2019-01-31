@@ -1,6 +1,6 @@
 CONFIG_DIR = ../../config
 
-# We use FIRE_FrozenBranch at 2018-06-17
+# FIRE_FrozenBranch at 2018-06-17
 GIZMO_REPO = ssh://hg@bitbucket.org/phopkins/gizmo
 GIZMO_COMMIT = 76dbfab6c0fbef056b713410e5eb73f8c1b00205
 GIZMO_DIR = gizmo-hg
@@ -39,9 +39,18 @@ initial-condition:
 	mkdir -p $@
 
 .PHONY: submit-ic
+files: job/gen-ic.sh
 submit-ic: job/gen-ic.sh
-	cd job && qsub -N $(JOB_NAME)-ic gen-ic.sh
+	cd job && sbatch -J $(JOB_NAME)-ic gen-ic.sh
 job/gen-ic.sh: ../template/job/gen-ic.sh | job
 	cp -f $< $@
+
+.PHONY: submit-ic-lm
+files: job/gen-ic-lm.sh
+submit-ic-lm: job/gen-ic-lm.sh
+	cd job && qsub -N $(JOB_NAME)-ic gen-ic-lm.sh
+job/gen-ic-lm.sh: ../template/job/gen-ic-lm.sh | job
+	cp -f $< $@
+
 job:
 	mkdir -p $@

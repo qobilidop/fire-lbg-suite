@@ -1,9 +1,9 @@
 /box/
-gizmo-hg/
-initial-condition/
-output/
+z2m12*/*/
+ewald_spc_table_64_dbl.dat
 GIZMO
 gizmo-config.sh
 gizmo-params.txt
+gizmo-params.txt-usedvalues
 output-scale-factors.txt
 TREECOOL

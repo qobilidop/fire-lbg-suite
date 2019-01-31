@@ -10,7 +10,7 @@
 #SBATCH --output=run.log
 #SBATCH --export=ALL
 #SBATCH --workdir=.
-set -x
+set -e
 cd ..
 pwd
 source gizenv-activate.sh

@@ -5,6 +5,7 @@ CONFIG_GIZMO_CONFIG = dmo.sh
 CONFIG_GIZMO_PARAMS = dmo.txt
 
 .PHONY: submit-run
+files: job/run.sh
 submit-run: job/run.sh
 	cd job && sbatch -J $(JOB_NAME) run.sh
 job/run.sh: ../template/job/run-dmo.sh | job
