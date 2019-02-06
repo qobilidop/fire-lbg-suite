@@ -1,3 +1,7 @@
+# Set job names
+JOB_IC_SUBMIT += $(JOB_NAME)-ic
+JOB_RUN_SUBMIT += $(JOB_NAME)
+
 GIZMO_DIR = gizmo_hg
 CONFIG_DIR = ../../config
 
