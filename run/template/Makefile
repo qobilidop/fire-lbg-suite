@@ -1,56 +1,84 @@
+GIZMO_DIR = gizmo_hg
 CONFIG_DIR = ../../config
 
-# FIRE_FrozenBranch at 2018-06-17
-GIZMO_REPO = ssh://hg@bitbucket.org/phopkins/gizmo
-GIZMO_COMMIT = 76dbfab6c0fbef056b713410e5eb73f8c1b00205
-GIZMO_DIR = gizmo-hg
-GIZMO_CONFIG = gizmo-config.sh
-GIZMO_PARAMS = gizmo-params.txt
+.PHONY: help
+help:
+	@echo 'These commands are available:'
+	@echo 'init: Prepare auxiliary files and compile GIZMO'
+	@echo 'submit-ic: Submit IC generation job'
+	@echo 'submit-run: Submit simulation run job'
+	@echo 'purge: Purge all files except for this Makefile'
 
-.PHONY: init
-init: compile files
+.PHONY: init files compile
+init: files compile
+files: README
+README: ../template/README
+	cp -f $< $@
+ic job:
+	mkdir -p $@
 
-.PHONY: compile
+# GIZMO compiling
 compile: GIZMO
-GIZMO: $(GIZMO_CONFIG)
-	gizenv-compile-gizmo.py \
-	--repo $(GIZMO_REPO) \
-	--commit $(GIZMO_COMMIT) \
-	--dir $(GIZMO_DIR) \
-	--config $< \
-	--bin $@
+GIZMO: $(GIZMO_DIR) gizmo_config.sh
+	cp $(GIZENV_ROOT)/config/package/gizmo/Makefile.systype $</Makefile.systype
+	cp gizmo_config.sh $</Config.sh
+	cd $< && make
+	mv $</GIZMO $@
 
-.PHONY: files
-files: TREECOOL output-scale-factors.txt $(GIZMO_PARAMS)
-TREECOOL: $(GIZMO_DIR)/cooling/TREECOOL compile
-	ln -nsf $< $@
-output-scale-factors.txt: $(CONFIG_DIR)/gizmo/output/scale-factors.txt
+# GIZMO-related files
+files: $(GIZMO_DIR) gizmo_config.sh gizmo_params.txt output_scale_factors.txt
+$(GIZMO_DIR):
+	hg clone $(GIZMO_REPO) -r $(GIZMO_COMMIT) $@
+gizmo_config.sh: $(CONFIG_DIR)/gizmo/config/$(SIM_TYPE).sh
 	cp -f $< $@
-$(GIZMO_CONFIG): $(CONFIG_DIR)/gizmo/config/$(CONFIG_GIZMO_CONFIG)
+	perl -p -i -e "s/{{ OPENMP }}/$(JOB_RUN_OMP)/g" $@
+gizmo_params.txt: $(CONFIG_DIR)/gizmo/params.txt
 	cp -f $< $@
-$(GIZMO_PARAMS): $(CONFIG_DIR)/gizmo/params/$(CONFIG_GIZMO_PARAMS)
-	cp -f $< $@
-files: initial-condition/music.conf initial-condition/region-point.txt
-initial-condition/music.conf: $(CONFIG_DIR)/initial-condition/$(CONFIG_MUSIC_CONF) | initial-condition
-	cp -f $< $@
-initial-condition/region-point.txt: $(CONFIG_DIR)/initial-condition/zoom-region/$(CONFIG_ZOOM_REGION) | initial-condition
-	cp -f $< $@
-initial-condition:
-	mkdir -p $@
-
-.PHONY: submit-ic
-files: job/gen-ic.sh
-submit-ic: job/gen-ic.sh
-	cd job && sbatch -J $(JOB_NAME)-ic gen-ic.sh
-job/gen-ic.sh: ../template/job/gen-ic.sh | job
+	perl -p -i -e "s/{{ NumFilesPerSnapshot }}/$(SNAP_FILES)/g" $@
+	perl -p -i -e "s/{{ TimeLimitCPU }}/$(JOB_RUN_TIME)/g" $@
+	perl -p -i -e "s/{{ MaxMemSize }}/$(JOB_RUN_MEM)/g" $@
+	perl -p -i -e "s/{{ BufferSize }}/$(JOB_RUN_BUF)/g" $@
+output_scale_factors.txt: $(CONFIG_DIR)/gizmo/output/scale-factors.txt
 	cp -f $< $@
 
-.PHONY: submit-ic-lm
-files: job/gen-ic-lm.sh
-submit-ic-lm: job/gen-ic-lm.sh
-	cd job && qsub -N $(JOB_NAME)-ic gen-ic-lm.sh
-job/gen-ic-lm.sh: ../template/job/gen-ic-lm.sh | job
+# Cooling-related files
+ifeq ($(SIM_TYPE),hyd)
+files: spcool_tables TREECOOL
+spcool_tables:
+	curl http://www.tapir.caltech.edu/~phopkins/public/spcool_tables.tgz | tar xvz
+TREECOOL: | $(GIZMO_DIR)
+	ln -nsf $</cooling/TREECOOL $@
+endif
+
+# IC-related files
+files: ic/music.conf ic/region_point.txt
+ic/music.conf: $(CONFIG_DIR)/initial-condition/zoom.conf | ic
+	cp -f $< $@
+	perl -p -i -e "s/{{ levelmax }}/$(REF_LVL)/g" $@
+	perl -p -i -e "s/{{ baryons }}/$(HAS_BARYONS)/g" $@
+	perl -p -i -e "s/{{ gadget_num_files }}/$(SNAP_FILES)/g" $@
+ic/region_point.txt: $(CONFIG_DIR)/initial-condition/zoom-region/$(ZOOM_REGION) | ic
 	cp -f $< $@
 
-job:
-	mkdir -p $@
+# Jobs
+.PHONY: submit-ic submit-run
+files: job/ic.sh job/run.sh
+submit-ic: job/ic.sh
+	cd job && $(JOB_IC_SUBMIT) ic.sh
+job/ic.sh: ../template/job/$(JOB_IC_SCRIPT) | job
+	cp -f $< $@
+submit-run: job/run.sh
+	cd job && $(JOB_RUN_SUBMIT) run.sh
+job/run.sh: ../template/job/$(JOB_RUN_SCRIPT) | job
+	cp -f $< $@
+	perl -p -i -e "s/{{ MPI_TASKS }}/$(JOB_RUN_MPI)/g" $@
+	perl -p -i -e "s/{{ OMP_THREADS }}/$(JOB_RUN_OMP)/g" $@
+
+# Other commands
+.PHONY: clean purge
+clean:
+	cd $(GIZMO_DIR) && make clean
+	cd ic && rm -rf *.bin input_powerspec.txt
+purge:
+	rm -rf */
+	find . -type f -not -name 'Makefile' -delete

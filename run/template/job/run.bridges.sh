@@ -1,15 +1,15 @@
 #!/bin/bash
-# This job is to submit on Bridges.
-# The script is adapted from
-# https://www.psc.edu/bridges/user-guide/sample-batch-scripts#hybrid
-#SBATCH --partition=RM
-#SBATCH --nodes=16
-#SBATCH --ntasks-per-node=28
-#SBATCH --cpus-per-task=1
+# Free options:
+# -J
+# --nodes
+#SBATCH -p RM
+#SBATCH --ntasks-per-node={{ MPI_TASKS }}
+#SBATCH --cpus-per-task={{ OMP_THREADS }}
 #SBATCH --time=48:00:00
 #SBATCH --output=run.log
 #SBATCH --export=ALL
 #SBATCH --workdir=.
+# Reference: https://www.psc.edu/bridges/user-guide/sample-batch-scripts#hybrid
 set -e
 cd ..
 pwd
@@ -23,9 +23,9 @@ OPT="$OPT -genv I_MPI_PIN_DOMAIN=omp"
 date
 if [[ -d output/restartfiles ]]; then
     # Restart
-    mpirun $OPT ./GIZMO gizmo-params.txt 1
+    mpirun $OPT ./GIZMO gizmo_params.txt 1
 else
     # Start from scratch
-    mpirun $OPT ./GIZMO gizmo-params.txt
+    mpirun $OPT ./GIZMO gizmo_params.txt
 fi
 date

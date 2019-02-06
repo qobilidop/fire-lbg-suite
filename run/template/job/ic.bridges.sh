@@ -1,17 +1,17 @@
 #!/bin/bash
-# This job is to submit on Bridges.
-# The script is adapted from
-# https://www.psc.edu/bridges/user-guide/sample-batch-scripts#openmp
-#SBATCH --partition=RM-small
+# Free options:
+# -J
+#SBATCH -p RM-small
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=28
 #SBATCH --cpus-per-task=1
 #SBATCH --time=1:00:00
-#SBATCH --output=gen-ic.log
+#SBATCH --output=ic.log
 #SBATCH --export=ALL
 #SBATCH --workdir=.
+# Reference: https://www.psc.edu/bridges/user-guide/sample-batch-scripts#openmp
 set -e
-cd ../initial-condition
+cd ../ic
 pwd
 source gizenv-activate.sh
 

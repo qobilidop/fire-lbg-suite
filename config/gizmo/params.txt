@@ -1,7 +1,7 @@
-% For running on Bridges with 32 nodes and 2 OMP threads
+% For running on Bridges with 16 nodes and 1 OMP thread
 
 %----  Relevant files (filenames and directories)
-InitCondFile  initial-condition/snapshot
+InitCondFile  ic/snapshot
 OutputDir     output
 
 %---- File formats (input and output)
@@ -12,8 +12,8 @@ SnapFormat  3
 RestartFile                restart
 SnapshotFileBase           snapshot
 OutputListOn               1
-OutputListFilename         output-scale-factors.txt
-NumFilesPerSnapshot        4
+OutputListFilename         output_scale_factors.txt
+NumFilesPerSnapshot        {{ NumFilesPerSnapshot }}
 NumFilesWrittenInParallel  16
 
 %---- Output frequency
@@ -22,7 +22,7 @@ TimeBetSnapshot      1.1
 TimeBetStatistics    0.05
 
 %---- CPU run-time and checkpointing time-limits
-TimeLimitCPU           202000
+TimeLimitCPU           {{ TimeLimitCPU }}
 CpuTimeBetRestartFile  7200
 ResubmitOn             0
 ResubmitCommand        none
@@ -51,9 +51,9 @@ OmegaBaryon            0.048
 HubbleParam            0.68
 
 %----- Memory allocation
-MaxMemSize       8000
+MaxMemSize       {{ MaxMemSize }}
 PartAllocFactor  3.0
-BufferSize       200
+BufferSize       {{ BufferSize }}
 
 %---- Rebuild domains when >this fraction of particles active
 TreeDomainUpdateFrequency  0.005
