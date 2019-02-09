@@ -1,5 +1,0 @@
-HALO_LABEL = h01
-
-include ../template/Makefile.help
-include ../template/Makefile.dmo
-include ../template/Makefile
