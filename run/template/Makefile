@@ -51,7 +51,7 @@ files: spcool_tables TREECOOL
 spcool_tables:
 	curl http://www.tapir.caltech.edu/~phopkins/public/spcool_tables.tgz | tar xvz
 TREECOOL: | $(GIZMO_DIR)
-	ln -nsf $</cooling/TREECOOL $@
+	ln -nsf $(GIZMO_DIR)/cooling/TREECOOL $@
 endif
 
 # IC-related files
