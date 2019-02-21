@@ -71,6 +71,7 @@ submit-ic: job/ic.sh
 	cd job && $(JOB_IC_SUBMIT) ic.sh
 job/ic.sh: ../template/job/$(JOB_IC_SCRIPT) | job
 	cp -f $< $@
+	perl -p -i -e "s/{{ OMP_THREADS }}/$(JOB_IC_OMP)/g" $@
 submit-run: job/run.sh
 	cd job && $(JOB_RUN_SUBMIT) run.sh
 job/run.sh: ../template/job/$(JOB_RUN_SCRIPT) | job
