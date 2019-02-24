@@ -60,7 +60,6 @@ ic/music.conf: $(CONFIG_DIR)/initial-condition/zoom.conf | ic
 	cp -f $< $@
 	perl -p -i -e "s/{{ levelmax }}/$(REF_LVL)/g" $@
 	perl -p -i -e "s/{{ baryons }}/$(HAS_BARYONS)/g" $@
-	perl -p -i -e "s/{{ gadget_num_files }}/$(SNAP_FILES)/g" $@
 ic/region_point.txt: $(CONFIG_DIR)/initial-condition/zoom-region/$(ZOOM_REGION) | ic
 	cp -f $< $@
 
