@@ -85,4 +85,4 @@ clean:
 	cd ic && rm -rf *.bin input_powerspec.txt
 purge:
 	rm -rf */
-	find . -type f -not -name 'Makefile' -delete
+	find . -not -name 'Makefile' -delete
