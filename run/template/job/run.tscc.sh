@@ -1,9 +1,7 @@
 #!/bin/bash
-# Free options:
-# -N
-# -l nodes=(n):ppn=16:ib
-#PBS -q condo
-#PBS -l walltime=8:00:00
+#PBS -q {{ QUEUE }}
+#PBS -l nodes={{ NODES }}:ppn={{ CORES }}:ib
+#PBS -l walltime={{ HOUR }}:00:00
 #PBS -j oe
 #PBS -o run.log
 #PBS -V
@@ -13,8 +11,8 @@ cd ..
 pwd
 source gizenv-activate.sh
 
-export OMP_NUM_THREADS={{ OMP_THREADS }}
-OPT="-v -machinefile $PBS_NODEFILE -npernode {{ MPI_TASKS }} -x LD_LIBRARY_PATH"
+export OMP_NUM_THREADS={{ OMP }}
+OPT="-v -machinefile $PBS_NODEFILE -npernode {{ MPI }} -x LD_LIBRARY_PATH"
 
 date
 if [[ -d output/restartfiles ]]; then

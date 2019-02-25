@@ -1,8 +1,6 @@
 #!/bin/bash
-# Free options:
-# -N
-# -q (conda or pdafm)
-#PBS -l nodes=1:ppn={{ OMP_THREADS }}
+#PBS -q {{ QUEUE }}
+#PBS -l nodes=1:ppn={{ OMP }}
 #PBS -l walltime=8:00:00
 #PBS -j oe
 #PBS -o ic.log

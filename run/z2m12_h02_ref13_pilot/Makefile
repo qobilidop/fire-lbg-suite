@@ -1,12 +1,14 @@
 HALO = h02
+IC_TYPE = box
 SIM_TYPE = hyd
 REF_LVL = 13
 
 include ../template/Makefile.config
-# Use box IC for the pilot run
-ZOOM_REGION = $(HALO)-box-rad4.txt
-# Generate IC on TSCC for larger memory
+
+# Generate IC on TSCC using larger memory node
 JOB_IC_SCRIPT = ic.tscc.sh
-JOB_IC_SUBMIT = qsub -q pdafm -N
-JOB_IC_OMP = 32
+JOB_IC_QUEUE = pdafm
+JOB_IC_OMP = 16
+JOB_IC_HOUR = 8
+
 include ../template/Makefile

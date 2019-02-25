@@ -1,11 +1,9 @@
 #!/bin/bash
-# Free options:
-# -J
-#SBATCH -p RM-small
+#SBATCH --partition={{ QUEUE }}
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node={{ OMP_THREADS }}
+#SBATCH --ntasks-per-node={{ OMP }}
 #SBATCH --cpus-per-task=1
-#SBATCH --time=8:00:00
+#SBATCH --time={{ HOUR }}:00:00
 #SBATCH --output=ic.log
 #SBATCH --export=ALL
 #SBATCH --workdir=.

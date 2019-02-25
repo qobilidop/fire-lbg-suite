@@ -2,6 +2,9 @@
 JOB_IC_SUBMIT += $(JOB_NAME)-ic
 JOB_RUN_SUBMIT += $(JOB_NAME)
 
+# Set derived parameters
+JOB_RUN_CORES = $$(( $(JOB_RUN_MPI) * $(JOB_RUN_OMP) ))
+
 GIZMO_DIR = gizmo_hg
 CONFIG_DIR = ../../config
 
@@ -70,13 +73,19 @@ submit-ic: job/ic.sh
 	cd job && $(JOB_IC_SUBMIT) ic.sh
 job/ic.sh: ../template/job/$(JOB_IC_SCRIPT) | job
 	cp -f $< $@
-	perl -p -i -e "s/{{ OMP_THREADS }}/$(JOB_IC_OMP)/g" $@
+	perl -p -i -e "s/{{ QUEUE }}/$(JOB_IC_QUEUE)/g" $@
+	perl -p -i -e "s/{{ OMP }}/$(JOB_IC_OMP)/g" $@
+	perl -p -i -e "s/{{ HOUR }}/$(JOB_IC_HOUR)/g" $@
 submit-run: job/run.sh
 	cd job && $(JOB_RUN_SUBMIT) run.sh
 job/run.sh: ../template/job/$(JOB_RUN_SCRIPT) | job
 	cp -f $< $@
-	perl -p -i -e "s/{{ MPI_TASKS }}/$(JOB_RUN_MPI)/g" $@
-	perl -p -i -e "s/{{ OMP_THREADS }}/$(JOB_RUN_OMP)/g" $@
+	perl -p -i -e "s/{{ QUEUE }}/$(JOB_RUN_QUEUE)/g" $@
+	perl -p -i -e "s/{{ NODES }}/$(JOB_RUN_NODES)/g" $@
+	perl -p -i -e "s/{{ CORES }}/$(JOB_RUN_CORES)/g" $@
+	perl -p -i -e "s/{{ MPI }}/$(JOB_RUN_MPI)/g" $@
+	perl -p -i -e "s/{{ OMP }}/$(JOB_RUN_OMP)/g" $@
+	perl -p -i -e "s/{{ HOUR }}/$(JOB_RUN_HOUR)/g" $@
 
 # Other commands
 .PHONY: clean purge

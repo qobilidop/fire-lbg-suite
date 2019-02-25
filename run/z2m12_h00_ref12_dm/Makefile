@@ -1,4 +1,5 @@
 HALO = h00
+IC_TYPE = box
 SIM_TYPE = dmo
 REF_LVL = 12
 

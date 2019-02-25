@@ -1,11 +1,9 @@
 #!/bin/bash
-# Free options:
-# -J
-# --nodes
-#SBATCH -p RM
-#SBATCH --ntasks-per-node={{ MPI_TASKS }}
-#SBATCH --cpus-per-task={{ OMP_THREADS }}
-#SBATCH --time=48:00:00
+#SBATCH --partition={{ QUEUE }}
+#SBATCH --nodes={{ NODES }}
+#SBATCH --ntasks-per-node={{ MPI }}
+#SBATCH --cpus-per-task={{ OMP }}
+#SBATCH --time={{ HOUR }}:00:00
 #SBATCH --output=run.log
 #SBATCH --export=ALL
 #SBATCH --workdir=.
