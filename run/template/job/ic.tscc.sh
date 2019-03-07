@@ -1,4 +1,5 @@
 #!/bin/bash
+#PBS -N {{ NAME }}
 #PBS -q {{ QUEUE }}
 #PBS -l nodes=1:ppn={{ OMP }}
 #PBS -l walltime=8:00:00

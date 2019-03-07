@@ -1,4 +1,5 @@
 #!/bin/bash
+#SBATCH --job-name={{ NAME }}
 #SBATCH --partition={{ QUEUE }}
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node={{ OMP }}

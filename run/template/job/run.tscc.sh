@@ -1,4 +1,5 @@
 #!/bin/bash
+#PBS -N {{ NAME }}
 #PBS -q {{ QUEUE }}
 #PBS -l nodes={{ NODES }}:ppn={{ CORES }}:ib
 #PBS -l walltime={{ HOUR }}:00:00
