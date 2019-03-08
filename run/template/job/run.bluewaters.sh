@@ -12,7 +12,7 @@ cd ..
 pwd
 source "$GIZENV_ACTIVATE"
 
-if [[ -f output/snapshot_190.hdf5 || -d output/snapdir_190 ]]; then
+if [[ -f output/snapshot_172.hdf5 || -d output/snapdir_172 ]]; then
     echo "job finished"
     exit
 else
