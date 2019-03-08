@@ -5,12 +5,12 @@
 #PBS -l walltime={{ HOUR }}:00:00
 #PBS -j oe
 #PBS -o run.log
-#PBS -V
+#PBS -v GIZENV_ACTIVATE
 #PBS -d .
 set -e
 cd ..
 pwd
-source gizenv-activate.sh
+source "$GIZENV_ACTIVATE"
 
 if [[ -f output/snapshot_190.hdf5 || -d output/snapdir_190 ]]; then
     echo "job finished"
@@ -20,7 +20,7 @@ else
 fi
 
 export OMP_NUM_THREADS={{ OMP }}
-OPT="-N {{ MPI }} -d {{ OMP }}"
+OPT="-n $(( {{ NODES }} * {{ MPI }} )) -N {{ MPI }} -d {{ OMP }}"
 
 date
 if [[ -d output/restartfiles ]]; then
