@@ -12,6 +12,13 @@ cd ..
 pwd
 source gizenv-activate.sh
 
+if [[ -f output/snapshot_190.hdf5 || -d output/snapdir_190 ]]; then
+    echo "job finished"
+    exit
+else
+    qsub -W depend=afterok:"$PBS_JOBID" run.sh
+fi
+
 export OMP_NUM_THREADS={{ OMP }}
 OPT="-N {{ MPI }} -d {{ OMP }}"
 

@@ -14,6 +14,13 @@ cd ..
 pwd
 source gizenv-activate.sh
 
+if [[ -f output/snapshot_190.hdf5 || -d output/snapdir_190 ]]; then
+    echo "job finished"
+    exit
+else
+    sbatch --dependency=afterok:"$SLURM_JOB_ID" run.sh
+fi
+
 export I_MPI_JOB_RESPECT_PROCESS_PLACEMENT=0
 OPT="-print-rank-map -n $SLURM_NTASKS -ppn $SLURM_NTASKS_PER_NODE"
 OPT="$OPT -genv OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK"
