@@ -16,7 +16,7 @@ if [[ -f output/snapshot_172.hdf5 || -d output/snapdir_172 ]]; then
     echo "job finished"
     exit
 else
-    qsub -W depend=afterok:"$PBS_JOBID" run.sh
+    cd job && qsub -W depend=afterok:"$PBS_JOBID" run.sh
 fi
 
 export OMP_NUM_THREADS={{ OMP }}

@@ -19,7 +19,7 @@ if [[ -f output/snapshot_172.hdf5 || -d output/snapdir_172 ]]; then
     echo "job finished"
     exit
 else
-    sbatch --dependency=afterok:"$SLURM_JOB_ID" run.sh
+    cd job && sbatch --dependency=afterok:"$SLURM_JOB_ID" run.sh
 fi
 
 export OMP_NUM_THREADS="$SLURM_CPUS_PER_TASK"
