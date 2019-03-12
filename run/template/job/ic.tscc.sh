@@ -2,7 +2,7 @@
 #PBS -N {{ NAME }}
 #PBS -q {{ QUEUE }}
 #PBS -l nodes=1:ppn={{ OMP }}
-#PBS -l walltime=8:00:00
+#PBS -l walltime={{ HOUR }}:00:00
 #PBS -j oe
 #PBS -o ic.log
 #PBS -V
