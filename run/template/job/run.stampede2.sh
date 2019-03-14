@@ -7,20 +7,13 @@
 #SBATCH --time={{ HOUR }}:00:00
 #SBATCH --account=TG-AST140023
 #SBATCH --output=run.log
-#SBATCH --export=ALL
+#SBATCH --mail-type=all
 #SBATCH --workdir=.
 # Reference: https://portal.tacc.utexas.edu/user-guides/stampede2#job-scripts
 set -e
 cd ..
 pwd
-source gizenv-activate.sh
-
-if [[ -f output/snapshot_172.hdf5 || -d output/snapdir_172 ]]; then
-    echo "job finished"
-    exit
-else
-    cd job && sbatch --dependency=afterok:"$SLURM_JOB_ID" run.sh
-fi
+source "$GIZENV_ACTIVATE"
 
 export OMP_NUM_THREADS="$SLURM_CPUS_PER_TASK"
 OPT="tacc_affinity"

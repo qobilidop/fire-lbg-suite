@@ -6,20 +6,14 @@
 #SBATCH --cpus-per-task={{ OMP }}
 #SBATCH --time={{ HOUR }}:00:00
 #SBATCH --output=run.log
+#SBATCH --mail-type=all
 #SBATCH --export=ALL
 #SBATCH --workdir=.
 # Reference: https://www.psc.edu/bridges/user-guide/sample-batch-scripts#hybrid
 set -e
 cd ..
 pwd
-source gizenv-activate.sh
-
-if [[ -f output/snapshot_172.hdf5 || -d output/snapdir_172 ]]; then
-    echo "job finished"
-    exit
-else
-    cd job && sbatch --dependency=afterok:"$SLURM_JOB_ID" run.sh
-fi
+source "$GIZENV_ACTIVATE"
 
 export I_MPI_JOB_RESPECT_PROCESS_PLACEMENT=0
 OPT="-print-rank-map -n $SLURM_NTASKS -ppn $SLURM_NTASKS_PER_NODE"

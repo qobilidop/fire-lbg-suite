@@ -5,19 +5,14 @@
 #PBS -l walltime={{ HOUR }}:00:00
 #PBS -j oe
 #PBS -o run.log
+#PBS -m abe
 #PBS -v GIZENV_ACTIVATE
 #PBS -d .
+# Reference: https://bluewaters.ncsa.illinois.edu/batch-jobs
 set -e
 cd ..
 pwd
 source "$GIZENV_ACTIVATE"
-
-if [[ -f output/snapshot_172.hdf5 || -d output/snapdir_172 ]]; then
-    echo "job finished"
-    exit
-else
-    cd job && qsub -W depend=afterok:"$PBS_JOBID" run.sh
-fi
 
 export OMP_NUM_THREADS={{ OMP }}
 OPT="-n $(( {{ NODES }} * {{ MPI }} )) -N {{ MPI }} -d {{ OMP }}"

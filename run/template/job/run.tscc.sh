@@ -5,19 +5,13 @@
 #PBS -l walltime={{ HOUR }}:00:00
 #PBS -j oe
 #PBS -o run.log
+#PBS -m abe
 #PBS -V
 #PBS -d .
 set -e
 cd ..
 pwd
-source gizenv-activate.sh
-
-if [[ -f output/snapshot_172.hdf5 || -d output/snapdir_172 ]]; then
-    echo "job finished"
-    exit
-else
-    cd job && qsub -W depend=afterok:"$PBS_JOBID" run.sh
-fi
+source "$GIZENV_ACTIVATE"
 
 export OMP_NUM_THREADS={{ OMP }}
 OPT="-v -machinefile $PBS_NODEFILE -npernode {{ MPI }} -x LD_LIBRARY_PATH"
