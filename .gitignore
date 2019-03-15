@@ -1,13 +1,14 @@
+# Local
 *.log
 
-# Select from https://github.com/github/gitignore/blob/master/Python.gitignore
+# Reference: https://github.com/github/gitignore/blob/master/Python.gitignore
+# Expand as needed
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
-*.py[cod]
 
 # Distribution / packaging
-*.egg-info
+*.egg-info/
 
 # Jupyter Notebook
 .ipynb_checkpoints

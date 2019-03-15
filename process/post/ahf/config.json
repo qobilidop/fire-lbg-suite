@@ -1,0 +1,12 @@
+{
+  "scale_dom": [0.5, "Mpccm"],
+  "scale_min": [10, "pc"],
+  "extra": {
+    "NperDomCell": 5,
+    "NperRefCell": 5,
+    "VescTune": 1e10,
+    "NminPerHalo": 100,
+    "RhoVir": 0,
+    "Dvir": -1
+  }
+}

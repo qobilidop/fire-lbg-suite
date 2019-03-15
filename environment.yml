@@ -3,8 +3,11 @@ channels:
   - defaults
 dependencies:
   - python=3
+  - cython
   - matplotlib
   - numpy
   - pandas
   - scipy
   - yt
+  - pip:
+    - git+https://github.com/qobilidop/ahfio.git

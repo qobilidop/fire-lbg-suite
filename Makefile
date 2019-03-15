@@ -2,18 +2,15 @@
 help:
 	cat Makefile
 
-.PHONY: deploy-bridges deploy-tscc
+CONDA_ENV_NAME = fire2-lbg
+CONDA_ENV_PIP = $(shell conda info --root)/envs/$(CONDA_ENV_NAME)/bin/pip
 
-rsync-git = rsync -Kamrvz --update --filter=':- .gitignore' --exclude='.git'
-project-name = fire2-lbg
-remote-bridges = bridges:~/project/$(project-name)/
-remote-tscc = tscc:~/project/$(project-name)/
+.PHONY: init
+init:
+	conda env create -n $(CONDA_ENV_NAME) -f environment.yml
+	$(CONDA_ENV_PIP) install -e .
 
-deploy-bridges:
-	$(rsync-git) ./ $(remote-bridges)
-
-deploy-tscc:
-	$(rsync-git) ./ $(remote-tscc)
-
-capture-tscc:
-	$(rsync-git) $(remote-tscc) ./
+.PHONY: up
+up:
+	conda env update -n $(CONDA_ENV_NAME) -f environment.yml
+	$(CONDA_ENV_PIP) install -e .
