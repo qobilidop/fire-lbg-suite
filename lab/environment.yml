@@ -1,9 +1,15 @@
 channels:
   - conda-forge
   - defaults
+  - bioconda
 dependencies:
+  - nextflow
   - python=3
-  - jupyterlab
+  - cython
   - matplotlib
   - numpy
   - pandas
+  - scipy
+  - yt
+  - pip:
+    - git+https://github.com/qobilidop/ahfio.git

@@ -10,7 +10,8 @@ class Simulation:
     def __init__(self, name):
         self.name = name
         self.dir = RUN_DIR / f'z2m12_{name}_ref13_pilot'
-        self.snaps = [Snapshot(self, snap_id) for snap_id in range(173)]
+        self.snaps = [Snapshot(self, snap_id)
+                      for snap_id in reversed(range(173))]
 
 
 class Snapshot:
