@@ -2,7 +2,7 @@
 JOB_RUN_CORES = $$(( $(JOB_RUN_MPI) * $(JOB_RUN_OMP) ))
 
 GIZMO_DIR = gizmo_hg
-CONFIG_DIR = ../../config
+CONFIG_DIR = $(TMPL_DIR)/../config
 
 .PHONY: help
 help:
@@ -15,7 +15,7 @@ help:
 .PHONY: init files compile
 init: files compile
 files: README
-README: ../template/README
+README: $(TMPL_DIR)/README
 	cp -f $< $@
 ic job:
 	mkdir -p $@
@@ -67,7 +67,7 @@ ic/region_point.txt: $(CONFIG_DIR)/initial-condition/zoom-region/$(ZOOM_REGION) 
 files: job/ic.sh job/run.sh
 submit-ic: job/ic.sh
 	cd job && $(JOB_IC_SUBMIT) ic.sh
-job/ic.sh: ../template/job/$(JOB_IC_SCRIPT) | job
+job/ic.sh: $(TMPL_DIR)/job/$(JOB_IC_SCRIPT) | job
 	cp -f $< $@
 	perl -p -i -e "s/{{ NAME }}/$(JOB_NAME)-ic/g" $@
 	perl -p -i -e "s/{{ QUEUE }}/$(JOB_IC_QUEUE)/g" $@
@@ -75,7 +75,7 @@ job/ic.sh: ../template/job/$(JOB_IC_SCRIPT) | job
 	perl -p -i -e "s/{{ HOUR }}/$(JOB_IC_HOUR)/g" $@
 submit-run: job/run.sh
 	cd job && $(JOB_RUN_SUBMIT) run.sh
-job/run.sh: ../template/job/$(JOB_RUN_SCRIPT) | job
+job/run.sh: $(TMPL_DIR)/job/$(JOB_RUN_SCRIPT) | job
 	cp -f $< $@
 	perl -p -i -e "s/{{ NAME }}/$(JOB_NAME)/g" $@
 	perl -p -i -e "s/{{ QUEUE }}/$(JOB_RUN_QUEUE)/g" $@
