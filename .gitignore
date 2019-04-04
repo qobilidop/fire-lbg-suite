@@ -1,6 +1,8 @@
 # Local
 /scratch/
+/suite/run/
 *.log
+.doit.db*
 
 # Reference: https://github.com/github/gitignore/blob/master/Python.gitignore
 # Expand as needed

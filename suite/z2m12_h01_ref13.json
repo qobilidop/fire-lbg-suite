@@ -1,0 +1,23 @@
+{
+  "name": "h01",
+  "ic": {
+    "zoom_region": "h01-box-rad4",
+    "mach": "bridges",
+    "queue": "RM-small",
+    "omp": 28,
+    "hour": 8,
+    "lvl_max": 13,
+    "baryon": "yes"
+  },
+  "run": {
+    "mach": "stampede2",
+    "queue": "skx-normal",
+    "nodes": 24,
+    "omp": 2,
+    "mpi": 24,
+    "hour": 48,
+    "time": 202000,
+    "mem": 7000,
+    "buf": 140
+  }
+}
