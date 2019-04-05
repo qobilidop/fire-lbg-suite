@@ -1,14 +1,14 @@
 #!/bin/bash
 # sbatch
 #SBATCH --job-name={{ job_name }}
-#SBATCH --dependency==singleton
+#SBATCH --dependency=singleton
 #SBATCH --partition={{ queue }}
 # skx-normal: 196GB 48 cores
 #SBATCH --nodes={{ nodes }}
 #SBATCH --ntasks-per-node={{ mpi }}
 #SBATCH --cpus-per-task={{ omp }}
 #SBATCH --time={{ hour }}:00:00
-#SBATCH --account=TG-AST140023
+#SBATCH --account={{ account }}
 #SBATCH --output=run.log
 #SBATCH --mail-type=all
 #SBATCH --mail-user=qobilidop@gmail.com

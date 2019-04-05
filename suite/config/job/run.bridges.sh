@@ -1,7 +1,7 @@
 #!/bin/bash
 # sbatch
 #SBATCH --job-name={{ job_name }}
-#SBATCH --dependency==singleton
+#SBATCH --dependency=singleton
 #SBATCH --partition={{ queue }}
 # RM: 128GB 28 cores
 #SBATCH --nodes={{ nodes }}

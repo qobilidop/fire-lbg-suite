@@ -11,6 +11,7 @@
   },
   "run": {
     "mach": "stampede2",
+    "account": "TG-AST140023",
     "queue": "skx-normal",
     "nodes": 64,
     "omp": 2,
