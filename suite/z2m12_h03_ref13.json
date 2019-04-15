@@ -18,6 +18,8 @@
     "hour": 48,
     "time": 202000,
     "mem": 8000,
-    "buf": 160
+    "buf": 160,
+    "paf": 2,
+    "ic_file": "output/snapdir_048/snapshot_048"
   }
 }

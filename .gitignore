@@ -1,6 +1,7 @@
 # Local
 /scratch/
 /suite/run/
+/suite/mach
 *.log
 .doit.db*
 

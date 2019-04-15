@@ -25,6 +25,6 @@ if [[ -d output/restartfiles ]]; then
     mpirun $OPT ./GIZMO gizmo_params.txt 1
 else
     # Start from scratch
-    mpirun $OPT ./GIZMO gizmo_params.txt
+    mpirun $OPT ./GIZMO gizmo_params.txt {{ 2 if ic_file is defined }}
 fi
 date

@@ -1,11 +1,11 @@
 % For running on Bridges with 16 nodes and 1 OMP thread
 
 %----  Relevant files (filenames and directories)
-InitCondFile  ic/snapshot
+InitCondFile  {{ ic_file|default("ic/snapshot") }}
 OutputDir     output
 
 %---- File formats (input and output)
-ICFormat    1
+ICFormat    {{ 1 if ic_file is undefined else 3 }}
 SnapFormat  3
 
 %---- Output parameters
@@ -52,7 +52,7 @@ HubbleParam            0.68
 
 %----- Memory allocation
 MaxMemSize       {{ mem }}
-PartAllocFactor  3.0
+PartAllocFactor  {{ paf|default(3) }}
 BufferSize       {{ buf }}
 
 %---- Rebuild domains when >this fraction of particles active

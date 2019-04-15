@@ -28,6 +28,6 @@ if [[ -d output/restartfiles ]]; then
     ibrun $OPT ./GIZMO gizmo_params.txt 1
 else
     # Start from scratch
-    ibrun $OPT ./GIZMO gizmo_params.txt
+    ibrun $OPT ./GIZMO gizmo_params.txt {{ 2 if ic_file is defined }}
 fi
 date

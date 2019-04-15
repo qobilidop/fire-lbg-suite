@@ -72,6 +72,7 @@ def task_init():
             'task_dep': [
                 f'init_ic:{name}',
                 f'init_run:{name}',
+                f'download:{name}',
                 f'compile:{name}',
             ]
         }
@@ -114,24 +115,7 @@ def task_init_run():
         params['job_name'] = f'run-{name}'
         params['cores'] = params['omp'] * params['mpi']
 
-        gizmo_dir = run_dir / 'gizmo_hg'
-        task['actions'] += [
-            f'rm -rf {gizmo_dir}',
-            f'hg clone {GIZMO_REPO} -r {GIZMO_COMMIT} {gizmo_dir}',
-        ]
-        task['targets'] += [gizmo_dir]
-
-        task['actions'] += [
-            f'rm -rf {run_dir / COOL_TAB}',
-            f'cd {run_dir} && curl {COOL_TAB_TGZ} | tar xzv',
-        ]
-        task['targets'] += [run_dir / COOL_TAB]
-
         add_render_ = partial(add_render, params=params, task=task)
-        add_render_(
-            gizmo_dir / 'cooling/TREECOOL',
-            run_dir / 'TREECOOL',
-        )
         add_render_(
             CONFIG_DIR / 'gizmo_config.sh',
             run_dir / 'gizmo_config.sh',
@@ -150,6 +134,35 @@ def task_init_run():
             run_dir / 'job/run.sh',
         )
         yield task
+
+
+def task_download():
+
+    for f in SIM_CONFIG_FILES:
+        name, config, run_dir = load_sim_config(f)
+        task = init_task(name)
+
+        gizmo_dir = run_dir / 'gizmo_hg'
+        task['actions'] += [
+            f'rm -rf {gizmo_dir}',
+            f'hg clone {GIZMO_REPO} -r {GIZMO_COMMIT} {gizmo_dir}',
+        ]
+        task['targets'] += [gizmo_dir]
+
+        task['actions'] += [
+            f'rm -rf {run_dir / COOL_TAB}',
+            f'cd {run_dir} && curl {COOL_TAB_TGZ} | tar xzv',
+        ]
+        task['targets'] += [run_dir / COOL_TAB]
+
+        add_render(
+            gizmo_dir / 'cooling/TREECOOL',
+            run_dir / 'TREECOOL',
+            params=None, task=task,
+        )
+
+        yield task
+
 
 def task_compile():
 
