@@ -14,3 +14,7 @@ init:
 up:
 	conda env update -n $(CONDA_ENV_NAME) -f lab/environment.yml
 	cd lab && $(CONDA_ENV_PIP) install -e .
+
+.PHONY: down
+down:
+	rsync -amrvL --include='*/' --include='*.png' --exclude='*' tscc:~/project/fire2-lbg/suite/run/ suite/run/

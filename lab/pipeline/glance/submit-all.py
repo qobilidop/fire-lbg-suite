@@ -12,7 +12,7 @@ TEMPLATE = """\
 #!/bin/bash
 #PBS -N {name}
 #PBS -q condo
-#PBS -l nodes=1:ppn=16
+#PBS -l nodes=1:ppn=4
 #PBS -l walltime=8:00:00
 #PBS -j oe
 #PBS -o {name}.log
@@ -28,7 +28,7 @@ pwd
 
 export OMP_NUM_THREADS=$PBS_NP
 
-{cdir}/run.py {snap_file}
+{project_dir}/lab/bin/snap-diag-plot.py -s {snap_file}
 
 date
 """
@@ -44,7 +44,6 @@ def submit(snap):
         name=job_name,
         project_dir=PROJECT_DIR,
         work_dir=get_work_dir(snap),
-        cdir=CDIR,
         snap_file=snap.file,
     )
     job_file.write_text(job_script)

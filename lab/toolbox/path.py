@@ -2,14 +2,14 @@ from itertools import product
 from pathlib import Path
 
 
-PROJECT_DIR = Path(__file__).parents[1].resolve()
-RUN_DIR = PROJECT_DIR / 'run'
+PROJECT_DIR = Path(__file__).parents[2].resolve()
+RUN_DIR = PROJECT_DIR / 'suite/run'
 
 
 class Simulation:
     def __init__(self, name):
         self.name = name
-        self.dir = RUN_DIR / f'z2m12_{name}_ref13_pilot'
+        self.dir = RUN_DIR / f'z2m12_{name}_ref13'
         self.snaps = [Snapshot(self, snap_id)
                       for snap_id in reversed(range(173))]
 
