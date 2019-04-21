@@ -12,7 +12,7 @@
   "run": {
     "mach": "bridges",
     "queue": "RM",
-    "nodes": 42,
+    "nodes": 64,
     "omp": 2,
     "mpi": 14,
     "hour": 48,
@@ -20,6 +20,6 @@
     "mem": 8000,
     "buf": 160,
     "paf": 2,
-    "ic_file": "output/snapdir_021/snapshot_021"
+    "ic_file": "output/snapdir_022/snapshot_022"
   }
 }

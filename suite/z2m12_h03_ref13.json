@@ -12,7 +12,7 @@
   "run": {
     "mach": "bridges",
     "queue": "RM",
-    "nodes": 48,
+    "nodes": 64,
     "omp": 2,
     "mpi": 14,
     "hour": 48,

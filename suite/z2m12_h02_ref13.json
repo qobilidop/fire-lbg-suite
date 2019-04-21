@@ -13,13 +13,14 @@
     "mach": "stampede2",
     "account": "TG-AST140023",
     "queue": "skx-normal",
-    "nodes": 80,
+    "nodes": 128,
     "omp": 2,
     "mpi": 14,
     "hour": 48,
     "time": 202000,
-    "mem": 7500,
-    "buf": 150,
-    "paf": 2
+    "mem": 7000,
+    "buf": 140,
+    "paf": 2,
+    "ic_file": "output/snapdir_020/snapshot_020"
   }
 }
