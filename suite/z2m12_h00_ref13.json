@@ -19,7 +19,6 @@
     "time": 202000,
     "mem": 8000,
     "buf": 160,
-    "paf": 2,
-    "ic_file": "output/snapdir_086/snapshot_086"
+    "paf": 2
   }
 }

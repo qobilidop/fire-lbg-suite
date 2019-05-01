@@ -15,12 +15,12 @@
     "queue": "skx-normal",
     "nodes": 128,
     "omp": 2,
-    "mpi": 14,
+    "mpi": 24,
     "hour": 48,
     "time": 202000,
-    "mem": 7000,
-    "buf": 140,
-    "paf": 2,
-    "ic_file": "output/snapdir_020/snapshot_020"
+    "mem": 7500,
+    "buf": 150,
+    "paf": 1.5,
+    "ic_file": "output/snapdir_027/snapshot_027"
   }
 }
