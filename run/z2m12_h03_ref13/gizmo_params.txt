@@ -1,0 +1,109 @@
+%----  Relevant files (filenames and directories)
+InitCondFile  output/snapdir_048/snapshot_048
+OutputDir     output
+
+%---- File formats (input and output)
+ICFormat    3
+SnapFormat  3
+
+%---- Output parameters
+RestartFile                restart
+SnapshotFileBase           snapshot
+OutputListOn               1
+OutputListFilename         output_times.txt
+NumFilesPerSnapshot        4
+NumFilesWrittenInParallel  16
+
+%---- Output frequency
+TimeOfFirstSnapshot  0.1
+TimeBetSnapshot      1.1
+TimeBetStatistics    0.05
+
+%---- CPU run-time and checkpointing time-limits
+TimeLimitCPU           202000
+CpuTimeBetRestartFile  7200
+ResubmitOn             0
+ResubmitCommand        none
+
+%---- Desired simulation beginning and end times (in code units) for run
+TimeBegin  0.01
+TimeMax    0.3333333
+
+%---- Maximum and minimum timesteps allowed
+MaxSizeTimestep  0.005
+MinSizeTimestep  1.0e-12
+
+%---- System of units
+UnitLength_in_cm            3.085678e21
+UnitMass_in_g               1.989e43
+UnitVelocity_in_cm_per_s    1.0e5
+UnitMagneticField_in_gauss  1.0
+GravityConstantInternal     0
+
+%---- Cosmological parameters
+ComovingIntegrationOn  1
+BoxSize                58480.
+Omega0                 0.31
+OmegaLambda            0.69
+OmegaBaryon            0.048
+HubbleParam            0.68
+
+%----- Memory allocation
+MaxMemSize       8000
+PartAllocFactor  2
+BufferSize       160
+
+%---- Rebuild domains when >this fraction of particles active
+TreeDomainUpdateFrequency  0.005
+
+%---- (Optional) Initial hydro temperature & temperature floor (in Kelvin)
+InitGasTemp  0
+MinGasTemp   10.
+
+%---- Hydro reconstruction (kernel) parameters
+DesNumNgb             32
+MaxHsml               1.0e6
+MinGasHsmlFractional  1.0
+
+%---- Gravitational softening lengths
+SofteningGas           0.0068
+SofteningHalo          0.272
+SofteningDisk          2
+SofteningBulge         0
+SofteningStars         0.0272
+SofteningBndry         0
+SofteningGasMaxPhys    0.00068
+SofteningHaloMaxPhys   0.0272
+SofteningDiskMaxPhys   0.2
+SofteningBulgeMaxPhys  0
+SofteningStarsMaxPhys  0.00272
+SofteningBndryMaxPhys  0
+AGS_DesNumNgb          32
+
+
+%-------------------------------------------------------------------------
+%-------------------------------------------------------------------------
+%---------- Physics Modules ----------------------------------------------
+%-------------------------------------------------------------------------
+%-------------------------------------------------------------------------
+
+
+%---- Turbulent Diffusion Master Switch (TURB_DIFFUSION on)
+TurbDiffusionCoefficient  1.0
+
+%---- Star Formation parameters (GALSF on)
+CritPhysDensity   1000
+SfEffPerFreeFall  1.0
+
+%---- FIRE (PFH) explicit star formation & feedback model (FIRE on)
+InitMetallicity                  0.0001
+InitStellarAge                   0.001
+WindMomentumLoading              1.0
+SNeIIEnergyFrac                  1.0
+HIIRegion_fLum_Coupled           1.0
+PhotonMomentum_Coupled_Fraction  1.0
+PhotonMomentum_fUV               0.01
+PhotonMomentum_fOPT              0.01
+GasReturnFraction                1.0
+GasReturnEnergy                  1.0
+CosmicRay_SNeFraction            0.1

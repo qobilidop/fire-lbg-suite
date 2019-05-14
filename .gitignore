@@ -1,17 +1,1 @@
-# Local
-/suite/run/
-/suite/mach
-*.log
-.doit.db*
-
-# Reference: https://github.com/github/gitignore/blob/master/Python.gitignore
-# Expand as needed
-
-# Byte-compiled / optimized / DLL files
-__pycache__/
-
-# Distribution / packaging
-*.egg-info/
-
-# Jupyter Notebook
-.ipynb_checkpoints
+/env/

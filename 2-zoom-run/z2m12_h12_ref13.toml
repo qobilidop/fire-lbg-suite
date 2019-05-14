@@ -1,0 +1,24 @@
+halo_name = "h12"
+zoom_region = "h12-box-rad4"
+
+[gizmo]
+TimeLimitCPU = 202000
+MaxMemSize = 7000
+PartAllocFactor = 2
+BufferSize = 140
+
+[job]
+
+[job.ic]
+site = "bridges"
+queue = "RM-small"
+omp = 28
+hour = 8
+
+[job.run]
+site = "stampede2"
+queue = "skx-normal"
+nodes = 128
+mpi = 24
+omp = 2
+hour = 48

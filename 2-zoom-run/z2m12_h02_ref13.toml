@@ -1,0 +1,25 @@
+halo_name = "h02"
+zoom_region = "h02-box-rad4"
+
+[gizmo]
+InitCondFile = "output/snapdir_027/snapshot_027"
+TimeLimitCPU = 202000
+MaxMemSize = 7000
+PartAllocFactor = 1.5
+BufferSize = 140
+
+[job]
+
+[job.ic]
+site = "tscc"
+queue = "pdafm"
+omp = 16
+hour = 8
+
+[job.run]
+site = "stampede2"
+queue = "skx-normal"
+nodes = 128
+mpi = 24
+omp = 2
+hour = 48

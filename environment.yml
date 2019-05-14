@@ -2,12 +2,6 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3
-  - cython
-  - matplotlib
-  - numpy
-  - pandas
-  - scipy
-  - yt
-  - pip:
-    - git+https://github.com/qobilidop/ahfio.git
+  - python>=3.6
+  - jinja2
+  - toml

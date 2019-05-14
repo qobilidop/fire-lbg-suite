@@ -1,0 +1,10 @@
+ic/*.bin
+ic/snapshot
+job/*.log
+gizmo_hg/
+output/
+spcool_tables/
+*.dat
+*-usedvalues
+GIZMO
+TREECOOL
