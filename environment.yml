@@ -1,9 +1,7 @@
 channels:
   - conda-forge
   - defaults
-  - bioconda
 dependencies:
-  - nextflow
   - python=3
   - cython
   - matplotlib
