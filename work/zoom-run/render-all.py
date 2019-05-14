@@ -6,10 +6,11 @@ import shutil
 from jinja2 import Template
 import toml
 
+from lib.path import ROOT
+
 
 THIS_DIR = Path(__file__).parent.resolve()
 TMPL_DIR = THIS_DIR / 'template'
-ROOT = THIS_DIR.parent
 RUN_DIR = ROOT / 'run'
 
 
