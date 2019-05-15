@@ -22,8 +22,8 @@ TimeBetSnapshot      1.1
 TimeBetStatistics    0.05
 
 %---- CPU run-time and checkpointing time-limits
-TimeLimitCPU           202000
-CpuTimeBetRestartFile  7200
+TimeLimitCPU           200000
+CpuTimeBetRestartFile  3600
 ResubmitOn             0
 ResubmitCommand        none
 

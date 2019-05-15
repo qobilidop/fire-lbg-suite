@@ -23,7 +23,7 @@ TimeBetStatistics    0.05
 
 %---- CPU run-time and checkpointing time-limits
 TimeLimitCPU           {{ gizmo.TimeLimitCPU }}
-CpuTimeBetRestartFile  7200
+CpuTimeBetRestartFile  3600
 ResubmitOn             0
 ResubmitCommand        none
 

@@ -19,7 +19,7 @@ MPIRUN="mpirun -n $SLURM_NTASKS -ppn 14 -genv OMP_NUM_THREADS=2 -genv I_MPI_PIN_
 if [[ -d output/restartfiles ]]; then
     RESTART_FLAG=1
 else
-    RESTART_FLAG=2
+    RESTART_FLAG=
 fi
 
 pwd

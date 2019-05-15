@@ -2,7 +2,7 @@ halo_name = "h00"
 zoom_region = "h00-box-rad4"
 
 [gizmo]
-TimeLimitCPU = 202000
+TimeLimitCPU = 200000
 MaxMemSize = 8000
 PartAllocFactor = 2
 BufferSize = 160

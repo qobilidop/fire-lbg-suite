@@ -1,11 +1,11 @@
 % This params file follows m12i_res7100
 
 %----  Relevant files (filenames and directories)
-InitCondFile  output/snapdir_022/snapshot_022
+InitCondFile  ic/snapshot
 OutputDir     output
 
 %---- File formats (input and output)
-ICFormat    3
+ICFormat    1
 SnapFormat  3
 
 %---- Output parameters
@@ -22,8 +22,8 @@ TimeBetSnapshot      1.1
 TimeBetStatistics    0.05
 
 %---- CPU run-time and checkpointing time-limits
-TimeLimitCPU           202000
-CpuTimeBetRestartFile  7200
+TimeLimitCPU           200000
+CpuTimeBetRestartFile  3600
 ResubmitOn             0
 ResubmitCommand        none
 
