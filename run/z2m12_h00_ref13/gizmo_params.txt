@@ -1,3 +1,5 @@
+% This params file follows m12i_res7100
+
 %----  Relevant files (filenames and directories)
 InitCondFile  ic/snapshot
 OutputDir     output
@@ -66,17 +68,17 @@ MaxHsml               1.0e6
 MinGasHsmlFractional  1.0
 
 %---- Gravitational softening lengths
-SofteningGas           0.0068
-SofteningHalo          0.272
-SofteningDisk          2
+SofteningGas           0.0068   % 10 a * pc/h
+SofteningHalo          0.272    % 200 a * pc/h
+SofteningDisk          2        % some large number
 SofteningBulge         0
-SofteningStars         0.0272
+SofteningStars         0.0272   % 40 a * pc/h
 SofteningBndry         0
-SofteningGasMaxPhys    0.00068
-SofteningHaloMaxPhys   0.0272
-SofteningDiskMaxPhys   0.2
+SofteningGasMaxPhys    0.00068  % 1 pc/h
+SofteningHaloMaxPhys   0.0272   % 20 pc/h
+SofteningDiskMaxPhys   0.2      % some large number
 SofteningBulgeMaxPhys  0
-SofteningStarsMaxPhys  0.00272
+SofteningStarsMaxPhys  0.00272  % 4 pc/h
 SofteningBndryMaxPhys  0
 AGS_DesNumNgb          32
 
