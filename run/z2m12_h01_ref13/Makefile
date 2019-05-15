@@ -17,3 +17,9 @@ spcool_tables:
 
 TREECOOL: | gizmo_hg
 	ln -s gizmo_hg/cooling/TREECOOL $@
+
+.PHONY: recompile
+recompile:
+	cd gizmo_hg && make clean
+	rm GIZMO
+	make GIZMO
