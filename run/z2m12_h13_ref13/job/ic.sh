@@ -6,7 +6,7 @@
 #PBS -l nodes=1:ppn=32
 #PBS -l walltime=24:00:00
 #PBS -j oe
-#PBS -o ic.log
+#PBS -o job/ic.log
 #PBS -d .
 set -e
 spack env activate gizmo
