@@ -3,7 +3,7 @@
 from pathlib import Path
 import shutil
 
-from jinja2 import Template
+from jinja2 import Environment
 import toml
 
 from lib.path import ROOT
@@ -15,8 +15,9 @@ RUN_DIR = ROOT / 'run'
 
 
 def render_file(src, dst, params):
+    env = Environment(keep_trailing_newline=True)
+    template = env.from_string(src.read_text())
     dst.parent.mkdir(parents=True, exist_ok=True)
-    template = Template(src.read_text())
     dst.write_text(template.render(**params))
 
 
