@@ -14,8 +14,8 @@ RhoVir = 0  # Use critical density
 Dvir = -1  # Let AHF calculate virial overdensity using spherical top-hat collapse
 MaxGatherRad = 1.0  # > max Rvir = 0.766 Mpc/h
 LevelDomainDecomp = 6  # 86 / 2**6 = 1.34 Mpc = 0.91 Mpc/h
-NcpuReading = 4
+NcpuReading = 1
 
-[GADGET]
-GADGET_LUNIT = 1e-3
-GADGET_MUNIT = 1e10
+[GIZMO]
+GIZMO_LUNIT = 1e-3
+GIZMO_MUNIT = 1e10
