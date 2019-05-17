@@ -4,4 +4,8 @@ channels:
 dependencies:
   - python>=3.6
   - jinja2
+  - jupyterlab
+  - matplotlib
+  - numpy
+  - pandas
   - toml
