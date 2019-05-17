@@ -10,7 +10,10 @@ import lib.mplstyle
 CAND_FILE = 'data/halo/candidate.csv'
 MENV_FILE = 'data/halo/menv.csv'
 OUTPUT = 'data/halo/sample.csv'
-PLOT = 'asset/sample-selection.pdf'
+PLOTS = [
+    'asset/sample-selection.pdf',
+    'asset/sample-selection.png'
+]
 M_MAX = 10**12.2  # Msun
 M_MIN = 10**11.8  # Msun
 RANDOM_SEED_1 = 42
@@ -79,4 +82,5 @@ if __name__ == '__main__':
     plt.xlabel('$\log{M_{vir}/M_\odot}$')
     plt.ylabel('$\log{M(<1.8\,\mathrm{Mpc})/M_\odot}$')
     plt.legend()
-    plt.savefig(PLOT)
+    for plot in PLOTS:
+        plt.savefig(plot)
