@@ -2,10 +2,11 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python>=3.6
+  - cython
   - jinja2
-  - jupyterlab
   - matplotlib
   - numpy
   - pandas
+  - python>=3.6
   - toml
+  - yt
