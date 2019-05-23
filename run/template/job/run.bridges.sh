@@ -1,6 +1,5 @@
 #!/bin/bash
 # sbatch job/run.sh
-# https://www.psc.edu/bridges/user-guide/sample-batch-scripts#hybrid
 #SBATCH -J {{ halo_name }}-run
 #SBATCH -d singleton
 #SBATCH -p {{ job.run.queue }}
@@ -11,8 +10,12 @@
 #SBATCH -o job/run.log
 #SBATCH -D .
 set -e
+module list
 spack env activate gizmo
+spack env status
 set -x
+pwd
+date
 
 export I_MPI_JOB_RESPECT_PROCESS_PLACEMENT=0
 MPIRUN="mpirun -n $SLURM_NTASKS -ppn {{ job.run.mpi }} -genv OMP_NUM_THREADS={{ job.run.omp }} -genv I_MPI_PIN_DOMAIN=omp"
@@ -22,7 +25,6 @@ else
     RESTART_FLAG={{ 2 if gizmo.InitCondFile is defined }}
 fi
 
-pwd
-date
 eval "$MPIRUN" ./GIZMO gizmo_params.txt "$RESTART_FLAG"
+
 date
