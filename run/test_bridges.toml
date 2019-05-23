@@ -18,7 +18,7 @@ hour = 8
 [job.run]
 site = "bridges"
 queue = "RM"
-nodes = 32
+nodes = 16
 mpi = 14
 omp = 2
 hour = 48

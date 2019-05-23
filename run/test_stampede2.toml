@@ -18,7 +18,7 @@ hour = 8
 [job.run]
 site = "stampede2"
 queue = "skx-normal"
-nodes = 32
+nodes = 16
 mpi = 24
 omp = 2
 hour = 48

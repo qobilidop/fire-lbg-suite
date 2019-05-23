@@ -3,7 +3,7 @@
 #SBATCH -J h00-run
 #SBATCH -d singleton
 #SBATCH -p RM
-#SBATCH -N 32
+#SBATCH -N 16
 #SBATCH --ntasks-per-node=14
 #SBATCH --cpus-per-task=2
 #SBATCH -t 48:00:00
