@@ -51,9 +51,9 @@ OmegaBaryon            0.048
 HubbleParam            0.68
 
 %----- Memory allocation
-MaxMemSize       7000
-PartAllocFactor  1.5
-BufferSize       140
+MaxMemSize       8000
+PartAllocFactor  2
+BufferSize       160
 
 %---- Rebuild domains when >this fraction of particles active
 TreeDomainUpdateFrequency  0.005

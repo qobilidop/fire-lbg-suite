@@ -2,9 +2,9 @@
 # sbatch job/run.sh
 #SBATCH -J h02-run
 #SBATCH -d singleton
-#SBATCH -p skx-normal
-#SBATCH -N 128
-#SBATCH --ntasks-per-node=24
+#SBATCH -p RM
+#SBATCH -N 64
+#SBATCH --ntasks-per-node=14
 #SBATCH --cpus-per-task=2
 #SBATCH -t 48:00:00
 #SBATCH -o job/run.log
@@ -17,8 +17,8 @@ set -x
 pwd
 date
 
-export OMP_NUM_THREADS=2
-MPIRUN="ibrun"
+export I_MPI_JOB_RESPECT_PROCESS_PLACEMENT=0
+MPIRUN="mpirun -n $SLURM_NTASKS -ppn 14 -genv OMP_NUM_THREADS=2 -genv I_MPI_PIN_DOMAIN=omp"
 if [[ -d output/restartfiles ]]; then
     RESTART_FLAG=1
 else

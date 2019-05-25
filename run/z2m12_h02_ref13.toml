@@ -4,9 +4,9 @@ zoom_region = "h02-box-rad4"
 [gizmo]
 InitCondFile = "output/snapdir_027/snapshot_027"
 TimeLimitCPU = 200000
-MaxMemSize = 7000
-PartAllocFactor = 1.5
-BufferSize = 140
+MaxMemSize = 8000
+PartAllocFactor = 2
+BufferSize = 160
 
 [job]
 
@@ -17,9 +17,9 @@ omp = 16
 hour = 8
 
 [job.run]
-site = "stampede2"
-queue = "skx-normal"
-nodes = 128
-mpi = 24
+site = "bridges"
+queue = "RM"
+nodes = 64
+mpi = 14
 omp = 2
 hour = 48
