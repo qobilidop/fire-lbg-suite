@@ -14,7 +14,7 @@ We are selecting our sample halos from the existing FIRE dark-matter-only box ru
 
 Run AHF on the box snapshot at redshift 2:
 ```console
-$ qsub job/box-ahf.sh
+$ qsub job/box-ahf.sh  # takes ~ 0.5h
 $ ls box/ahf/*.AHF_halos  # to check the output
 ```
 
@@ -32,7 +32,7 @@ $ head data/halo/candidate.csv  # to check the output
 
 Measure local environment density for these candidate halos:
 ```console
-$ qsub job/menv.sh
+$ qsub job/menv.sh  # takes ~ 3h
 $ head data/halo/candidate.csv  # to check the output
 $ rm data/halo/menv-*  # to clear cache files
 ```
@@ -47,6 +47,6 @@ $ cat data/halo/sample.csv  # to check the output
 ### Zoom IC Preparation
 
 ```console
-$ ./job/ic-prep-submit-all.sh
+$ ./job/ic-prep-submit-all.sh  # each job takes ~ 1h
 $ ls data/zoom-region  # to check the output
 ```

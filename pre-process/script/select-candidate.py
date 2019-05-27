@@ -69,6 +69,7 @@ for i, row in hc.iterrows():
 hc = hc[hc['Mvir'] < M_MAX]
 
 # Save candidate table
+CAND.parent.mkdir(parents=True, exist_ok=True)
 hc.sort_values(by='Mvir', ascending=False, inplace=True)
 hc.reset_index(drop=True, inplace=True)
 hc.to_csv(CAND, index=False)
