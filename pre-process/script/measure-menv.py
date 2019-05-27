@@ -24,7 +24,7 @@ yt.enable_parallelism()
 ds = yt.load(str(SNAP))
 hc = pd.read_csv(CAND)
 if yt.is_root():
-    print(len(hc), 'halos in measure')
+    print(len(hc), 'halos to measure')
 
 # Measure local environment density
 storage = {}
