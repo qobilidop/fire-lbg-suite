@@ -23,18 +23,20 @@ yt.enable_parallelism()
 # Load data
 ds = yt.load(str(SNAP))
 hc = pd.read_csv(CAND)
+if yt.is_root():
+    print(len(hc), 'halos in measure')
 
 # Measure local environment density
 storage = {}
-for sto, row in yt.parallel_objects(
-        list(hc.itertuples()), storage=storage, dynamic=True
+for sto, (index, row) in yt.parallel_objects(
+        list(hc.to_dict(orient='index').items()), storage=storage, dynamic=True
     ):
-    center = ds.arr([row.Xc, row.Yc, row.Zc], 'kpccm/h')
+    center = ds.arr([row['Xc'], row['Yc'], row['Zc']], 'kpccm/h')
     sp = ds.sphere(center, (R_ENV, 'Mpc'))
     m_env = sp['all', 'particle_mass'].sum().to_value('Msun')
-    sto.result_id = row.Index
+    sto.result_id = index
     sto.result = m_env
-    print(index, 'of', len(hc))
+    print(index)
 
 # Update candidate table
 if yt.is_root():

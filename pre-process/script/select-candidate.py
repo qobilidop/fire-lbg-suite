@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 """Select candidate halos from AHF halo catalogue."""
+from pathlib import Path
+
 import pandas as pd
 from scipy.spatial import cKDTree
 
 
 BASE_DIR = Path(__file__).parents[1].resolve()
-AHF_HALOS = BASE_DIR / 'data/box/ahf/snapshot_005.AHF_halos'
+AHF_HALOS = BASE_DIR / 'box/ahf/snapshot_005.AHF_halos'
 CAND = BASE_DIR / 'data/halo/candidate.csv'
 BOX_SIZE = 58480  # kpc/h
 HUBBLE_CONSTANT = 0.68

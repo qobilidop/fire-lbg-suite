@@ -8,14 +8,20 @@ The scripts and jobs are supposed to work on TSCC.
 
 ### Box Run
 
-We are selecting our sample halos from the existing FIRE dark-matter-only box run L86 stored at `GalaxiesOnFIRE/boxes/L86`. Link `box/initial_condition` to `L86/initial_condition` and `box/output` to `L86/output` to make the IC and snapshots available for further processing.
+We are selecting our sample halos from the existing FIRE dark-matter-only box run L86 stored at `GalaxiesOnFIRE/boxes/L86`. Link `box/output` to `L86/output` to make the snapshots available for further processing.
 
 ### Sample Selection
 
 Run AHF on the box snapshot at redshift 2:
 ```console
 $ qsub job/box-ahf.sh
-$ ls box/ahf  # to check the output
+$ ls box/ahf/*.AHF_halos  # to check the output
+```
+
+AHF is run in MPI mode, with output files split into several parts. We need to combine them into a single file before moving on.
+```
+$ cat box/ahf/*.AHF_halos > box/ahf/snapshot_005.AHF_halos
+$ head box/ahf/snapshot_005.AHF_halos  # to check the output
 ```
 
 Select candidate halos from the produced AHF halo catalog:
