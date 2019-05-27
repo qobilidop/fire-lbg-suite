@@ -61,5 +61,7 @@ vertices = np.remainder(vertices + center - 0.5, 1.)
 print('Saving zoom region file')
 ZOOM_REGION_DIR.mkdir(parents=True, exist_ok=True)
 zoom_region_file = ZOOM_REGION_DIR / f'{halo_name}-box-rad{R_ZOOM}.txt'
-vertices.sort(axis=0)
+vertices = [tuple(v) for v in vertices]
+vertices = np.array(vertices, dtype=[(axis, float) for axis in 'xyz'])
+vertices.sort(order=['x', 'y', 'z'])
 np.savetxt(zoom_region_file, vertices, fmt='%.8f')
