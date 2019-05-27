@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #PBS -N menv
 #PBS -q condo
-#PBS -l nodes=8:ppn=16:ib
+#PBS -l nodes=16:ppn=16:ib
 #PBS -l walltime=8:00:00
 #PBS -j oe
 #PBS -o job/menv.log

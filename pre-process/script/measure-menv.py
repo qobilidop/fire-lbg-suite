@@ -6,6 +6,7 @@ https://yt-project.org/doc/analyzing/parallel_computation.html#parallelizing-ove
 
 """
 from pathlib import Path
+import struct
 
 import pandas as pd
 import yt
@@ -22,6 +23,7 @@ yt.enable_parallelism()
 
 # Load data
 ds = yt.load(str(SNAP))
+ds.index
 hc = pd.read_csv(CAND)
 if yt.is_root():
     print(len(hc), 'halos to measure')
@@ -31,12 +33,19 @@ storage = {}
 for sto, (index, row) in yt.parallel_objects(
         list(hc.to_dict(orient='index').items()), storage=storage, dynamic=True
     ):
-    center = ds.arr([row['Xc'], row['Yc'], row['Zc']], 'kpccm/h')
-    sp = ds.sphere(center, (R_ENV, 'Mpc'))
-    m_env = sp['all', 'particle_mass'].sum().to_value('Msun')
+    cache = BASE_DIR / f'data/halo/menv-{index}'
+    if cache.exists():
+        m_env = struct.unpack('d', cache.read_bytes())[0]
+        print(index, 'from cache')
+    else:
+        print(index, 'begin')
+        center = ds.arr([row['Xc'], row['Yc'], row['Zc']], 'kpccm/h')
+        sp = ds.sphere(center, (R_ENV, 'Mpc'))
+        m_env = sp['all', 'particle_mass'].sum().to_value('Msun')
+        cache.write_bytes(struct.pack('d', m_env))
+        print(index, 'end')
     sto.result_id = index
     sto.result = m_env
-    print(index)
 
 # Update candidate table
 if yt.is_root():

@@ -34,6 +34,7 @@ Measure local environment density for these candidate halos:
 ```console
 $ qsub job/menv.sh
 $ head data/halo/candidate.csv  # to check the output
+$ rm data/halo/menv-*  # to clear cache files
 ```
 Note that this job adds a column `Menv` to the existing `candidate.csv` table.
 
