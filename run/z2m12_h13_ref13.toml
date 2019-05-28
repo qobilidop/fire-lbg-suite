@@ -10,10 +10,10 @@ BufferSize = 140
 [job]
 
 [job.ic]
-site = "tscc"
-queue = "pdafm"
-omp = 32
-hour = 24
+site = "bridges"
+queue = "RM-small"
+omp = 28
+hour = 8
 
 [job.run]
 site = "stampede2"

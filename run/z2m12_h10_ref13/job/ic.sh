@@ -1,6 +1,4 @@
 #!/bin/bash
-# sbatch job/ic.sh
-# https://www.psc.edu/bridges/user-guide/sample-batch-scripts#openmp
 #SBATCH -J h10-ic
 #SBATCH -p RM-small
 #SBATCH -N 1
@@ -9,13 +7,17 @@
 #SBATCH -o job/ic.log
 #SBATCH -D .
 set -e
-spack env activate gizmo
+module list
+eval "$ENV_ACTIVATE"
 set -x
-
-export OMP_NUM_THREADS=28
-
 cd ic
 pwd
 date
+date_start="$(date)"
+
+export OMP_NUM_THREADS=28
+
 MUSIC music.conf
+
+echo "$date_start"
 date

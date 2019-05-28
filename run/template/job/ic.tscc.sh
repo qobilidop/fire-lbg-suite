@@ -1,6 +1,4 @@
 #!/bin/bash
-# qsub job/ic.sh
-# https://www.sdsc.edu/support/user_guides/tscc.html
 #PBS -N {{ halo_name }}-ic
 #PBS -q {{ job.ic.queue }}
 #PBS -l nodes=1:ppn={{ job.ic.omp }}
@@ -9,13 +7,17 @@
 #PBS -o job/ic.log
 #PBS -d .
 set -e
-spack env activate gizmo
+module list
+eval "$ENV_ACTIVATE"
 set -x
-
-export OMP_NUM_THREADS={{ job.ic.omp }}
-
 cd ic
 pwd
 date
+date_start="$(date)"
+
+export OMP_NUM_THREADS={{ job.ic.omp }}
+
 MUSIC music.conf
+
+echo "$date_start"
 date

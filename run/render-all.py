@@ -6,12 +6,9 @@ import shutil
 from jinja2 import Environment
 import toml
 
-from lib.path import ROOT
-
 
 THIS_DIR = Path(__file__).parent.resolve()
 TMPL_DIR = THIS_DIR / 'template'
-RUN_DIR = ROOT / 'run'
 
 
 def render_file(src, dst, params):
@@ -47,11 +44,11 @@ def render_run(config_file, run_dir):
 
     # Copy zoom region file
     shutil.copyfile(
-        ROOT / 'data/zoom-region' / (params['zoom_region'] + '.txt'),
+        THIS_DIR / 'data/zoom-region' / (params['zoom_region'] + '.txt'),
         run_dir / 'ic/zoom_region.txt'
     )
 
 
 if __name__ == '__main__':
     for config_file in THIS_DIR.glob('*.toml'):
-        render_run(config_file, RUN_DIR / config_file.stem)
+        render_run(config_file, THIS_DIR / config_file.stem)

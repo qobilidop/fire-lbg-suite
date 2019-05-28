@@ -11,11 +11,11 @@
 #SBATCH -D .
 set -e
 module list
-spack env activate gizmo
-spack env status
+eval "$ENV_ACTIVATE"
 set -x
 pwd
 date
+date_start="$(date)"
 
 export OMP_NUM_THREADS=2
 MPIRUN="ibrun"
@@ -27,4 +27,5 @@ fi
 
 eval "$MPIRUN" ./GIZMO gizmo_params.txt "$RESTART_FLAG"
 
+echo "$date_start"
 date

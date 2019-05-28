@@ -1,5 +1,4 @@
 #!/bin/bash
-# sbatch job/run.sh
 #SBATCH -J h02-run
 #SBATCH -d singleton
 #SBATCH -p RM
@@ -11,11 +10,11 @@
 #SBATCH -D .
 set -e
 module list
-spack env activate gizmo
-spack env status
+eval "$ENV_ACTIVATE"
 set -x
 pwd
 date
+date_start="$(date)"
 
 export I_MPI_JOB_RESPECT_PROCESS_PLACEMENT=0
 MPIRUN="mpirun -n $SLURM_NTASKS -ppn 14 -genv OMP_NUM_THREADS=2 -genv I_MPI_PIN_DOMAIN=omp"
@@ -27,4 +26,5 @@ fi
 
 eval "$MPIRUN" ./GIZMO gizmo_params.txt "$RESTART_FLAG"
 
+echo "$date_start"
 date

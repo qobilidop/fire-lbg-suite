@@ -1,21 +1,23 @@
 #!/bin/bash
-# qsub job/ic.sh
-# https://www.sdsc.edu/support/user_guides/tscc.html
-#PBS -N h02-ic
-#PBS -q pdafm
-#PBS -l nodes=1:ppn=16
-#PBS -l walltime=8:00:00
-#PBS -j oe
-#PBS -o job/ic.log
-#PBS -d .
+#SBATCH -J h02-ic
+#SBATCH -p RM-small
+#SBATCH -N 1
+#SBATCH --ntasks-per-node=28
+#SBATCH -t 8:00:00
+#SBATCH -o job/ic.log
+#SBATCH -D .
 set -e
-spack env activate gizmo
+module list
+eval "$ENV_ACTIVATE"
 set -x
-
-export OMP_NUM_THREADS=16
-
 cd ic
 pwd
 date
+date_start="$(date)"
+
+export OMP_NUM_THREADS=28
+
 MUSIC music.conf
+
+echo "$date_start"
 date

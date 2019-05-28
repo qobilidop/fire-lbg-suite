@@ -11,9 +11,9 @@ BufferSize = 160
 [job]
 
 [job.ic]
-site = "tscc"
-queue = "pdafm"
-omp = 16
+site = "bridges"
+queue = "RM-small"
+omp = 28
 hour = 8
 
 [job.run]
