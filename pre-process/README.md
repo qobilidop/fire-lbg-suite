@@ -8,11 +8,11 @@ The scripts and jobs are supposed to work on TSCC.
 
 ### Box Run
 
-We are selecting our sample halos from the existing FIRE dark-matter-only box run L86 stored at `GalaxiesOnFIRE/boxes/L86`. Link `box/output` to `L86/output` to make the snapshots available for further processing.
+We are selecting our sample halos from the existing FIRE dark-matter-only box run L86 stored at `GalaxiesOnFIRE/boxes/L86`. Link `box/output` to `L86/output`, which should include `snapdir_000` (z = 99) and `snapdir_005` (z = 2) at the least, to make the snapshots available for further processing.
 
 ### Sample Selection
 
-Run AHF on the box snapshot at redshift 2:
+Run AHF on the box snapshot at z = 2:
 ```console
 $ qsub job/box-ahf.sh  # takes ~ 0.5h
 $ ls box/ahf/*.AHF_halos  # to check the output
@@ -32,7 +32,7 @@ $ head data/halo/candidate.csv  # to check the output
 
 Measure local environment density for these candidate halos:
 ```console
-$ qsub job/menv.sh  # takes ~ 3h
+$ qsub job/menv.sh  # takes ~ 2.5h
 $ head data/halo/candidate.csv  # to check the output
 $ rm data/halo/menv-*  # to clear cache files
 ```
