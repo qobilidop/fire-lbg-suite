@@ -35,12 +35,13 @@ sample = hc.groupby(['i', 'j']).apply(
     lambda df: df.sample(random_state=RANDOM_SEED_1)
 )
 
-# Reroll the dice for h12 and h13, which are too massive to finish
-# realistically with the computing resources available
+# Reroll the dice for h02, h12 and h13
+# h02 was on the edge of the box, which is causing a lot of trouble I suspect.
+# h12 and h13 were too massive to finish realistically.
 sample_again = hc.groupby(['i', 'j']).apply(
     lambda df: df.sample(random_state=RANDOM_SEED_2)
 )
-for i in [6, 7]:
+for i in [2, 6, 7]:
     sample.iloc[i] = sample_again.iloc[i]
 
 # Name the halos
