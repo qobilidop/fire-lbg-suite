@@ -1,0 +1,15 @@
+# This file is for GitHub to recognize dependencies
+
+# conda
+cython
+jinja2
+matplotlib
+numpy
+pandas
+python
+toml
+yt
+
+# extra
+jupyterlab
+mpi4py

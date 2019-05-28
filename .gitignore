@@ -1,9 +1,3 @@
 **/job/*.log
+asset/
 cache/
-env/
-
-# Python
-# https://github.com/github/gitignore/blob/master/Python.gitignore
-__pycache__/
-*.egg-info/
-.ipynb_checkpoints

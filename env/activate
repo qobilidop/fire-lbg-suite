@@ -1,0 +1,9 @@
+echo "Activate conda env"
+conda activate fire-lbg-suite
+conda env list
+
+echo "Activate spack env"
+spack env activate gizmo
+spack env status
+
+export ENV_ACTIVATE="conda activate fire-lbg-suite && spack env activate gizmo"

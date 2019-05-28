@@ -1,6 +1,6 @@
+name: fire-lbg-suite
 channels:
   - conda-forge
-  - defaults
 dependencies:
   - cython
   - jinja2
