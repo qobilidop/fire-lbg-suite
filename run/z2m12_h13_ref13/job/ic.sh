@@ -1,9 +1,9 @@
 #!/bin/bash
 #SBATCH -J h13-ic
-#SBATCH -p RM
+#SBATCH -p RM-small
 #SBATCH -N 1
 #SBATCH --ntasks-per-node=28
-#SBATCH -t 48:00:00
+#SBATCH -t 8:00:00
 #SBATCH -o job/ic.log
 #SBATCH -D .
 set -e

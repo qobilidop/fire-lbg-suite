@@ -11,9 +11,9 @@ BufferSize = 140
 
 [job.ic]
 site = "bridges"
-queue = "RM"
+queue = "RM-small"
 omp = 28
-hour = 48
+hour = 8
 
 [job.run]
 site = "stampede2"
