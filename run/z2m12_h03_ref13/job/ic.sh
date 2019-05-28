@@ -1,11 +1,11 @@
 #!/bin/bash
-#SBATCH -J h03-ic
-#SBATCH -p RM-small
-#SBATCH -N 1
-#SBATCH --ntasks-per-node=28
-#SBATCH -t 8:00:00
-#SBATCH -o job/ic.log
-#SBATCH -D .
+#PBS -N h03-ic
+#PBS -q condo
+#PBS -l nodes=1:ppn=16
+#PBS -l walltime=8:00:00
+#PBS -j oe
+#PBS -o job/ic.log
+#PBS -d .
 set -e
 module list
 eval "$ENV_ACTIVATE"
@@ -15,7 +15,7 @@ pwd
 date
 date_start="$(date)"
 
-export OMP_NUM_THREADS=28
+export OMP_NUM_THREADS=16
 
 MUSIC music.conf
 

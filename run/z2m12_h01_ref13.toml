@@ -10,9 +10,9 @@ BufferSize = 140
 [job]
 
 [job.ic]
-site = "bridges"
-queue = "RM-small"
-omp = 28
+site = "tscc"
+queue = "condo"
+omp = 16
 hour = 8
 
 [job.run]
