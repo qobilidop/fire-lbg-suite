@@ -1,9 +1,9 @@
 #!/bin/bash
-#SBATCH -J h00-ic
-#SBATCH -p skx-dev
+#SBATCH -J {{ halo_name }}-ic
+#SBATCH -p {{ job.ic.queue }}
 #SBATCH -N 1
-#SBATCH --ntasks-per-node=48
-#SBATCH -t 2:00:00
+#SBATCH --ntasks-per-node={{ job.ic.omp }}
+#SBATCH -t {{ job.ic.hour }}:00:00
 #SBATCH -o job/ic.log
 #SBATCH -D .
 set -e
@@ -15,7 +15,7 @@ pwd
 date
 date_start="$(date)"
 
-export OMP_NUM_THREADS=48
+export OMP_NUM_THREADS={{ job.ic.omp }}
 
 MUSIC music.conf
 

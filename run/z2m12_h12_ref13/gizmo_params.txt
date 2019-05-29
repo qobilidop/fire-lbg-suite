@@ -13,7 +13,7 @@ RestartFile                restart
 SnapshotFileBase           snapshot
 OutputListOn               1
 OutputListFilename         output_times.txt
-NumFilesPerSnapshot        4
+NumFilesPerSnapshot        8
 NumFilesWrittenInParallel  16
 
 %---- Output frequency

@@ -1,4 +1,5 @@
 ic/*.bin
+ic/input_powerspec.txt
 ic/snapshot
 job/*.log
 gizmo_hg/

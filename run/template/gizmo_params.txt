@@ -13,7 +13,7 @@ RestartFile                restart
 SnapshotFileBase           snapshot
 OutputListOn               1
 OutputListFilename         output_times.txt
-NumFilesPerSnapshot        4
+NumFilesPerSnapshot        {{ gizmo.NumFilesPerSnapshot|default(4) }}
 NumFilesWrittenInParallel  16
 
 %---- Output frequency

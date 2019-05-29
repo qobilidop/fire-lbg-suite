@@ -2,6 +2,7 @@ halo_name = "h12"
 zoom_region = "h12-box-rad4"
 
 [gizmo]
+NumFilesPerSnapshot = 8
 TimeLimitCPU = 200000
 MaxMemSize = 7000
 PartAllocFactor = 2

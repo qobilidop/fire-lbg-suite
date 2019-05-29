@@ -1,5 +1,4 @@
 #!/bin/bash
-# sbatch job/run.sh
 #SBATCH -J {{ halo_name }}-run
 #SBATCH -d singleton
 #SBATCH -p {{ job.run.queue }}

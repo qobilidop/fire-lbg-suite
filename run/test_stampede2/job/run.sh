@@ -1,5 +1,4 @@
 #!/bin/bash
-# sbatch job/run.sh
 #SBATCH -J h00-run
 #SBATCH -d singleton
 #SBATCH -p skx-normal
