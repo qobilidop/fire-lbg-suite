@@ -1,0 +1,815 @@
+14:50:04 | info    | Opening log file 'music.conf_log.txt'.
+14:50:04 | info    | Running music!, version 1.53
+14:50:04 | info    | Log is for run started Tue May 28 14:50:04 2019 
+14:50:04 | info    | Code was compiled using FFTW version 3.x
+14:50:04 | info    | Code was compiled for multi-threaded FFTW
+14:50:04 | info    | Running with a maximum of 16 OpenMP threads
+14:50:04 | info    | Code was compiled for double precision.
+14:50:04 | info    | Using k-space sampled transfer functions...
+14:50:04 | info    | Selecting transfer function plug-in  : eisenstein
+14:50:04 | info    | Selecting region generator plug-in  : convex_hull
+14:50:04 | info    | region point file appears to contain 3 columns
+14:50:04 | info    | Region center from convex hull centroid determined at 	 (0.375093,0.901236,0.615610)
+14:50:04 | info    | Selecting random number generator plug-in  : MUSIC
+14:50:04 | info    | refinement region is 'convex_hull', w/ bounding box         left = [0.338045,0.846443,0.586696]        right = [0.407506,0.946503,0.656605]
+14:50:04 | info    | Grid structure for Poisson solver:
+14:50:04 | info    |    Domain shifted by      (   16,  -50,  -15)
+14:50:04 | info    |    Level   7 :   offset = (    0,    0,    0)
+14:50:04 | info    |                    size = (  128,  128,  128)
+14:50:04 | info    |    Level   8 :   offset = (   50,   49,   51)
+14:50:04 | info    |                    size = (   54,   62,   54)
+14:50:04 | info    |    Level   9 :   offset = (   10,   10,    9)
+14:50:04 | info    |                    size = (   70,   86,   72)
+14:50:04 | info    |    Level  10 :   offset = (    9,    9,   10)
+14:50:04 | info    |                    size = (  104,  136,  104)
+14:50:04 | info    |    Level  11 :   offset = (    9,   10,   10)
+14:50:04 | info    |                    size = (  170,  232,  170)
+14:50:04 | info    |    Level  12 :   offset = (    9,    9,    9)
+14:50:04 | info    |                    size = (  304,  428,  304)
+14:50:04 | info    |    Level  13 :   offset = (   10,    9,    9)
+14:50:04 | info    |                    size = (  570,  820,  572)
+14:50:04 | info    | Grid structure for density convolution:
+14:50:04 | info    |    Domain shifted by      (   16,  -50,  -15)
+14:50:04 | info    |    Level   9 :   offset = (    0,    0,    0)
+14:50:04 | info    |                    size = (  512,  512,  512)
+14:50:04 | info    |    Level  10 :   offset = (  219,  223,  222)
+14:50:04 | info    |                    size = (  144,  144,  144)
+14:50:04 | info    |    Level  11 :   offset = (   12,   12,   13)
+14:50:04 | info    |                    size = (  240,  240,  240)
+14:50:04 | info    |    Level  12 :   offset = (   10,   11,   10)
+14:50:04 | info    |                    size = (  436,  436,  436)
+14:50:04 | info    |    Level  13 :   offset = (   12,   11,   11)
+14:50:04 | info    |                    size = (  828,  828,  828)
+14:50:04 | info    | Computing white noise...
+14:50:04 | info    | Found 0 density constraint(s) to be obeyed.
+14:50:04 | info    | Generating random numbers (2) with seed 1123
+14:50:04 | info    | Generating random numbers w/ sample cube size of 128
+14:50:04 | info    | Generating random numbers w/ sample cube size of 256
+14:50:05 | info    | Generating a constrained random number set with seed 1235     using coarse mode replacement...
+14:50:05 | info    | Generating random numbers w/ sample cube size of 256
+14:50:08 | info    | Generating a constrained random number set with seed 2358     using coarse mode replacement...
+14:50:10 | info    | Storing white noise field in file 'wnoise_0009.bin'...
+14:50:11 | info    | Generating random numbers w/ sample cube size of 256
+14:50:18 | info    | Generating a constrained random number set with seed 35813     using coarse mode replacement...
+14:50:19 | info    | Storing white noise field in file 'wnoise_0010.bin'...
+14:50:19 | info    | Generating random numbers w/ sample cube size of 256
+14:50:26 | info    | Generating a constrained random number set with seed 581321     using coarse mode replacement...
+14:50:28 | info    | Storing white noise field in file 'wnoise_0011.bin'...
+14:50:29 | info    | Generating random numbers w/ sample cube size of 256
+14:50:46 | info    | Generating a constrained random number set with seed 8132134     using coarse mode replacement...
+14:51:16 | info    | Storing white noise field in file 'wnoise_0012.bin'...
+14:51:31 | info    | Generating random numbers w/ sample cube size of 256
+14:52:19 | info    | Generating a constrained random number set with seed 13213455     using coarse mode replacement...
+14:55:09 | info    | Storing white noise field in file 'wnoise_0013.bin'...
+14:56:11 | info    | Entering 2LPT branch
+14:56:11 | info    | Computing velocities...
+14:56:11 | info    | Using k-space transfer function kernel.
+14:56:11 | info    | Performing noise convolution on level   9
+14:56:11 | info    | Loading white noise from file 'wnoise_0009.bin'...
+14:56:17 | info    | Performing kernel convolution on (  512,  512,  512) grid
+14:56:17 | info    | Performing forward FFT...
+14:56:18 | info    | Performing backward FFT...
+14:56:20 | info    | Performing noise convolution on level  10...
+14:56:20 | info    | Allocating refinement patch
+14:56:20 | info    |    offset=(  219,  223,  222)
+14:56:20 | info    |    size  =(  144,  144,  144)
+14:56:20 | info    | Loading white noise from file 'wnoise_0010.bin'...
+14:56:20 | info    | Performing kernel convolution on (  288,  288,  288) grid
+14:56:20 | info    | Performing forward FFT...
+14:56:20 | info    | Performing backward FFT...
+14:56:21 | info    | FFT interpolate: offset=183,187,186 size=288,288,288
+14:56:21 | info    | Performing noise convolution on level  11...
+14:56:21 | info    | Allocating refinement patch
+14:56:21 | info    |    offset=(   12,   12,   13)
+14:56:21 | info    |    size  =(  240,  240,  240)
+14:56:22 | info    | Loading white noise from file 'wnoise_0011.bin'...
+14:56:23 | info    | Performing kernel convolution on (  480,  480,  480) grid
+14:56:23 | info    | Performing forward FFT...
+14:56:25 | info    | Performing backward FFT...
+14:56:25 | info    | FFT interpolate: offset=24,24,25 size=480,480,480
+14:56:27 | info    | Performing noise convolution on level  12...
+14:56:27 | info    | Allocating refinement patch
+14:56:27 | info    |    offset=(   10,   11,   10)
+14:56:27 | info    |    size  =(  436,  436,  436)
+14:56:28 | info    | Loading white noise from file 'wnoise_0012.bin'...
+14:56:38 | info    | Performing kernel convolution on (  872,  872,  872) grid
+14:56:38 | info    | Performing forward FFT...
+14:56:53 | info    | Performing backward FFT...
+14:57:03 | info    | FFT interpolate: offset=21,22,21 size=872,872,872
+14:57:28 | info    | Performing noise convolution on level  13...
+14:57:28 | info    | Allocating refinement patch
+14:57:28 | info    |    offset=(   12,   11,   11)
+14:57:28 | info    |    size  =(  828,  828,  828)
+14:57:40 | info    | Loading white noise from file 'wnoise_0013.bin'...
+14:58:06 | info    | Performing kernel convolution on ( 1656, 1656, 1656) grid
+14:58:06 | info    | Performing forward FFT...
+14:59:30 | info    | Performing backward FFT...
+15:00:17 | info    | FFT interpolate: offset=23,22,22 size=1656,1656,1656
+15:02:10 | info    | Finished computing the density field in 359.619015s
+15:02:39 | info    | Grid mean density is 0. Correcting...
+15:02:41 | info    | Initializing multi-grid Poisson solver...
+15:02:41 | info    | Selected Gauss-Seidel multigrid smoother
+15:02:41 | info    | Running multigrid solver with 6th order Laplacian..
+15:02:41 | info    | Performing multi-grid V-cycle...
+15:02:52 | debug   | [mg]      level   7,  residual 7.45666e-09,  rel. error 0.0125906
+15:02:52 | debug   | [mg]      level   8,  residual 6.13743e-09,  rel. error 0.0140175
+15:02:52 | debug   | [mg]      level   9,  residual 2.04865e-09,  rel. error 0.00607054
+15:02:52 | debug   | [mg]      level  10,  residual 6.5111e-10,  rel. error 0.00121436
+15:02:52 | debug   | [mg]      level  11,  residual 2.19875e-10,  rel. error 0.000248259
+15:02:52 | debug   | [mg]      level  12,  residual 7.39285e-11,  rel. error 4.67048e-05
+15:02:54 | debug   | [mg]      level  13,  residual 2.63845e-11,  rel. error 8.63643e-06
+15:02:54 | info    | Performing multi-grid V-cycle...
+15:03:06 | debug   | [mg]      level   7,  residual 5.09231e-10,  rel. error 0.000583597
+15:03:06 | debug   | [mg]      level   8,  residual 6.25831e-10,  rel. error 0.0014881
+15:03:06 | debug   | [mg]      level   9,  residual 1.95014e-10,  rel. error 0.000877668
+15:03:06 | debug   | [mg]      level  10,  residual 8.27001e-11,  rel. error 0.000175225
+15:03:06 | debug   | [mg]      level  11,  residual 2.37556e-11,  rel. error 3.60381e-05
+15:03:06 | debug   | [mg]      level  12,  residual 8.45711e-12,  rel. error 4.47351e-06
+15:03:08 | debug   | [mg]      level  13,  residual 2.66493e-12,  rel. error 8.0676e-07
+15:03:08 | info    | Performing multi-grid V-cycle...
+15:03:19 | debug   | [mg]      level   7,  residual 3.92082e-11,  rel. error 6.09027e-05
+15:03:19 | debug   | [mg]      level   8,  residual 4.94272e-11,  rel. error 0.000151776
+15:03:19 | debug   | [mg]      level   9,  residual 1.76623e-11,  rel. error 5.9022e-05
+15:03:19 | debug   | [mg]      level  10,  residual 6.69571e-12,  rel. error 1.9737e-05
+15:03:19 | debug   | [mg]      level  11,  residual 1.93657e-12,  rel. error 4.41441e-06
+15:03:20 | debug   | [mg]      level  12,  residual 6.21797e-13,  rel. error 5.67468e-07
+15:03:22 | debug   | [mg]      level  13,  residual 1.80563e-13,  rel. error 5.97336e-08
+15:03:22 | info    | Performing multi-grid V-cycle...
+15:03:33 | debug   | [mg]      level   7,  residual 3.36715e-12,  rel. error 1.20448e-05
+15:03:33 | debug   | [mg]      level   8,  residual 4.64867e-12,  rel. error 1.55814e-05
+15:03:33 | debug   | [mg]      level   9,  residual 1.58803e-12,  rel. error 5.66548e-06
+15:03:33 | debug   | [mg]      level  10,  residual 5.57104e-13,  rel. error 1.61753e-06
+15:03:34 | debug   | [mg]      level  11,  residual 1.6693e-13,  rel. error 2.43873e-07
+15:03:34 | debug   | [mg]      level  12,  residual 4.94809e-14,  rel. error 3.39529e-08
+15:03:36 | debug   | [mg]      level  13,  residual 1.31889e-14,  rel. error 4.83583e-09
+15:03:36 | info    | Performing multi-grid V-cycle...
+15:03:48 | debug   | [mg]      level   7,  residual 3.1746e-13,  rel. error 5.31282e-07
+15:03:48 | debug   | [mg]      level   8,  residual 3.94075e-13,  rel. error 7.54538e-07
+15:03:48 | debug   | [mg]      level   9,  residual 1.39776e-13,  rel. error 8.4673e-07
+15:03:48 | debug   | [mg]      level  10,  residual 4.48126e-14,  rel. error 1.59027e-07
+15:03:48 | debug   | [mg]      level  11,  residual 1.35758e-14,  rel. error 2.08814e-08
+15:03:48 | debug   | [mg]      level  12,  residual 3.78842e-15,  rel. error 2.67065e-09
+15:03:50 | debug   | [mg]      level  13,  residual 9.11705e-16,  rel. error 3.66891e-10
+15:03:50 | info    | Poisson solver converged to max. error of 8.4673e-07 in 5 steps.
+15:03:52 | info    | Computing 2LPT term....
+15:04:05 | info    | Solving 2LPT Poisson equation
+15:04:07 | info    | Initializing multi-grid Poisson solver...
+15:04:07 | info    | Selected Gauss-Seidel multigrid smoother
+15:04:07 | info    | Running multigrid solver with 6th order Laplacian..
+15:04:07 | info    | Performing multi-grid V-cycle...
+15:04:23 | debug   | [mg]      level   7,  residual 8.65821e-11,  rel. error 0.0555927
+15:04:23 | debug   | [mg]      level   8,  residual 8.1569e-11,  rel. error 0.0347208
+15:04:23 | debug   | [mg]      level   9,  residual 2.52122e-11,  rel. error 0.00171105
+15:04:23 | debug   | [mg]      level  10,  residual 8.20508e-12,  rel. error 0.000362175
+15:04:23 | debug   | [mg]      level  11,  residual 2.52389e-12,  rel. error 0.000104655
+15:04:23 | debug   | [mg]      level  12,  residual 1.00138e-12,  rel. error 3.34804e-05
+15:04:26 | debug   | [mg]      level  13,  residual 3.54759e-13,  rel. error 1.11578e-05
+15:04:26 | info    | Performing multi-grid V-cycle...
+15:04:42 | debug   | [mg]      level   7,  residual 9.63035e-12,  rel. error 0.00781997
+15:04:42 | debug   | [mg]      level   8,  residual 1.17983e-11,  rel. error 0.00203026
+15:04:42 | debug   | [mg]      level   9,  residual 4.341e-12,  rel. error 0.000179868
+15:04:42 | debug   | [mg]      level  10,  residual 1.60956e-12,  rel. error 3.49037e-05
+15:04:42 | debug   | [mg]      level  11,  residual 2.02877e-13,  rel. error 9.60421e-06
+15:04:42 | debug   | [mg]      level  12,  residual 7.82564e-14,  rel. error 2.81503e-06
+15:04:45 | debug   | [mg]      level  13,  residual 2.5157e-14,  rel. error 8.37922e-07
+15:04:45 | info    | Performing multi-grid V-cycle...
+15:05:01 | debug   | [mg]      level   7,  residual 2.73928e-13,  rel. error 0.000166113
+15:05:01 | debug   | [mg]      level   8,  residual 4.77398e-13,  rel. error 0.000412032
+15:05:01 | debug   | [mg]      level   9,  residual 1.57595e-13,  rel. error 1.4626e-05
+15:05:01 | debug   | [mg]      level  10,  residual 6.90775e-14,  rel. error 2.94058e-06
+15:05:01 | debug   | [mg]      level  11,  residual 1.90294e-14,  rel. error 8.11835e-07
+15:05:01 | debug   | [mg]      level  12,  residual 5.71687e-15,  rel. error 2.17685e-07
+15:05:04 | debug   | [mg]      level  13,  residual 1.70687e-15,  rel. error 5.96771e-08
+15:05:04 | info    | Performing multi-grid V-cycle...
+15:05:21 | debug   | [mg]      level   7,  residual 1.89569e-14,  rel. error 8.96569e-06
+15:05:21 | debug   | [mg]      level   8,  residual 4.72354e-14,  rel. error 4.40906e-05
+15:05:21 | debug   | [mg]      level   9,  residual 1.36743e-14,  rel. error 1.22562e-06
+15:05:21 | debug   | [mg]      level  10,  residual 5.06209e-15,  rel. error 2.62277e-07
+15:05:21 | debug   | [mg]      level  11,  residual 1.83322e-15,  rel. error 7.07069e-08
+15:05:21 | debug   | [mg]      level  12,  residual 1.58774e-15,  rel. error 1.80956e-08
+15:05:24 | debug   | [mg]      level  13,  residual 1.06011e-16,  rel. error 4.59235e-09
+15:05:24 | info    | Performing multi-grid V-cycle...
+15:05:40 | debug   | [mg]      level   7,  residual 1.50721e-15,  rel. error 7.40612e-07
+15:05:40 | debug   | [mg]      level   8,  residual 4.02142e-15,  rel. error 1.93184e-06
+15:05:40 | debug   | [mg]      level   9,  residual 1.23148e-15,  rel. error 1.09512e-07
+15:05:40 | debug   | [mg]      level  10,  residual 5.02175e-16,  rel. error 2.25735e-08
+15:05:40 | debug   | [mg]      level  11,  residual 1.32417e-16,  rel. error 6.02151e-09
+15:05:40 | debug   | [mg]      level  12,  residual 1.34422e-16,  rel. error 1.45735e-09
+15:05:43 | debug   | [mg]      level  13,  residual 7.3627e-18,  rel. error 3.41126e-10
+15:05:43 | info    | Performing multi-grid V-cycle...
+15:05:59 | debug   | [mg]      level   7,  residual 2.64753e-16,  rel. error 6.30103e-08
+15:05:59 | debug   | [mg]      level   8,  residual 3.89884e-16,  rel. error 1.73504e-07
+15:05:59 | debug   | [mg]      level   9,  residual 1.04907e-16,  rel. error 9.73828e-09
+15:05:59 | debug   | [mg]      level  10,  residual 3.67381e-17,  rel. error 1.96598e-09
+15:05:59 | debug   | [mg]      level  11,  residual 1.10439e-17,  rel. error 5.16698e-10
+15:05:59 | debug   | [mg]      level  12,  residual 1.16629e-17,  rel. error 1.20761e-10
+15:06:02 | debug   | [mg]      level  13,  residual 5.36732e-19,  rel. error 2.66246e-11
+15:06:02 | info    | Poisson solver converged to max. error of 1.73504e-07 in 6 steps.
+15:06:06 | info    | Entering hybrid Poisson solver...
+15:07:55 | info    | Copying hybrid correction factor...
+15:07:55 | info    | Done with hybrid Poisson solve.
+15:07:55 | info    | Computing a 6th order finite difference gradient...
+15:07:57 | info    | Done computing a 6th order finite difference gradient.
+15:07:58 | info    | Writing CDM velocities
+15:08:01 | info    | Entering hybrid Poisson solver...
+15:10:02 | info    | Copying hybrid correction factor...
+15:10:03 | info    | Done with hybrid Poisson solve.
+15:10:03 | info    | Computing a 6th order finite difference gradient...
+15:10:04 | info    | Done computing a 6th order finite difference gradient.
+15:10:05 | info    | Writing CDM velocities
+15:10:08 | info    | Entering hybrid Poisson solver...
+15:12:08 | info    | Copying hybrid correction factor...
+15:12:08 | info    | Done with hybrid Poisson solve.
+15:12:08 | info    | Computing a 6th order finite difference gradient...
+15:12:09 | info    | Done computing a 6th order finite difference gradient.
+15:12:10 | info    | Writing CDM velocities
+15:12:12 | info    | Computing baryon displacements...
+15:12:12 | info    | Using k-space transfer function kernel.
+15:12:12 | info    | Performing noise convolution on level   9
+15:12:12 | info    | Loading white noise from file 'wnoise_0009.bin'...
+15:12:15 | info    | Performing kernel convolution on (  512,  512,  512) grid
+15:12:15 | info    | Performing forward FFT...
+15:12:16 | info    | Performing staggering shift for SPH
+15:12:17 | info    | Performing backward FFT...
+15:12:18 | info    | Performing noise convolution on level  10...
+15:12:18 | info    | Allocating refinement patch
+15:12:18 | info    |    offset=(  219,  223,  222)
+15:12:18 | info    |    size  =(  144,  144,  144)
+15:12:18 | info    | Loading white noise from file 'wnoise_0010.bin'...
+15:12:19 | info    | Performing kernel convolution on (  288,  288,  288) grid
+15:12:19 | info    | Performing forward FFT...
+15:12:20 | info    | Performing staggering shift for SPH
+15:12:20 | info    | Performing backward FFT...
+15:12:20 | info    | FFT interpolate: offset=183,187,186 size=288,288,288
+15:12:21 | info    | Performing noise convolution on level  11...
+15:12:21 | info    | Allocating refinement patch
+15:12:21 | info    |    offset=(   12,   12,   13)
+15:12:21 | info    |    size  =(  240,  240,  240)
+15:12:21 | info    | Loading white noise from file 'wnoise_0011.bin'...
+15:12:24 | info    | Performing kernel convolution on (  480,  480,  480) grid
+15:12:24 | info    | Performing forward FFT...
+15:12:24 | info    | Performing staggering shift for SPH
+15:12:26 | info    | Performing backward FFT...
+15:12:27 | info    | FFT interpolate: offset=24,24,25 size=480,480,480
+15:12:29 | info    | Performing noise convolution on level  12...
+15:12:29 | info    | Allocating refinement patch
+15:12:29 | info    |    offset=(   10,   11,   10)
+15:12:29 | info    |    size  =(  436,  436,  436)
+15:12:30 | info    | Loading white noise from file 'wnoise_0012.bin'...
+15:12:51 | info    | Performing kernel convolution on (  872,  872,  872) grid
+15:12:51 | info    | Performing forward FFT...
+15:13:01 | info    | Performing staggering shift for SPH
+15:13:07 | info    | Performing backward FFT...
+15:13:17 | info    | FFT interpolate: offset=21,22,21 size=872,872,872
+15:13:42 | info    | Performing noise convolution on level  13...
+15:13:42 | info    | Allocating refinement patch
+15:13:42 | info    |    offset=(   12,   11,   11)
+15:13:42 | info    |    size  =(  828,  828,  828)
+15:13:54 | info    | Loading white noise from file 'wnoise_0013.bin'...
+15:14:35 | info    | Performing kernel convolution on ( 1656, 1656, 1656) grid
+15:14:35 | info    | Performing forward FFT...
+15:15:17 | info    | Performing staggering shift for SPH
+15:16:02 | info    | Performing backward FFT...
+15:16:47 | info    | FFT interpolate: offset=23,22,22 size=1656,1656,1656
+15:21:09 | info    | Finished computing the density field in 537.769782s
+15:21:38 | info    | Grid mean density is 0. Correcting...
+15:21:42 | info    | Initializing multi-grid Poisson solver...
+15:21:42 | info    | Selected Gauss-Seidel multigrid smoother
+15:21:42 | info    | Running multigrid solver with 6th order Laplacian..
+15:21:42 | info    | Performing multi-grid V-cycle...
+15:21:54 | debug   | [mg]      level   7,  residual 7.35877e-09,  rel. error 0.010093
+15:21:54 | debug   | [mg]      level   8,  residual 1.1481e-08,  rel. error 0.00923124
+15:21:54 | debug   | [mg]      level   9,  residual 1.88159e-09,  rel. error 0.00457645
+15:21:54 | debug   | [mg]      level  10,  residual 8.32921e-10,  rel. error 0.0113714
+15:21:54 | debug   | [mg]      level  11,  residual 2.96183e-10,  rel. error 0.000246579
+15:21:54 | debug   | [mg]      level  12,  residual 1.00537e-10,  rel. error 4.44377e-05
+15:21:56 | debug   | [mg]      level  13,  residual 2.78651e-11,  rel. error 8.59493e-06
+15:21:56 | info    | Performing multi-grid V-cycle...
+15:22:08 | debug   | [mg]      level   7,  residual 5.24405e-10,  rel. error 0.000588013
+15:22:08 | debug   | [mg]      level   8,  residual 5.76333e-10,  rel. error 0.00154395
+15:22:08 | debug   | [mg]      level   9,  residual 3.34092e-10,  rel. error 0.000508786
+15:22:08 | debug   | [mg]      level  10,  residual 8.28209e-11,  rel. error 0.00015218
+15:22:08 | debug   | [mg]      level  11,  residual 2.51068e-11,  rel. error 5.14969e-05
+15:22:08 | debug   | [mg]      level  12,  residual 7.57798e-12,  rel. error 4.46935e-06
+15:22:11 | debug   | [mg]      level  13,  residual 2.57766e-12,  rel. error 8.09177e-07
+15:22:11 | info    | Performing multi-grid V-cycle...
+15:22:23 | debug   | [mg]      level   7,  residual 4.0714e-11,  rel. error 4.67123e-05
+15:22:23 | debug   | [mg]      level   8,  residual 4.96143e-11,  rel. error 0.00010033
+15:22:23 | debug   | [mg]      level   9,  residual 1.79436e-11,  rel. error 4.66169e-05
+15:22:23 | debug   | [mg]      level  10,  residual 6.85311e-12,  rel. error 1.50582e-05
+15:22:23 | debug   | [mg]      level  11,  residual 2.07841e-12,  rel. error 0.000375139
+15:22:23 | debug   | [mg]      level  12,  residual 5.74855e-13,  rel. error 4.86956e-07
+15:22:25 | debug   | [mg]      level  13,  residual 1.80097e-13,  rel. error 6.01405e-08
+15:22:25 | info    | Performing multi-grid V-cycle...
+15:22:39 | debug   | [mg]      level   7,  residual 3.49346e-12,  rel. error 8.0806e-06
+15:22:39 | debug   | [mg]      level   8,  residual 1.02139e-11,  rel. error 6.83997e-06
+15:22:39 | debug   | [mg]      level   9,  residual 1.59491e-12,  rel. error 2.00145e-05
+15:22:39 | debug   | [mg]      level  10,  residual 5.85827e-13,  rel. error 2.2049e-06
+15:22:39 | debug   | [mg]      level  11,  residual 1.79892e-13,  rel. error 2.29467e-07
+15:22:39 | debug   | [mg]      level  12,  residual 4.76074e-14,  rel. error 3.17412e-08
+15:22:41 | debug   | [mg]      level  13,  residual 1.36854e-14,  rel. error 4.86425e-09
+15:22:41 | info    | Performing multi-grid V-cycle...
+15:22:53 | debug   | [mg]      level   7,  residual 3.29903e-13,  rel. error 4.72058e-07
+15:22:53 | debug   | [mg]      level   8,  residual 3.75659e-13,  rel. error 5.81894e-07
+15:22:53 | debug   | [mg]      level   9,  residual 2.49743e-13,  rel. error 4.21918e-07
+15:22:53 | debug   | [mg]      level  10,  residual 4.79088e-14,  rel. error 1.6016e-07
+15:22:53 | debug   | [mg]      level  11,  residual 1.49163e-14,  rel. error 3.86511e-08
+15:22:53 | debug   | [mg]      level  12,  residual 3.72656e-15,  rel. error 3.47097e-09
+15:22:56 | debug   | [mg]      level  13,  residual 9.68448e-16,  rel. error 3.67376e-10
+15:22:56 | info    | Poisson solver converged to max. error of 5.81894e-07 in 5 steps.
+15:22:56 | info    | Writing baryon potential
+15:23:08 | info    | Initializing multi-grid Poisson solver...
+15:23:08 | info    | Selected Gauss-Seidel multigrid smoother
+15:23:08 | info    | Running multigrid solver with 6th order Laplacian..
+15:23:08 | info    | Performing multi-grid V-cycle...
+15:23:22 | debug   | [mg]      level   7,  residual 1.79834e-10,  rel. error 0.0519556
+15:23:22 | debug   | [mg]      level   8,  residual 9.45632e-11,  rel. error 0.0260472
+15:23:22 | debug   | [mg]      level   9,  residual 4.33755e-11,  rel. error 0.00165946
+15:23:22 | debug   | [mg]      level  10,  residual 1.18758e-11,  rel. error 0.000362909
+15:23:23 | debug   | [mg]      level  11,  residual 3.47643e-12,  rel. error 0.000104444
+15:23:23 | debug   | [mg]      level  12,  residual 9.02236e-13,  rel. error 3.35501e-05
+15:23:26 | debug   | [mg]      level  13,  residual 3.3986e-13,  rel. error 1.11772e-05
+15:23:26 | info    | Performing multi-grid V-cycle...
+15:23:42 | debug   | [mg]      level   7,  residual 4.46667e-12,  rel. error 0.00401929
+15:23:42 | debug   | [mg]      level   8,  residual 1.37072e-11,  rel. error 0.00234483
+15:23:42 | debug   | [mg]      level   9,  residual 2.39384e-12,  rel. error 0.00016727
+15:23:42 | debug   | [mg]      level  10,  residual 8.86139e-13,  rel. error 3.49074e-05
+15:23:42 | debug   | [mg]      level  11,  residual 2.56978e-13,  rel. error 9.54926e-06
+15:23:42 | debug   | [mg]      level  12,  residual 7.31134e-14,  rel. error 2.82146e-06
+15:23:45 | debug   | [mg]      level  13,  residual 2.41083e-14,  rel. error 8.36671e-07
+15:23:45 | info    | Performing multi-grid V-cycle...
+15:24:00 | debug   | [mg]      level   7,  residual 3.98239e-13,  rel. error 0.000155068
+15:24:00 | debug   | [mg]      level   8,  residual 8.62531e-13,  rel. error 0.000164531
+15:24:00 | debug   | [mg]      level   9,  residual 6.9274e-13,  rel. error 1.28402e-05
+15:24:00 | debug   | [mg]      level  10,  residual 1.08345e-13,  rel. error 2.93763e-06
+15:24:00 | debug   | [mg]      level  11,  residual 1.65523e-14,  rel. error 8.04931e-07
+15:24:00 | debug   | [mg]      level  12,  residual 5.16309e-15,  rel. error 2.17943e-07
+15:24:03 | debug   | [mg]      level  13,  residual 1.73909e-15,  rel. error 5.95269e-08
+15:24:03 | info    | Performing multi-grid V-cycle...
+15:24:18 | debug   | [mg]      level   7,  residual 1.85363e-14,  rel. error 1.9113e-05
+15:24:18 | debug   | [mg]      level   8,  residual 5.35778e-14,  rel. error 1.67106e-05
+15:24:18 | debug   | [mg]      level   9,  residual 1.29491e-14,  rel. error 1.16051e-06
+15:24:18 | debug   | [mg]      level  10,  residual 7.86086e-15,  rel. error 2.62306e-07
+15:24:18 | debug   | [mg]      level  11,  residual 1.35092e-15,  rel. error 7.03904e-08
+15:24:18 | debug   | [mg]      level  12,  residual 3.97656e-16,  rel. error 1.8157e-08
+15:24:21 | debug   | [mg]      level  13,  residual 1.14339e-16,  rel. error 4.57978e-09
+15:24:21 | info    | Performing multi-grid V-cycle...
+15:24:36 | debug   | [mg]      level   7,  residual 1.41748e-15,  rel. error 9.80698e-07
+15:24:36 | debug   | [mg]      level   8,  residual 3.97388e-15,  rel. error 1.38478e-06
+15:24:36 | debug   | [mg]      level   9,  residual 3.50113e-15,  rel. error 1.01703e-07
+15:24:36 | debug   | [mg]      level  10,  residual 3.08026e-16,  rel. error 2.25461e-08
+15:24:36 | debug   | [mg]      level  11,  residual 1.1006e-16,  rel. error 6.01611e-09
+15:24:36 | debug   | [mg]      level  12,  residual 2.92534e-17,  rel. error 1.4638e-09
+15:24:39 | debug   | [mg]      level  13,  residual 8.00713e-18,  rel. error 3.4056e-10
+15:24:39 | info    | Performing multi-grid V-cycle...
+15:24:53 | debug   | [mg]      level   7,  residual 1.65973e-16,  rel. error 8.39357e-08
+15:24:53 | debug   | [mg]      level   8,  residual 7.25159e-16,  rel. error 1.19923e-07
+15:24:53 | debug   | [mg]      level   9,  residual 3.02593e-16,  rel. error 8.96459e-09
+15:24:53 | debug   | [mg]      level  10,  residual 6.2904e-17,  rel. error 1.95556e-09
+15:24:53 | debug   | [mg]      level  11,  residual 1.10781e-17,  rel. error 5.14546e-10
+15:24:54 | debug   | [mg]      level  12,  residual 2.51787e-18,  rel. error 1.21225e-10
+15:24:56 | debug   | [mg]      level  13,  residual 5.90017e-19,  rel. error 2.64512e-11
+15:24:56 | info    | Poisson solver converged to max. error of 1.19923e-07 in 6 steps.
+15:25:01 | info    | Entering hybrid Poisson solver...
+15:26:59 | info    | Copying hybrid correction factor...
+15:27:00 | info    | Done with hybrid Poisson solve.
+15:27:00 | info    | Computing a 6th order finite difference gradient...
+15:27:01 | info    | Done computing a 6th order finite difference gradient.
+15:27:01 | info    | Writing baryon velocities
+15:27:04 | info    | Entering hybrid Poisson solver...
+15:28:55 | info    | Copying hybrid correction factor...
+15:28:56 | info    | Done with hybrid Poisson solve.
+15:28:56 | info    | Computing a 6th order finite difference gradient...
+15:28:57 | info    | Done computing a 6th order finite difference gradient.
+15:28:58 | info    | Writing baryon velocities
+15:29:01 | info    | Entering hybrid Poisson solver...
+15:31:00 | info    | Copying hybrid correction factor...
+15:31:00 | info    | Done with hybrid Poisson solve.
+15:31:00 | info    | Computing a 6th order finite difference gradient...
+15:31:01 | info    | Done computing a 6th order finite difference gradient.
+15:31:01 | info    | Writing baryon velocities
+15:31:03 | info    | Computing dark matter displacements...
+15:31:03 | info    | Using k-space transfer function kernel.
+15:31:04 | info    | Performing noise convolution on level   9
+15:31:04 | info    | Loading white noise from file 'wnoise_0009.bin'...
+15:31:07 | info    | Performing kernel convolution on (  512,  512,  512) grid
+15:31:07 | info    | Performing forward FFT...
+15:31:09 | info    | Performing backward FFT...
+15:31:10 | info    | Performing noise convolution on level  10...
+15:31:10 | info    | Allocating refinement patch
+15:31:10 | info    |    offset=(  219,  223,  222)
+15:31:10 | info    |    size  =(  144,  144,  144)
+15:31:10 | info    | Loading white noise from file 'wnoise_0010.bin'...
+15:31:11 | info    | Performing kernel convolution on (  288,  288,  288) grid
+15:31:11 | info    | Performing forward FFT...
+15:31:11 | info    | Performing backward FFT...
+15:31:11 | info    | FFT interpolate: offset=183,187,186 size=288,288,288
+15:31:12 | info    | Performing noise convolution on level  11...
+15:31:12 | info    | Allocating refinement patch
+15:31:12 | info    |    offset=(   12,   12,   13)
+15:31:12 | info    |    size  =(  240,  240,  240)
+15:31:12 | info    | Loading white noise from file 'wnoise_0011.bin'...
+15:31:17 | info    | Performing kernel convolution on (  480,  480,  480) grid
+15:31:17 | info    | Performing forward FFT...
+15:31:18 | info    | Performing backward FFT...
+15:31:19 | info    | FFT interpolate: offset=24,24,25 size=480,480,480
+15:31:20 | info    | Performing noise convolution on level  12...
+15:31:20 | info    | Allocating refinement patch
+15:31:20 | info    |    offset=(   10,   11,   10)
+15:31:20 | info    |    size  =(  436,  436,  436)
+15:31:22 | info    | Loading white noise from file 'wnoise_0012.bin'...
+15:31:27 | info    | Performing kernel convolution on (  872,  872,  872) grid
+15:31:27 | info    | Performing forward FFT...
+15:31:43 | info    | Performing backward FFT...
+15:31:53 | info    | FFT interpolate: offset=21,22,21 size=872,872,872
+15:32:18 | info    | Performing noise convolution on level  13...
+15:32:18 | info    | Allocating refinement patch
+15:32:18 | info    |    offset=(   12,   11,   11)
+15:32:18 | info    |    size  =(  828,  828,  828)
+15:32:30 | info    | Loading white noise from file 'wnoise_0013.bin'...
+15:35:44 | info    | Performing kernel convolution on ( 1656, 1656, 1656) grid
+15:35:44 | info    | Performing forward FFT...
+15:37:28 | info    | Performing backward FFT...
+15:38:14 | info    | FFT interpolate: offset=23,22,22 size=1656,1656,1656
+15:40:09 | info    | Finished computing the density field in 545.826950s
+15:40:38 | info    | Grid mean density is 0. Correcting...
+15:40:38 | info    | Writing CDM data
+15:40:42 | info    | Initializing multi-grid Poisson solver...
+15:40:42 | info    | Selected Gauss-Seidel multigrid smoother
+15:40:42 | info    | Running multigrid solver with 6th order Laplacian..
+15:40:42 | info    | Performing multi-grid V-cycle...
+15:40:53 | debug   | [mg]      level   7,  residual 7.47577e-09,  rel. error 0.0126299
+15:40:53 | debug   | [mg]      level   8,  residual 5.68689e-09,  rel. error 0.00797313
+15:40:53 | debug   | [mg]      level   9,  residual 1.86038e-09,  rel. error 0.00477921
+15:40:53 | debug   | [mg]      level  10,  residual 7.14604e-10,  rel. error 0.0012822
+15:40:53 | debug   | [mg]      level  11,  residual 2.39303e-10,  rel. error 0.000238284
+15:40:53 | debug   | [mg]      level  12,  residual 7.90125e-11,  rel. error 4.09918e-05
+15:40:56 | debug   | [mg]      level  13,  residual 2.78919e-11,  rel. error 8.64081e-06
+15:40:56 | info    | Performing multi-grid V-cycle...
+15:41:07 | debug   | [mg]      level   7,  residual 5.05521e-10,  rel. error 0.001019
+15:41:07 | debug   | [mg]      level   8,  residual 6.04145e-10,  rel. error 0.00108631
+15:41:07 | debug   | [mg]      level   9,  residual 1.9393e-10,  rel. error 0.000437359
+15:41:07 | debug   | [mg]      level  10,  residual 7.49502e-11,  rel. error 0.000157872
+15:41:08 | debug   | [mg]      level  11,  residual 2.49705e-11,  rel. error 2.91608e-05
+15:41:08 | debug   | [mg]      level  12,  residual 7.64649e-12,  rel. error 4.75406e-06
+15:41:10 | debug   | [mg]      level  13,  residual 2.39971e-12,  rel. error 7.97618e-07
+15:41:10 | info    | Performing multi-grid V-cycle...
+15:41:22 | debug   | [mg]      level   7,  residual 4.38233e-11,  rel. error 5.51405e-05
+15:41:22 | debug   | [mg]      level   8,  residual 5.22736e-11,  rel. error 0.000187664
+15:41:22 | debug   | [mg]      level   9,  residual 1.74048e-11,  rel. error 5.54977e-05
+15:41:22 | debug   | [mg]      level  10,  residual 6.79851e-12,  rel. error 2.49051e-05
+15:41:22 | debug   | [mg]      level  11,  residual 2.87325e-12,  rel. error 2.97404e-06
+15:41:22 | debug   | [mg]      level  12,  residual 7.08876e-13,  rel. error 6.19616e-07
+15:41:24 | debug   | [mg]      level  13,  residual 2.24628e-13,  rel. error 5.91183e-08
+15:41:24 | info    | Performing multi-grid V-cycle...
+15:41:36 | debug   | [mg]      level   7,  residual 3.7271e-12,  rel. error 1.15808e-05
+15:41:36 | debug   | [mg]      level   8,  residual 4.35417e-12,  rel. error 1.39751e-05
+15:41:36 | debug   | [mg]      level   9,  residual 1.60141e-12,  rel. error 5.20677e-06
+15:41:36 | debug   | [mg]      level  10,  residual 4.76908e-13,  rel. error 1.59738e-06
+15:41:36 | debug   | [mg]      level  11,  residual 1.57254e-13,  rel. error 2.39702e-07
+15:41:36 | debug   | [mg]      level  12,  residual 4.10798e-14,  rel. error 3.31672e-08
+15:41:39 | debug   | [mg]      level  13,  residual 1.06863e-14,  rel. error 4.74525e-09
+15:41:39 | info    | Performing multi-grid V-cycle...
+15:41:50 | debug   | [mg]      level   7,  residual 3.52423e-13,  rel. error 5.3525e-07
+15:41:50 | debug   | [mg]      level   8,  residual 3.71913e-13,  rel. error 7.45287e-07
+15:41:50 | debug   | [mg]      level   9,  residual 1.34876e-13,  rel. error 8.07534e-07
+15:41:50 | debug   | [mg]      level  10,  residual 3.98164e-14,  rel. error 1.57484e-07
+15:41:50 | debug   | [mg]      level  11,  residual 1.29816e-14,  rel. error 2.04571e-08
+15:41:50 | debug   | [mg]      level  12,  residual 3.16655e-15,  rel. error 2.60543e-09
+15:41:53 | debug   | [mg]      level  13,  residual 7.4929e-16,  rel. error 3.56067e-10
+15:41:53 | info    | Poisson solver converged to max. error of 8.07534e-07 in 5 steps.
+15:42:09 | info    | Initializing multi-grid Poisson solver...
+15:42:09 | info    | Selected Gauss-Seidel multigrid smoother
+15:42:09 | info    | Running multigrid solver with 6th order Laplacian..
+15:42:09 | info    | Performing multi-grid V-cycle...
+15:42:23 | debug   | [mg]      level   7,  residual 8.98938e-11,  rel. error 0.0673926
+15:42:23 | debug   | [mg]      level   8,  residual 7.10105e-11,  rel. error 0.0254181
+15:42:23 | debug   | [mg]      level   9,  residual 2.71653e-11,  rel. error 0.00174796
+15:42:23 | debug   | [mg]      level  10,  residual 8.19243e-12,  rel. error 0.000364902
+15:42:23 | debug   | [mg]      level  11,  residual 2.95756e-12,  rel. error 0.000105358
+15:42:24 | debug   | [mg]      level  12,  residual 1.01022e-12,  rel. error 3.35628e-05
+15:42:27 | debug   | [mg]      level  13,  residual 3.28476e-13,  rel. error 1.1177e-05
+15:42:27 | info    | Performing multi-grid V-cycle...
+15:42:42 | debug   | [mg]      level   7,  residual 4.64189e-12,  rel. error 0.0044318
+15:42:42 | debug   | [mg]      level   8,  residual 6.17841e-12,  rel. error 0.0081148
+15:42:42 | debug   | [mg]      level   9,  residual 2.57051e-12,  rel. error 0.00246998
+15:42:42 | debug   | [mg]      level  10,  residual 9.02527e-13,  rel. error 3.51078e-05
+15:42:43 | debug   | [mg]      level  11,  residual 2.84285e-13,  rel. error 9.52057e-06
+15:42:43 | debug   | [mg]      level  12,  residual 8.38464e-14,  rel. error 2.80759e-06
+15:42:47 | debug   | [mg]      level  13,  residual 2.29115e-14,  rel. error 8.3475e-07
+15:42:47 | info    | Performing multi-grid V-cycle...
+15:43:02 | debug   | [mg]      level   7,  residual 2.8467e-13,  rel. error 0.000150846
+15:43:02 | debug   | [mg]      level   8,  residual 5.19174e-13,  rel. error 0.000320326
+15:43:02 | debug   | [mg]      level   9,  residual 1.77838e-13,  rel. error 1.40505e-05
+15:43:02 | debug   | [mg]      level  10,  residual 7.65776e-14,  rel. error 2.96662e-06
+15:43:02 | debug   | [mg]      level  11,  residual 2.94916e-14,  rel. error 8.02893e-07
+15:43:02 | debug   | [mg]      level  12,  residual 6.67288e-15,  rel. error 2.17175e-07
+15:43:06 | debug   | [mg]      level  13,  residual 1.5864e-15,  rel. error 5.93839e-08
+15:43:06 | info    | Performing multi-grid V-cycle...
+15:43:21 | debug   | [mg]      level   7,  residual 1.95331e-14,  rel. error 9.09864e-06
+15:43:21 | debug   | [mg]      level   8,  residual 4.56062e-14,  rel. error 5.63833e-05
+15:43:21 | debug   | [mg]      level   9,  residual 1.57992e-14,  rel. error 1.22018e-06
+15:43:21 | debug   | [mg]      level  10,  residual 6.84278e-15,  rel. error 2.65985e-07
+15:43:21 | debug   | [mg]      level  11,  residual 2.07271e-15,  rel. error 7.01841e-08
+15:43:22 | debug   | [mg]      level  12,  residual 4.98179e-16,  rel. error 1.80461e-08
+15:43:25 | debug   | [mg]      level  13,  residual 1.08872e-16,  rel. error 4.57123e-09
+15:43:25 | info    | Performing multi-grid V-cycle...
+15:43:40 | debug   | [mg]      level   7,  residual 2.36793e-15,  rel. error 7.48473e-07
+15:43:40 | debug   | [mg]      level   8,  residual 6.42978e-15,  rel. error 1.93509e-06
+15:43:40 | debug   | [mg]      level   9,  residual 1.38108e-15,  rel. error 1.10362e-07
+15:43:40 | debug   | [mg]      level  10,  residual 1.23466e-15,  rel. error 2.29249e-08
+15:43:40 | debug   | [mg]      level  11,  residual 1.48939e-16,  rel. error 6.00264e-09
+15:43:41 | debug   | [mg]      level  12,  residual 3.83584e-17,  rel. error 1.45869e-09
+15:43:45 | debug   | [mg]      level  13,  residual 7.49049e-18,  rel. error 3.40733e-10
+15:43:45 | info    | Performing multi-grid V-cycle...
+15:44:00 | debug   | [mg]      level   7,  residual 1.25571e-16,  rel. error 6.34952e-08
+15:44:00 | debug   | [mg]      level   8,  residual 3.42244e-16,  rel. error 1.7538e-07
+15:44:00 | debug   | [mg]      level   9,  residual 1.19402e-16,  rel. error 9.8389e-09
+15:44:00 | debug   | [mg]      level  10,  residual 5.02517e-17,  rel. error 2.00812e-09
+15:44:00 | debug   | [mg]      level  11,  residual 1.26424e-17,  rel. error 5.14352e-10
+15:44:01 | debug   | [mg]      level  12,  residual 3.01804e-18,  rel. error 1.20852e-10
+15:44:04 | debug   | [mg]      level  13,  residual 5.54287e-19,  rel. error 2.65681e-11
+15:44:04 | info    | Poisson solver converged to max. error of 1.7538e-07 in 6 steps.
+15:44:09 | info    | Entering hybrid Poisson solver...
+15:46:15 | info    | Copying hybrid correction factor...
+15:46:15 | info    | Done with hybrid Poisson solve.
+15:46:16 | info    | Computing a 6th order finite difference gradient...
+15:46:17 | info    | Done computing a 6th order finite difference gradient.
+15:46:18 | info    | max. x-displacement of HR particles is -14.038485 [mean dx]
+15:46:18 | info    | Writing CDM displacements
+15:46:22 | info    | Entering hybrid Poisson solver...
+15:48:22 | info    | Copying hybrid correction factor...
+15:48:22 | info    | Done with hybrid Poisson solve.
+15:48:23 | info    | Computing a 6th order finite difference gradient...
+15:48:24 | info    | Done computing a 6th order finite difference gradient.
+15:48:24 | info    | max. y-displacement of HR particles is 16.456649 [mean dx]
+15:48:24 | info    | Writing CDM displacements
+15:48:28 | info    | Entering hybrid Poisson solver...
+15:50:34 | info    | Copying hybrid correction factor...
+15:50:35 | info    | Done with hybrid Poisson solve.
+15:50:35 | info    | Computing a 6th order finite difference gradient...
+15:50:35 | info    | Done computing a 6th order finite difference gradient.
+15:50:36 | info    | max. z-displacement of HR particles is -13.445527 [mean dx]
+15:50:36 | info    | Writing CDM displacements
+15:50:39 | info    | Computing baryon displacements...
+15:50:39 | info    | Using k-space transfer function kernel.
+15:50:39 | info    | Performing noise convolution on level   9
+15:50:39 | info    | Loading white noise from file 'wnoise_0009.bin'...
+15:50:43 | info    | Performing kernel convolution on (  512,  512,  512) grid
+15:50:43 | info    | Performing forward FFT...
+15:50:44 | info    | Performing staggering shift for SPH
+15:50:46 | info    | Performing backward FFT...
+15:50:47 | info    | Performing noise convolution on level  10...
+15:50:47 | info    | Allocating refinement patch
+15:50:47 | info    |    offset=(  219,  223,  222)
+15:50:47 | info    |    size  =(  144,  144,  144)
+15:50:47 | info    | Loading white noise from file 'wnoise_0010.bin'...
+15:50:48 | info    | Performing kernel convolution on (  288,  288,  288) grid
+15:50:48 | info    | Performing forward FFT...
+15:50:48 | info    | Performing staggering shift for SPH
+15:50:48 | info    | Performing backward FFT...
+15:50:49 | info    | FFT interpolate: offset=183,187,186 size=288,288,288
+15:50:49 | info    | Performing noise convolution on level  11...
+15:50:49 | info    | Allocating refinement patch
+15:50:49 | info    |    offset=(   12,   12,   13)
+15:50:49 | info    |    size  =(  240,  240,  240)
+15:50:49 | info    | Loading white noise from file 'wnoise_0011.bin'...
+15:50:52 | info    | Performing kernel convolution on (  480,  480,  480) grid
+15:50:52 | info    | Performing forward FFT...
+15:50:52 | info    | Performing staggering shift for SPH
+15:50:54 | info    | Performing backward FFT...
+15:50:55 | info    | FFT interpolate: offset=24,24,25 size=480,480,480
+15:50:56 | info    | Performing noise convolution on level  12...
+15:50:56 | info    | Allocating refinement patch
+15:50:56 | info    |    offset=(   10,   11,   10)
+15:50:56 | info    |    size  =(  436,  436,  436)
+15:50:58 | info    | Loading white noise from file 'wnoise_0012.bin'...
+15:51:21 | info    | Performing kernel convolution on (  872,  872,  872) grid
+15:51:21 | info    | Performing forward FFT...
+15:51:30 | info    | Performing staggering shift for SPH
+15:51:37 | info    | Performing backward FFT...
+15:51:47 | info    | FFT interpolate: offset=21,22,21 size=872,872,872
+15:52:12 | info    | Performing noise convolution on level  13...
+15:52:12 | info    | Allocating refinement patch
+15:52:12 | info    |    offset=(   12,   11,   11)
+15:52:12 | info    |    size  =(  828,  828,  828)
+15:52:23 | info    | Loading white noise from file 'wnoise_0013.bin'...
+15:55:40 | info    | Performing kernel convolution on ( 1656, 1656, 1656) grid
+15:55:40 | info    | Performing forward FFT...
+15:56:23 | info    | Performing staggering shift for SPH
+15:57:27 | info    | Performing backward FFT...
+15:58:12 | info    | FFT interpolate: offset=23,22,22 size=1656,1656,1656
+16:00:06 | info    | Finished computing the density field in 567.581839s
+16:00:35 | info    | Grid mean density is 0. Correcting...
+16:00:35 | info    | Writing baryon density
+16:00:39 | info    | Initializing multi-grid Poisson solver...
+16:00:39 | info    | Selected Gauss-Seidel multigrid smoother
+16:00:39 | info    | Running multigrid solver with 6th order Laplacian..
+16:00:39 | info    | Performing multi-grid V-cycle...
+16:00:53 | debug   | [mg]      level   7,  residual 7.52435e-09,  rel. error 0.0220682
+16:00:53 | debug   | [mg]      level   8,  residual 5.69163e-09,  rel. error 0.0124129
+16:00:53 | debug   | [mg]      level   9,  residual 1.94499e-09,  rel. error 0.00474
+16:00:54 | debug   | [mg]      level  10,  residual 6.0846e-10,  rel. error 0.00123189
+16:00:54 | debug   | [mg]      level  11,  residual 2.4054e-10,  rel. error 0.000237246
+16:00:54 | debug   | [mg]      level  12,  residual 7.02588e-11,  rel. error 0.000163844
+16:00:57 | debug   | [mg]      level  13,  residual 2.52233e-11,  rel. error 8.59262e-06
+16:00:57 | info    | Performing multi-grid V-cycle...
+16:01:13 | debug   | [mg]      level   7,  residual 8.37004e-10,  rel. error 0.000557829
+16:01:13 | debug   | [mg]      level   8,  residual 8.42584e-10,  rel. error 0.000904559
+16:01:13 | debug   | [mg]      level   9,  residual 2.03079e-10,  rel. error 0.000568697
+16:01:13 | debug   | [mg]      level  10,  residual 1.63304e-10,  rel. error 0.00016729
+16:01:13 | debug   | [mg]      level  11,  residual 2.58329e-11,  rel. error 2.7742e-05
+16:01:14 | debug   | [mg]      level  12,  residual 6.79932e-12,  rel. error 4.4432e-06
+16:01:16 | debug   | [mg]      level  13,  residual 2.19502e-12,  rel. error 7.88227e-07
+16:01:16 | info    | Performing multi-grid V-cycle...
+16:01:33 | debug   | [mg]      level   7,  residual 5.99093e-11,  rel. error 4.74599e-05
+16:01:33 | debug   | [mg]      level   8,  residual 1.09626e-10,  rel. error 0.000121
+16:01:33 | debug   | [mg]      level   9,  residual 1.7378e-11,  rel. error 4.67311e-05
+16:01:33 | debug   | [mg]      level  10,  residual 5.45902e-12,  rel. error 1.44022e-05
+16:01:33 | debug   | [mg]      level  11,  residual 1.99373e-12,  rel. error 2.78524e-06
+16:01:33 | debug   | [mg]      level  12,  residual 5.1491e-13,  rel. error 3.90885e-07
+16:01:36 | debug   | [mg]      level  13,  residual 1.50511e-13,  rel. error 5.72985e-08
+16:01:36 | info    | Performing multi-grid V-cycle...
+16:01:53 | debug   | [mg]      level   7,  residual 4.41648e-12,  rel. error 8.06826e-06
+16:01:53 | debug   | [mg]      level   8,  residual 4.3624e-12,  rel. error 7.04871e-06
+16:01:53 | debug   | [mg]      level   9,  residual 1.55118e-12,  rel. error 1.17894e-05
+16:01:53 | debug   | [mg]      level  10,  residual 4.77683e-13,  rel. error 2.4963e-06
+16:01:53 | debug   | [mg]      level  11,  residual 1.67283e-13,  rel. error 2.26308e-07
+16:01:53 | debug   | [mg]      level  12,  residual 4.16948e-14,  rel. error 3.07959e-08
+16:01:56 | debug   | [mg]      level  13,  residual 1.11545e-14,  rel. error 4.58416e-09
+16:01:56 | info    | Performing multi-grid V-cycle...
+16:02:12 | debug   | [mg]      level   7,  residual 4.71633e-13,  rel. error 4.44699e-07
+16:02:12 | debug   | [mg]      level   8,  residual 3.71588e-13,  rel. error 5.98336e-07
+16:02:12 | debug   | [mg]      level   9,  residual 1.3187e-13,  rel. error 4.23561e-07
+16:02:12 | debug   | [mg]      level  10,  residual 5.22719e-14,  rel. error 1.57727e-07
+16:02:12 | debug   | [mg]      level  11,  residual 1.67099e-14,  rel. error 3.16261e-08
+16:02:12 | debug   | [mg]      level  12,  residual 3.24521e-15,  rel. error 3.40819e-09
+16:02:15 | debug   | [mg]      level  13,  residual 7.9177e-16,  rel. error 3.43421e-10
+16:02:15 | info    | Poisson solver converged to max. error of 5.98336e-07 in 5 steps.
+16:02:31 | info    | Initializing multi-grid Poisson solver...
+16:02:31 | info    | Selected Gauss-Seidel multigrid smoother
+16:02:31 | info    | Running multigrid solver with 6th order Laplacian..
+16:02:31 | info    | Performing multi-grid V-cycle...
+16:02:46 | debug   | [mg]      level   7,  residual 8.95785e-11,  rel. error 0.0913738
+16:02:46 | debug   | [mg]      level   8,  residual 7.02319e-11,  rel. error 0.0244735
+16:02:46 | debug   | [mg]      level   9,  residual 2.7143e-11,  rel. error 0.00194296
+16:02:46 | debug   | [mg]      level  10,  residual 9.51817e-12,  rel. error 0.000362425
+16:02:46 | debug   | [mg]      level  11,  residual 3.15834e-12,  rel. error 0.000104772
+16:02:46 | debug   | [mg]      level  12,  residual 1.00888e-12,  rel. error 3.34887e-05
+16:02:49 | debug   | [mg]      level  13,  residual 3.45402e-13,  rel. error 1.1162e-05
+16:02:49 | info    | Performing multi-grid V-cycle...
+16:03:04 | debug   | [mg]      level   7,  residual 4.67412e-12,  rel. error 0.00282898
+16:03:04 | debug   | [mg]      level   8,  residual 6.03382e-12,  rel. error 0.0020727
+16:03:04 | debug   | [mg]      level   9,  residual 2.16504e-12,  rel. error 0.00016926
+16:03:04 | debug   | [mg]      level  10,  residual 9.16166e-13,  rel. error 3.5111e-05
+16:03:04 | debug   | [mg]      level  11,  residual 2.93125e-13,  rel. error 9.51354e-06
+16:03:04 | debug   | [mg]      level  12,  residual 8.45479e-14,  rel. error 2.81257e-06
+16:03:07 | debug   | [mg]      level  13,  residual 2.51158e-14,  rel. error 8.35526e-07
+16:03:07 | info    | Performing multi-grid V-cycle...
+16:03:22 | debug   | [mg]      level   7,  residual 2.83523e-13,  rel. error 0.000507097
+16:03:22 | debug   | [mg]      level   8,  residual 5.11731e-13,  rel. error 0.000164341
+16:03:22 | debug   | [mg]      level   9,  residual 1.81496e-13,  rel. error 1.31785e-05
+16:03:22 | debug   | [mg]      level  10,  residual 7.71577e-14,  rel. error 2.96322e-06
+16:03:22 | debug   | [mg]      level  11,  residual 2.43437e-14,  rel. error 8.03339e-07
+16:03:23 | debug   | [mg]      level  12,  residual 6.29303e-15,  rel. error 2.18136e-07
+16:03:25 | debug   | [mg]      level  13,  residual 1.69141e-15,  rel. error 5.95267e-08
+16:03:25 | info    | Performing multi-grid V-cycle...
+16:03:40 | debug   | [mg]      level   7,  residual 1.95991e-14,  rel. error 9.51479e-06
+16:03:40 | debug   | [mg]      level   8,  residual 4.54089e-14,  rel. error 1.66722e-05
+16:03:40 | debug   | [mg]      level   9,  residual 1.57912e-14,  rel. error 1.16906e-06
+16:03:40 | debug   | [mg]      level  10,  residual 6.84598e-15,  rel. error 2.65779e-07
+16:03:40 | debug   | [mg]      level  11,  residual 2.07367e-15,  rel. error 7.04045e-08
+16:03:41 | debug   | [mg]      level  12,  residual 4.99782e-16,  rel. error 1.81866e-08
+16:03:43 | debug   | [mg]      level  13,  residual 1.2229e-16,  rel. error 4.58275e-09
+16:03:43 | info    | Performing multi-grid V-cycle...
+16:03:58 | debug   | [mg]      level   7,  residual 1.87264e-15,  rel. error 9.47655e-07
+16:03:58 | debug   | [mg]      level   8,  residual 5.04198e-15,  rel. error 1.38843e-06
+16:03:58 | debug   | [mg]      level   9,  residual 1.77641e-15,  rel. error 1.01897e-07
+16:03:58 | debug   | [mg]      level  10,  residual 5.66132e-16,  rel. error 2.28623e-08
+16:03:58 | debug   | [mg]      level  11,  residual 1.72194e-16,  rel. error 6.00308e-09
+16:03:59 | debug   | [mg]      level  12,  residual 3.8452e-17,  rel. error 1.47078e-09
+16:04:02 | debug   | [mg]      level  13,  residual 8.6062e-18,  rel. error 3.41201e-10
+16:04:02 | info    | Performing multi-grid V-cycle...
+16:04:17 | debug   | [mg]      level   7,  residual 2.03502e-16,  rel. error 8.48279e-08
+16:04:17 | debug   | [mg]      level   8,  residual 2.59349e-16,  rel. error 1.20691e-07
+16:04:17 | debug   | [mg]      level   9,  residual 1.19504e-16,  rel. error 8.98683e-09
+16:04:17 | debug   | [mg]      level  10,  residual 3.68019e-17,  rel. error 1.99354e-09
+16:04:17 | debug   | [mg]      level  11,  residual 1.28051e-17,  rel. error 5.14732e-10
+16:04:18 | debug   | [mg]      level  12,  residual 3.02047e-18,  rel. error 1.22017e-10
+16:04:20 | debug   | [mg]      level  13,  residual 6.30321e-19,  rel. error 2.66264e-11
+16:04:20 | info    | Poisson solver converged to max. error of 1.20691e-07 in 6 steps.
+16:04:25 | info    | Entering hybrid Poisson solver...
+16:06:27 | info    | Copying hybrid correction factor...
+16:06:27 | info    | Done with hybrid Poisson solve.
+16:06:27 | info    | Computing a 6th order finite difference gradient...
+16:06:28 | info    | Done computing a 6th order finite difference gradient.
+16:06:28 | info    | Writing baryon displacements
+16:06:32 | info    | Entering hybrid Poisson solver...
+16:08:17 | info    | Copying hybrid correction factor...
+16:08:17 | info    | Done with hybrid Poisson solve.
+16:08:17 | info    | Computing a 6th order finite difference gradient...
+16:08:18 | info    | Done computing a 6th order finite difference gradient.
+16:08:18 | info    | Writing baryon displacements
+16:08:22 | info    | Entering hybrid Poisson solver...
+16:10:08 | info    | Copying hybrid correction factor...
+16:10:08 | info    | Done with hybrid Poisson solve.
+16:10:09 | info    | Computing a 6th order finite difference gradient...
+16:10:09 | info    | Done computing a 6th order finite difference gradient.
+16:10:09 | info    | Writing baryon displacements
+16:10:16 | info    |       type   0 :     86654056 [m=4.84604e-07]
+16:10:16 | info    |       type   1 :     86654056 [m=2.64513e-06]
+16:10:16 | info    |       type   2 :      6221567 [m=0]
+16:10:42 | info    | Gadget2 : set initial gas temperature to 138.20 K/mu
+16:10:43 | info    | Wrote output file 'snapshot'.
+16:10:43 | info    | Run finished succesfully on Tue May 28 16:10:43 2019 
+16:10:43 | info    | List of all configuration options:
+16:10:43 | info    |               cosmology/H0 = 68.0
+16:10:43 | info    |          cosmology/Omega_L = 0.69
+16:10:43 | info    |          cosmology/Omega_b = 0.048
+16:10:43 | info    |          cosmology/Omega_m = 0.31
+16:10:43 | info    |            cosmology/dplus = 0.0127402551123
+16:10:43 | info    |            cosmology/nspec = 0.97
+16:10:43 | info    |            cosmology/pnorm = 1.98531365487
+16:10:43 | info    |          cosmology/sigma_8 = 0.82
+16:10:43 | info    |         cosmology/transfer = eisenstein
+16:10:43 | info    |            cosmology/vfact = 556.776380001
+16:10:43 | info    |               cosmology/w0 = -1.0
+16:10:43 | info    |            output/filename = snapshot
+16:10:43 | info    |              output/format = gadget2
+16:10:43 | info    |   output/gadget_coarsetype = 2
+16:10:43 | info    |        output/gadget_lunit = kpc
+16:10:43 | info    |           poisson/accuracy = 1e-6
+16:10:43 | info    |           poisson/fft_fine = yes
+16:10:43 | info    |         poisson/grad_order = 6
+16:10:43 | info    |      poisson/laplace_order = 6
+16:10:43 | info    |        poisson/post_smooth = 3
+16:10:43 | info    |         poisson/pre_smooth = 3
+16:10:43 | info    |           poisson/smoother = gs
+16:10:43 | info    |            random/cubesize = 256
+16:10:43 | info    |            random/seed[10] = 35813
+16:10:43 | info    |            random/seed[11] = 581321
+16:10:43 | info    |            random/seed[12] = 8132134
+16:10:43 | info    |            random/seed[13] = 13213455
+16:10:43 | info    |             random/seed[7] = 1123
+16:10:43 | info    |             random/seed[8] = 1235
+16:10:43 | info    |             random/seed[9] = 2358
+16:10:43 | info    |            setup/align_top = no
+16:10:43 | info    |              setup/baryons = yes
+16:10:43 | info    |            setup/boxlength = 58.48
+16:10:43 | info    |               setup/do_SPH = yes
+16:10:43 | info    |            setup/kspace_TF = yes
+16:10:43 | info    |             setup/levelmax = 13
+16:10:43 | info    |             setup/levelmin = 7
+16:10:43 | info    |          setup/levelmin_TF = 9
+16:10:43 | info    |         setup/offset(10,0) = 9
+16:10:43 | info    |         setup/offset(10,1) = 9
+16:10:43 | info    |         setup/offset(10,2) = 10
+16:10:43 | info    |         setup/offset(11,0) = 9
+16:10:43 | info    |         setup/offset(11,1) = 10
+16:10:43 | info    |         setup/offset(11,2) = 10
+16:10:43 | info    |         setup/offset(12,0) = 9
+16:10:43 | info    |         setup/offset(12,1) = 9
+16:10:43 | info    |         setup/offset(12,2) = 9
+16:10:43 | info    |         setup/offset(13,0) = 10
+16:10:43 | info    |         setup/offset(13,1) = 9
+16:10:43 | info    |         setup/offset(13,2) = 9
+16:10:43 | info    |          setup/offset(7,0) = 0
+16:10:43 | info    |          setup/offset(7,1) = 0
+16:10:43 | info    |          setup/offset(7,2) = 0
+16:10:43 | info    |          setup/offset(8,0) = 50
+16:10:43 | info    |          setup/offset(8,1) = 49
+16:10:43 | info    |          setup/offset(8,2) = 51
+16:10:43 | info    |          setup/offset(9,0) = 10
+16:10:43 | info    |          setup/offset(9,1) = 10
+16:10:43 | info    |          setup/offset(9,2) = 9
+16:10:43 | info    |              setup/overlap = 4
+16:10:43 | info    |              setup/padding = 9
+16:10:43 | info    |          setup/periodic_TF = yes
+16:10:43 | info    |               setup/region = convex_hull
+16:10:43 | info    |    setup/region_point_file = zoom_region.txt
+16:10:43 | info    |              setup/shift_x = 16
+16:10:43 | info    |              setup/shift_y = -50
+16:10:43 | info    |              setup/shift_z = -15
+16:10:43 | info    |           setup/size(10,0) = 104
+16:10:43 | info    |           setup/size(10,1) = 136
+16:10:43 | info    |           setup/size(10,2) = 104
+16:10:43 | info    |           setup/size(11,0) = 170
+16:10:43 | info    |           setup/size(11,1) = 232
+16:10:43 | info    |           setup/size(11,2) = 170
+16:10:43 | info    |           setup/size(12,0) = 304
+16:10:43 | info    |           setup/size(12,1) = 428
+16:10:43 | info    |           setup/size(12,2) = 304
+16:10:43 | info    |           setup/size(13,0) = 570
+16:10:43 | info    |           setup/size(13,1) = 820
+16:10:43 | info    |           setup/size(13,2) = 572
+16:10:43 | info    |            setup/size(7,0) = 128
+16:10:43 | info    |            setup/size(7,1) = 128
+16:10:43 | info    |            setup/size(7,2) = 128
+16:10:43 | info    |            setup/size(8,0) = 54
+16:10:43 | info    |            setup/size(8,1) = 62
+16:10:43 | info    |            setup/size(8,2) = 54
+16:10:43 | info    |            setup/size(9,0) = 70
+16:10:43 | info    |            setup/size(9,1) = 86
+16:10:43 | info    |            setup/size(9,2) = 72
+16:10:43 | info    |             setup/use_2LPT = yes
+16:10:43 | info    |               setup/zstart = 99
