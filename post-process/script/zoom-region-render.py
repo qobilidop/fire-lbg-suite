@@ -7,8 +7,7 @@ import yt
 
 
 parser = ArgumentParser()
-parser.add_argument('-s', '--snapshot',
-                    default='/Users/qobilidop/work/data/yt/FIRE_M12i_ref11/snapshot_600.hdf5')
+parser.add_argument('-s', '--snapshot')
 parser.add_argument('-o', '--outdir', type=Path,
                     default='outdir')
 parser.add_argument('-p', '--percentile', default=80)
