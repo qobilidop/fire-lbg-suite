@@ -4,8 +4,9 @@ zoom_region = "h00-box-rad4"
 [gizmo]
 TimeLimitCPU = 200000
 MaxMemSize = 7000
-PartAllocFactor = 2
+PartAllocFactor = 5
 BufferSize = 140
+TreeDomainUpdateFrequency = 0.0005
 
 [job]
 

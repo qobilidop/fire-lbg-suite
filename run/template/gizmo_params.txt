@@ -56,7 +56,7 @@ PartAllocFactor  {{ gizmo.PartAllocFactor }}
 BufferSize       {{ gizmo.BufferSize }}
 
 %---- Rebuild domains when >this fraction of particles active
-TreeDomainUpdateFrequency  0.005
+TreeDomainUpdateFrequency  {{ gizmo.TreeDomainUpdateFrequency|default(0.005) }}
 
 %---- (Optional) Initial hydro temperature & temperature floor (in Kelvin)
 InitGasTemp  0
