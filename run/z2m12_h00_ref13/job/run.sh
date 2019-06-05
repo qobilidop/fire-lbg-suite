@@ -21,7 +21,7 @@ MPIRUN="ibrun"
 if [[ -d output/restartfiles ]]; then
     RESTART_FLAG=1
 else
-    RESTART_FLAG=
+    RESTART_FLAG=2
 fi
 
 eval "$MPIRUN" ./GIZMO gizmo_params.txt "$RESTART_FLAG"
