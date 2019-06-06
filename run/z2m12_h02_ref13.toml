@@ -2,9 +2,10 @@ halo_name = "h02"
 zoom_region = "h02-box-rad4"
 
 [gizmo]
+InitCondFile = "output/snapdir_040/snapshot_040"
 TimeLimitCPU = 200000
 MaxMemSize = 8000
-PartAllocFactor = 2
+PartAllocFactor = 3
 BufferSize = 160
 
 [job]
@@ -18,7 +19,7 @@ hour = 8
 [job.run]
 site = "bridges"
 queue = "RM"
-nodes = 32
+nodes = 64
 mpi = 14
 omp = 2
 hour = 48
