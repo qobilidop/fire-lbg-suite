@@ -1,7 +1,7 @@
 % This params file follows m12i_res7100
 
 %----  Relevant files (filenames and directories)
-InitCondFile  output/snapdir_118/snapshot_118
+InitCondFile  output/snapdir_117/snapshot_117
 OutputDir     output
 
 %---- File formats (input and output)
@@ -52,11 +52,11 @@ HubbleParam            0.68
 
 %----- Memory allocation
 MaxMemSize       8000
-PartAllocFactor  2
+PartAllocFactor  3
 BufferSize       160
 
 %---- Rebuild domains when >this fraction of particles active
-TreeDomainUpdateFrequency  0.005
+TreeDomainUpdateFrequency  0.0005
 
 %---- (Optional) Initial hydro temperature & temperature floor (in Kelvin)
 InitGasTemp  0

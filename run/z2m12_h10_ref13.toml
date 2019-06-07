@@ -2,11 +2,12 @@ halo_name = "h10"
 zoom_region = "h10-box-rad4"
 
 [gizmo]
-InitCondFile = "output/snapdir_118/snapshot_118"
+InitCondFile = "output/snapdir_117/snapshot_117"
 TimeLimitCPU = 200000
 MaxMemSize = 8000
-PartAllocFactor = 2
+PartAllocFactor = 3
 BufferSize = 160
+TreeDomainUpdateFrequency = 0.0005
 
 [job]
 
