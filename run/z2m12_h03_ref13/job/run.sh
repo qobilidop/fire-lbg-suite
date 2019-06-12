@@ -2,7 +2,7 @@
 #SBATCH -J h03-run
 #SBATCH -d singleton
 #SBATCH -p RM
-#SBATCH -N 64
+#SBATCH -N 80
 #SBATCH --ntasks-per-node=14
 #SBATCH --cpus-per-task=2
 #SBATCH -t 48:00:00

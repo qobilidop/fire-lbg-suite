@@ -52,11 +52,11 @@ HubbleParam            0.68
 
 %----- Memory allocation
 MaxMemSize       8000
-PartAllocFactor  4
+PartAllocFactor  3
 BufferSize       160
 
 %---- Rebuild domains when >this fraction of particles active
-TreeDomainUpdateFrequency  0.005
+TreeDomainUpdateFrequency  0.001
 
 %---- (Optional) Initial hydro temperature & temperature floor (in Kelvin)
 InitGasTemp  0

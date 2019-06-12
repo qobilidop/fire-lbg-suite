@@ -5,9 +5,9 @@ zoom_region = "h10-box-rad4"
 InitCondFile = "output/snapdir_117/snapshot_117"
 TimeLimitCPU = 200000
 MaxMemSize = 8000
-PartAllocFactor = 3
+PartAllocFactor = 2
 BufferSize = 160
-TreeDomainUpdateFrequency = 0.0005
+TreeDomainUpdateFrequency = 0.001
 
 [job]
 
@@ -20,7 +20,7 @@ hour = 8
 [job.run]
 site = "bridges"
 queue = "RM"
-nodes = 64
+nodes = 80
 mpi = 14
 omp = 2
 hour = 48
