@@ -2,6 +2,7 @@ halo_name = "h11"
 zoom_region = "h11-box-rad4"
 
 [gizmo]
+InitCondFile = "output/snapdir_087/snapshot_087"
 TimeLimitCPU = 200000
 MaxMemSize = 8000
 PartAllocFactor = 2
@@ -18,7 +19,7 @@ hour = 8
 [job.run]
 site = "bridges"
 queue = "RM"
-nodes = 64
+nodes = 80
 mpi = 14
 omp = 2
 hour = 48

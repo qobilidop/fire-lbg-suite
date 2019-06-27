@@ -7,7 +7,6 @@ TimeLimitCPU = 200000
 MaxMemSize = 8000
 PartAllocFactor = 3
 BufferSize = 160
-TreeDomainUpdateFrequency = 0.001
 
 [job]
 
