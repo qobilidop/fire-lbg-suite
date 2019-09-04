@@ -1,0 +1,18 @@
+CC       = $(MY_MPICC)
+CXX      = $(MY_MPICXX)
+FC       = $(MY_MPICC)
+OPTIMIZE = -O3 -xhost -ipo -funroll-loops -no-prec-div -fp-model fast=2
+OPTIMIZE += -g -Wall
+OPTIMIZE += $(MY_OPT_MPI) $(MY_OPT_OMP)
+GMP_INCL =
+GMP_LIBS =
+MKL_INCL = $(MY_MKL_INC)
+MKL_LIBS = $(MY_MKL_LIB)
+GSL_INCL = $(MY_GSL_INC)
+GSL_LIBS = $(MY_GSL_LIB)
+FFTW_INCL= $(MY_FFTW2_INC)
+FFTW_LIBS= $(MY_FFTW2_LIB)
+HDF5INCL = $(MY_HDF5_INC) -DH5_USE_16_API
+HDF5LIB  = $(MY_HDF5_LIB) -lhdf5 -lz
+MPICHLIB =
+OPT     += -DUSE_MPI_IN_PLACE

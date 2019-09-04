@@ -1,0 +1,13 @@
+channels:
+  - ./channel
+  - conda-forge
+dependencies:
+  # Locally built
+  - ahf
+  # General
+  - jinja2
+  - numpy
+  - python=3.6
+  - pyyaml
+  - scipy
+  - yt

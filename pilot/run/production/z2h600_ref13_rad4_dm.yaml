@@ -1,0 +1,8 @@
+import: z2h600_ref13_dm.yaml
+data:
+    zoom_region: data/zoom_region/z2h600_ref13_rad4.txt
+music:
+    region_point:
+        # See data/zoom_region/z2h600_ref13_shift.conf
+        shift: '-104, 62, -98'
+        levelmin: 8

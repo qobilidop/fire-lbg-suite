@@ -1,0 +1,15 @@
+import: .common.yaml
+data:
+    zoom_region: data/zoom_region/z2h350_ref13_rad4.txt
+music:
+    levelmax: 13
+    region_point:
+        shift: '-67, -45, -89'
+        levelmin: 8
+gizmo:
+    MaxMemSize: 8000
+    BufferSize: 200
+    job:
+        nodes: 32
+        mpi_tasks: 14
+        omp_threads: 2
