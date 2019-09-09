@@ -1,5 +1,8 @@
-GIZMO_HG_SRC = ssh://hg@bitbucket.org/phopkins/gizmo
-GIZMO_HG_COMMIT = 76dbfab6c0fbef056b713410e5eb73f8c1b00205
+GIZMO_GIT_SRC = git@bitbucket.org:phopkins/gizmo.git
+# commit message: Merged default into FIRE_FrozenBranch_Nov13_2015
+# commit date: 2018-06-17
+# original hg commit: 76dbfab6c0fbef056b713410e5eb73f8c1b00205
+GIZMO_GIT_COMMIT = 46c30dab9703f13fdbfd410e3ea4941e97860aa9
 
 .PHONY: init
 init: GIZMO spcool_tables TREECOOL

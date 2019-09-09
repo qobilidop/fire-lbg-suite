@@ -25,8 +25,11 @@ music:
         omp_threads: 28
         time: '01:00:00'
 gizmo:
-    source: ssh://hg@bitbucket.org/phopkins/gizmo
-    commit: 4fd12fbd8bf81edaa9d710b728ebbefa1e3e51b1
+    source: git@bitbucket.org:phopkins/gizmo.git
+    # commit message: fix for experimental SNe mods
+    # commit date: 2018-01-18
+    # original hg commit: 4fd12fbd8bf81edaa9d710b728ebbefa1e3e51b1
+    commit: f7783a31dc03af3476f93026accca8704492dff0
     # Numerics
     softening:  # all in physical pc
         dm_lr: 320
