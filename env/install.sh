@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
-conda env update -f environment.yml
+spack env create fire-lbg-suite env-spack.yaml
+
+conda env update -f env-conda.yaml
 . "$(conda info --base)"/etc/profile.d/conda.sh
 conda activate fire-lbg-suite
 conda env list

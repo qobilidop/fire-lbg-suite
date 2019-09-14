@@ -3,7 +3,7 @@ conda activate fire-lbg-suite
 conda env list
 
 echo "Activate spack env"
-spack env activate gizmo
+spack env activate fire-lbg-suite
 spack env status
 
-export ENV_ACTIVATE="conda activate fire-lbg-suite && spack env activate gizmo"
+export ENV_ACTIVATE="conda activate fire-lbg-suite && spack env activate fire-lbg-suite"
