@@ -1,3 +1,0 @@
-[submodule "env/gizmo-spack"]
-	path = env/gizmo-spack
-	url = https://github.com/qobilidop/gizmo-spack.git
