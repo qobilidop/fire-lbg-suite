@@ -14,7 +14,7 @@ GIZMO: gizmo_config.sh | gizmo_repo
 
 gizmo_repo:
 	git clone $(GIZMO_GIT_SRC) $@
-	cd $(GIZMO_GIT_SRC) && git checkout $(GIZMO_GIT_COMMIT)
+	cd $@ && git checkout $(GIZMO_GIT_COMMIT)
 
 spcool_tables:
 	curl http://www.tapir.caltech.edu/~phopkins/public/spcool_tables.tgz | tar xz
