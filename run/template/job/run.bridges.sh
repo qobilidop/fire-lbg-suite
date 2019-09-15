@@ -10,11 +10,9 @@
 #SBATCH -D .
 set -e
 module list
-eval "$ENV_ACTIVATE"
+spack env activate fire-lbg-suite
 set -x
 pwd
-date
-date_start="$(date)"
 
 export I_MPI_JOB_RESPECT_PROCESS_PLACEMENT=0
 MPIRUN="mpirun -n $SLURM_NTASKS -ppn {{ job.run.mpi }} -genv OMP_NUM_THREADS={{ job.run.omp }} -genv I_MPI_PIN_DOMAIN=omp"
@@ -24,7 +22,6 @@ else
     RESTART_FLAG={{ 2 if gizmo.InitCondFile is defined }}
 fi
 
+date
 eval "$MPIRUN" ./GIZMO gizmo_params.txt "$RESTART_FLAG"
-
-echo "$date_start"
 date

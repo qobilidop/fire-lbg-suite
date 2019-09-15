@@ -8,16 +8,13 @@
 #SBATCH -D .
 set -e
 module list
-eval "$ENV_ACTIVATE"
+spack env activate fire-lbg-suite
 set -x
 cd ic
 pwd
-date
-date_start="$(date)"
 
 export OMP_NUM_THREADS=48
 
+date
 MUSIC music.conf
-
-echo "$date_start"
 date
