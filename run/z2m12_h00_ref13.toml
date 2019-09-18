@@ -2,7 +2,6 @@ halo_name = "h00"
 zoom_region = "h00-box-rad4"
 
 [gizmo]
-InitCondFile = "output/snapdir_112/snapshot_112"
 TimeLimitCPU = 200000
 MaxMemSize = 7000
 PartAllocFactor = 3
