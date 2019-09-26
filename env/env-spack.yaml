@@ -2,4 +2,4 @@ spack:
   specs:
   - ahf-gizmo
   - gizmo-deps
-  - music cxxflags="--std=c++11"
+  - music
