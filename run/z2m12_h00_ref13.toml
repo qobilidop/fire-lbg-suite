@@ -2,10 +2,11 @@ halo_name = "h00"
 zoom_region = "h00-box-rad4"
 
 [gizmo]
+InitCondFile = "output/snapdir_114/snapshot_114"
 TimeLimitCPU = 200000
-MaxMemSize = 7000
-PartAllocFactor = 3
-BufferSize = 140
+MaxMemSize = 8800
+PartAllocFactor = 2.5
+BufferSize = 160
 
 [job]
 
@@ -16,9 +17,9 @@ omp = 16
 hour = 8
 
 [job.run]
-site = "stampede2"
-queue = "skx-normal"
-nodes = 64
-mpi = 24
+site = "bridges"
+queue = "RM"
+nodes = 96
+mpi = 14
 omp = 2
 hour = 48

@@ -1,11 +1,11 @@
 % This params file follows m12i_res7100
 
 %----  Relevant files (filenames and directories)
-InitCondFile  ic/snapshot
+InitCondFile  output/snapdir_114/snapshot_114
 OutputDir     output
 
 %---- File formats (input and output)
-ICFormat    1
+ICFormat    3
 SnapFormat  3
 
 %---- Output parameters
@@ -51,9 +51,9 @@ OmegaBaryon            0.048
 HubbleParam            0.68
 
 %----- Memory allocation
-MaxMemSize       7000
-PartAllocFactor  3
-BufferSize       140
+MaxMemSize       8800
+PartAllocFactor  2.5
+BufferSize       160
 
 %---- Rebuild domains when >this fraction of particles active
 TreeDomainUpdateFrequency  0.005
