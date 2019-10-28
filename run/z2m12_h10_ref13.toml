@@ -4,7 +4,7 @@ zoom_region = "h10-box-rad4"
 [gizmo]
 InitCondFile = "output/snapdir_119/snapshot_119"
 TimeLimitCPU = 200000
-MaxMemSize = 7700
+MaxMemSize = 7000
 PartAllocFactor = 3
 BufferSize = 140
 

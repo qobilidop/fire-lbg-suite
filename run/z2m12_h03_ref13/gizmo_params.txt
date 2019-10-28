@@ -51,7 +51,7 @@ OmegaBaryon            0.048
 HubbleParam            0.68
 
 %----- Memory allocation
-MaxMemSize       7700
+MaxMemSize       7000
 PartAllocFactor  3
 BufferSize       140
 
