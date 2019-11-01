@@ -5,7 +5,7 @@ zoom_region = "h00-box-rad4"
 InitCondFile = "output/snapdir_114/snapshot_114"
 TimeLimitCPU = 200000
 MaxMemSize = 8000
-PartAllocFactor = 2.5
+PartAllocFactor = 3
 BufferSize = 160
 
 [job]
