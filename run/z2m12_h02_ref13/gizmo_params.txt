@@ -53,7 +53,7 @@ HubbleParam            0.68
 %----- Memory allocation
 MaxMemSize       8000
 PartAllocFactor  3
-BufferSize       160
+BufferSize       240
 
 %---- Rebuild domains when >this fraction of particles active
 TreeDomainUpdateFrequency  0.005

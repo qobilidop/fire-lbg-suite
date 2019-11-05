@@ -6,7 +6,7 @@ InitCondFile = "output/snapdir_119/snapshot_119"
 TimeLimitCPU = 200000
 MaxMemSize = 7000
 PartAllocFactor = 3
-BufferSize = 140
+BufferSize = 210
 
 [job]
 
@@ -19,7 +19,7 @@ hour = 8
 [job.run]
 site = "stampede2"
 queue = "skx-normal"
-nodes = 64
+nodes = 96
 mpi = 24
 omp = 2
 hour = 48
