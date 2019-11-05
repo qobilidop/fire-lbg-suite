@@ -2,6 +2,7 @@ halo_name = "h02"
 zoom_region = "h02-box-rad4"
 
 [gizmo]
+# InitCondFile = "output/snapdir_040/snapshot_040"
 InitCondFile = "output/snapdir_113/snapshot_113"
 TimeLimitCPU = 200000
 MaxMemSize = 8000
