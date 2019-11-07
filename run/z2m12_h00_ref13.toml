@@ -8,7 +8,7 @@ InitCondFile = "output/snapdir_114/snapshot_114"
 TimeLimitCPU = 200000
 MaxMemSize = 8000
 PartAllocFactor = 3
-BufferSize = 240
+BufferSize = 400
 
 [job]
 
