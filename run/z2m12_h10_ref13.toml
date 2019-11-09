@@ -5,9 +5,9 @@ zoom_region = "h10-box-rad4"
 # InitCondFile = "output/snapdir_117/snapshot_117"
 InitCondFile = "output/snapdir_119/snapshot_119"
 TimeLimitCPU = 200000
-MaxMemSize = 7000
+MaxMemSize = 14000
 PartAllocFactor = 3
-BufferSize = 210
+BufferSize = 1000
 
 [job]
 
@@ -20,7 +20,7 @@ hour = 8
 [job.run]
 site = "stampede2"
 queue = "skx-normal"
-nodes = 96
-mpi = 24
-omp = 2
+nodes = 128
+mpi = 12
+omp = 4
 hour = 48

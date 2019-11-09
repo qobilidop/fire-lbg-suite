@@ -8,7 +8,7 @@ InitCondFile = "output/snapdir_114/snapshot_114"
 TimeLimitCPU = 200000
 MaxMemSize = 8000
 PartAllocFactor = 3
-BufferSize = 400
+BufferSize = 500
 
 [job]
 
@@ -21,7 +21,7 @@ hour = 8
 [job.run]
 site = "bridges"
 queue = "RM"
-nodes = 96
+nodes = 128
 mpi = 14
 omp = 2
 hour = 48

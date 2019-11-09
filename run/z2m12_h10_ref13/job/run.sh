@@ -2,9 +2,9 @@
 #SBATCH -J h10-run
 #SBATCH -d singleton
 #SBATCH -p skx-normal
-#SBATCH -N 96
-#SBATCH --ntasks-per-node=24
-#SBATCH --cpus-per-task=2
+#SBATCH -N 128
+#SBATCH --ntasks-per-node=12
+#SBATCH --cpus-per-task=4
 #SBATCH -t 48:00:00
 #SBATCH -o job/run.log
 #SBATCH -D .
@@ -14,7 +14,7 @@ spack env activate fire-lbg-suite
 set -x
 pwd
 
-export OMP_NUM_THREADS=2
+export OMP_NUM_THREADS=4
 MPIRUN="ibrun"
 if [[ -d output/restartfiles ]]; then
     RESTART_FLAG=1
