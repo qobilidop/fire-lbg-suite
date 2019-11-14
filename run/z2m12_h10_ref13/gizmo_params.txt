@@ -1,11 +1,11 @@
 % This params file follows m12i_res7100
 
 %----  Relevant files (filenames and directories)
-InitCondFile  output/snapdir_119/snapshot_119
+InitCondFile  ic/snapshot
 OutputDir     output
 
 %---- File formats (input and output)
-ICFormat    3
+ICFormat    1
 SnapFormat  3
 
 %---- Output parameters

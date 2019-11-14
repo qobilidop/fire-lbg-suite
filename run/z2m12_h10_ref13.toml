@@ -3,7 +3,7 @@ zoom_region = "h10-box-rad4"
 
 [gizmo]
 # InitCondFile = "output/snapdir_117/snapshot_117"
-InitCondFile = "output/snapdir_119/snapshot_119"
+# InitCondFile = "output/snapdir_119/snapshot_119"
 TimeLimitCPU = 200000
 MaxMemSize = 14000
 PartAllocFactor = 3
