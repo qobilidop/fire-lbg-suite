@@ -2,7 +2,7 @@
 #SBATCH -J h03-run
 #SBATCH -d singleton
 #SBATCH -p skx-normal
-#SBATCH -N 64
+#SBATCH -N 128
 #SBATCH --ntasks-per-node=24
 #SBATCH --cpus-per-task=2
 #SBATCH -t 48:00:00
@@ -19,7 +19,7 @@ MPIRUN="ibrun"
 if [[ -d output/restartfiles ]]; then
     RESTART_FLAG=1
 else
-    RESTART_FLAG=
+    RESTART_FLAG=2
 fi
 
 date
