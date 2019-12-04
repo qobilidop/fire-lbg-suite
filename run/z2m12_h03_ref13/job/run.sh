@@ -19,7 +19,7 @@ MPIRUN="ibrun"
 if [[ -d output/restartfiles ]]; then
     RESTART_FLAG=1
 else
-    RESTART_FLAG=2
+    RESTART_FLAG=
 fi
 
 date
